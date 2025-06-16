@@ -14,7 +14,7 @@ from pathlib import Path
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
 
-VERSION = "1.0.0"
+VERSION = "2.0.0"
 ADDON_NAME = "ComfyUI-DD-Translation"
 COMFY_PATH = Path(folder_paths.__file__).parent
 CUR_PATH = Path(__file__).parent
