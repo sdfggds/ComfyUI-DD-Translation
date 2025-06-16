@@ -179,6 +179,32 @@
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
+        .node-title-input {
+            margin-bottom: 30px;
+        }
+
+        .node-title-input label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .node-title-input input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .node-title-input input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
         .node-description-input {
             margin-bottom: 30px;
         }
@@ -469,13 +495,11 @@
             margin-bottom: 30px;
             border: 1px solid rgba(79, 172, 254, 0.2);
             box-shadow: 0 4px 15px rgba(79, 172, 254, 0.1);
-        }
-
-        .node-name-input, .node-description-input {
+        }        .node-name-input, .node-description-input, .node-title-input {
             margin-bottom: 25px;
         }
 
-        .node-name-input label, .node-description-input label {
+        .node-name-input label, .node-description-input label, .node-title-input label {
             display: block;
             margin-bottom: 12px;
             font-weight: 600;
@@ -483,7 +507,7 @@
             font-size: 1.1em;
         }
 
-        .node-name-input input, .node-description-input input {
+        .node-name-input input, .node-description-input input, .node-title-input input {
             width: 100%;
             padding: 18px 20px;
             border: 2px solid #e2e8f0;
@@ -493,11 +517,11 @@
             background: white;
         }
 
-        .node-name-input input:focus, .node-description-input input:focus {
+        .node-name-input input:focus, .node-description-input input:focus, .node-title-input input:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-        }        .node-sections {
+        }.node-sections {
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -1098,6 +1122,11 @@
                                 <input type="text" id="node-name-0" placeholder="例如: KSampler" onchange="updateNodeTab(0)">
                             </div>
                             
+                            <div class="node-title-input">
+                                <label for="node-title-0">🏷️ 翻译后标题 (必填):</label>
+                                <input type="text" id="node-title-0" placeholder="例如: K采样器" required>
+                            </div>
+                            
                             <div class="node-description-input">
                                 <label for="node-desc-0">📝 节点功能描述 (可选):</label>
                                 <input type="text" id="node-desc-0" placeholder="例如: 使用不同的采样器和调度器进行图像生成">
@@ -1300,6 +1329,11 @@
                     <div class="node-name-input">
                         <label for="node-name-${nodeIndex}">🎯 节点类名 (Class Name):</label>
                         <input type="text" id="node-name-${nodeIndex}" placeholder="例如: KSampler" onchange="updateNodeTab(${nodeIndex})">
+                    </div>
+                    
+                    <div class="node-title-input">
+                        <label for="node-title-${nodeIndex}">🏷️ 翻译后标题 (必填):</label>
+                        <input type="text" id="node-title-${nodeIndex}" placeholder="例如: K采样器" required>
                     </div>
                     
                     <div class="node-description-input">
@@ -1539,9 +1573,16 @@
                     const nodeNameElement = document.getElementById(`node-name-${nodeIndex}`);
                     
                     if (nodeNameElement) {
-                        const nodeName = nodeNameElement.value.trim();
-                        if (nodeName) {
+                        const nodeName = nodeNameElement.value.trim();                        if (nodeName) {
                             const nodeData = {};
+                            
+                            // 添加标题（必填）
+                            const nodeTitle = document.getElementById(`node-title-${nodeIndex}`).value.trim();
+                            if (!nodeTitle) {
+                                alert(`节点 "${nodeName}" 的翻译标题不能为空！`);
+                                return;
+                            }
+                            nodeData.title = nodeTitle;
                             
                             // 添加描述（如果有）
                             const nodeDesc = document.getElementById(`node-desc-${nodeIndex}`).value.trim();
@@ -1663,6 +1704,11 @@
                                     <div class="node-name-input">
                                         <label for="node-name-0">🎯 节点类名 (Class Name):</label>
                                         <input type="text" id="node-name-0" placeholder="例如: KSampler" onchange="updateNodeTab(0)">
+                                    </div>
+                                    
+                                    <div class="node-title-input">
+                                        <label for="node-title-0">🏷️ 翻译后标题 (必填):</label>
+                                        <input type="text" id="node-title-0" placeholder="例如: K采样器" required>
                                     </div>
                                     
                                     <div class="node-description-input">

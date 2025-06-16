@@ -245,10 +245,18 @@ export class TUtils {
           }
         });
       }
-      
-      if (t.hasOwnProperty("title")) {
-        node.title = t["title"];
-        node.constructor.title = t["title"];
+        if (t.hasOwnProperty("title")) {
+        // 检查节点是否有用户自定义标题标记
+        const hasCustomTitle = node._dd_custom_title || false;
+        // 检查当前标题是否与原始类型标题不同（表示用户可能已修改）
+        const originalTitle = node.constructor.comfyClass || node.constructor.type;
+        const isCustomizedTitle = node.title && node.title !== originalTitle && node.title !== t["title"];
+        
+        // 如果没有自定义标题且当前标题不是用户修改的，才应用翻译
+        if (!hasCustomTitle && !isCustomizedTitle) {
+          node.title = t["title"];
+          node.constructor.title = t["title"];
+        }
       }
       
       // 转换 widget 到 input 时需要刷新socket信息
@@ -599,6 +607,92 @@ export class TUtils {
       error("添加面板按钮失败:", e);
     }
   }
+    /**
+   * 添加节点标题监听机制
+   * @param {Object} app ComfyUI app对象
+   */
+  static addNodeTitleMonitoring(app) {
+    try {
+      // 确保LGraphNode存在
+      if (typeof LGraphNode === 'undefined') {
+        error("LGraphNode未定义，无法设置标题监听");
+        return;
+      }
+      
+      // 监听节点标题修改
+      const originalSetTitle = LGraphNode.prototype.setTitle || function(title) {
+        this.title = title;
+      };
+      
+      LGraphNode.prototype.setTitle = function(title) {
+        // 记录这是用户自定义的标题
+        if (title && title !== this.constructor.title) {
+          this._dd_custom_title = true;
+        }
+        return originalSetTitle.call(this, title);
+      };
+      
+      // 监听属性变化（处理直接赋值的情况）
+      const setupTitleWatcher = (node) => {
+        if (node._dd_title_watched) return;
+        node._dd_title_watched = true;
+        
+        let currentTitle = node.title;
+        const originalTitle = node.constructor.comfyClass || node.constructor.type;
+        
+        // 使用Object.defineProperty来监听title属性的变化
+        Object.defineProperty(node, '_title', {
+          value: currentTitle,
+          writable: true,
+          enumerable: false
+        });
+        
+        Object.defineProperty(node, 'title', {
+          get() {
+            return this._title;
+          },
+          set(newTitle) {
+            const oldTitle = this._title;
+            this._title = newTitle;
+            
+            // 检查是否是用户自定义修改
+            if (newTitle && newTitle !== originalTitle) {
+              // 检查是否是翻译系统设置的标题
+              const nodeT = TUtils.T.Nodes[this.constructor.comfyClass || this.constructor.type];
+              const isTranslatedTitle = nodeT && nodeT.title === newTitle;
+              
+              // 如果不是翻译系统设置的，则标记为用户自定义
+              if (!isTranslatedTitle && oldTitle !== newTitle) {
+                this._dd_custom_title = true;
+              }
+            }
+          },
+          enumerable: true,
+          configurable: true
+        });
+      };
+      
+      // 为现有节点设置监听
+      if (app.graph && app.graph._nodes) {
+        app.graph._nodes.forEach(setupTitleWatcher);
+      }
+      
+      // 为新创建的节点设置监听
+      if (typeof LGraph !== 'undefined' && LGraph.prototype.add) {
+        const originalAddNode = LGraph.prototype.add;
+        LGraph.prototype.add = function(node) {
+          const result = originalAddNode.call(this, node);
+          if (node) {
+            setupTitleWatcher(node);
+          }
+          return result;
+        };
+      }
+      
+    } catch (e) {
+      error("添加节点标题监听失败:", e);
+    }
+  }
 }
 
 const ext = {
@@ -625,9 +719,11 @@ const ext = {
    * @param {Object} app ComfyUI app对象
    */
   async setup(app) {
-    try {
-      // 检查ComfyUI是否已原生中文
+    try {      // 检查ComfyUI是否已原生中文
       const isComfyUIChineseNative = document.documentElement.lang === 'zh-CN';
+      
+      // 添加节点标题监听（无论翻译是否启用都需要）
+      TUtils.addNodeTitleMonitoring(app);
       
       // 只有在翻译启用时才应用翻译
       if (isTranslationEnabled()) {
@@ -704,14 +800,25 @@ const ext = {
   async registerCustomNodes(app) {
     // 注册自定义节点实现
   },
-  
-  /**
+    /**
    * 加载图表节点时调用
    * @param {Object} node 节点
    * @param {Object} app ComfyUI app对象
    */
   loadedGraphNode(node, app) {
     try {
+      // 检查节点标题是否已被用户自定义
+      const originalTitle = node.constructor.comfyClass || node.constructor.type;
+      const nodeT = TUtils.T.Nodes[originalTitle];
+      const translatedTitle = nodeT?.title;
+      
+      // 如果节点标题与原始标题和翻译标题都不同，说明是用户自定义的
+      if (node.title && 
+          node.title !== originalTitle && 
+          node.title !== translatedTitle) {
+        node._dd_custom_title = true;
+      }
+      
       // 只有在翻译启用时才应用翻译
       if (isTranslationEnabled()) {
         TUtils.applyNodeTranslation(node);

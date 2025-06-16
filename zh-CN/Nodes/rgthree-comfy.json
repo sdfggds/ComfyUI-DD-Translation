@@ -463,5 +463,8 @@
             "MODEL": "模型",
             "CLIP": "CLIP"
         }
+    },
+    "Label (rgthree)": {
+        "title": "标签"
     }
 }
