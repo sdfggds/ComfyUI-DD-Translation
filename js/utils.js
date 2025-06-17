@@ -83,9 +83,5 @@ export function isTranslationEnabled() {
 export function toggleTranslation() {
     const enabled = isTranslationEnabled();
     localStorage.setItem(TRANSLATION_ENABLED_KEY, enabled ? "false" : "true");
-    
-    // 触发翻译状态变化事件，而不是刷新页面
-    window.dispatchEvent(new CustomEvent('translation-toggle', { 
-        detail: { enabled: !enabled } 
-    }));
+    setTimeout(() => location.reload(), 500);
 }
