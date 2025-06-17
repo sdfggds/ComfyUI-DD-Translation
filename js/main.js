@@ -3,6 +3,7 @@ import { $el } from "../../../scripts/ui.js";
 import { applyMenuTranslation, observeFactory } from "./MenuTranslate.js";
 import { 
   containsChineseCharacters, 
+  isAlreadyTranslated,
   nativeTranslatedSettings,
   isTranslationEnabled, 
   toggleTranslation,
@@ -135,8 +136,7 @@ export class TUtils {
       error("增强节点小部件绘制失败:", e);
     }
   }
-  
-  /**
+    /**
    * 为特定节点类型应用翻译
    * @param {string} nodeName 节点名称
    */
@@ -148,13 +148,18 @@ export class TUtils {
       
       let class_type = nodeType.comfyClass ? nodeType.comfyClass : nodeType.type;
       if (nodesT.hasOwnProperty(class_type)) {
-        nodeType.title = nodesT[class_type]["title"] || nodeType.title;
+        // 🔧 修复：检查是否已有原生翻译，避免覆盖
+        const hasNativeTranslation = nodeType.title && containsChineseCharacters(nodeType.title);
+        if (!hasNativeTranslation && nodesT[class_type]["title"]) {
+          nodeType.title = nodesT[class_type]["title"];
+        } else if (hasNativeTranslation) {
+          log(`节点类型 ${class_type} 已有原生标题翻译，保持不变: ${nodeType.title}`);
+        }
       }
     } catch (e) {
       error(`为节点类型 ${nodeName} 应用翻译失败:`, e);
     }
   }
-
   /**
    * 为Vue节点定义应用显示名称翻译
    * @param {Object} nodeDef 节点定义对象
@@ -164,7 +169,13 @@ export class TUtils {
       const nodesT = TUtils.T.Nodes;
       const class_type = nodeDef.name;
       if (nodesT.hasOwnProperty(class_type)) {
-        nodeDef.display_name = nodesT[class_type]["title"] || nodeDef.display_name;
+        // 🔧 修复：检查是否已有原生翻译，避免覆盖
+        const hasNativeTranslation = nodeDef.display_name && containsChineseCharacters(nodeDef.display_name);
+        if (!hasNativeTranslation && nodesT[class_type]["title"]) {
+          nodeDef.display_name = nodesT[class_type]["title"];
+        } else if (hasNativeTranslation) {
+          log(`Vue节点 ${class_type} 已有原生显示名翻译，保持不变: ${nodeDef.display_name}`);
+        }
       }
     } catch (e) {
       error(`为Vue节点 ${nodeDef?.name} 应用显示名称翻译失败:`, e);
@@ -211,10 +222,40 @@ export class TUtils {
     } catch (e) {
       error("应用节点类型翻译失败:", e);
     }
+  }  /**
+   * 检测字段是否需要翻译
+   * @param {Object} item 字段项目
+   * @returns {boolean} 是否需要翻译
+   */
+  static needsTranslation(item) {
+    if (!item || !item.hasOwnProperty("name")) return false;
+    
+    // 使用改进的翻译检测函数
+    if (isAlreadyTranslated(item.name, item.label)) {
+      return false;
+    }
+    
+    // 如果name本身包含中文，不需要翻译
+    if (containsChineseCharacters(item.name)) {
+      return false;
+    }
+    
+    return true;
   }
 
   /**
-   * 为节点实例应用翻译
+   * 安全地应用翻译，不覆盖已存在的翻译
+   * @param {Object} item 字段项目
+   * @param {string} translation 翻译文本
+   */
+  static safeApplyTranslation(item, translation) {
+    if (this.needsTranslation(item) && translation) {
+      item.label = translation;
+    }
+  }
+
+  /**
+   * 为节点实例应用翻译（重构版本，兼容原生翻译）
    * @param {Object} node 节点实例
    */
   static applyNodeTranslation(node) {
@@ -225,13 +266,10 @@ export class TUtils {
       let nodesT = this.T.Nodes;
       let class_type = node.constructor.comfyClass ? node.constructor.comfyClass : node.constructor.type;
       
+      // 🔧 修复：移除强制重置逻辑，改为保护已存在的翻译
       if (!nodesT.hasOwnProperty(class_type)) {
-        for (let key of keys) {
-          if (!node.hasOwnProperty(key) || !Array.isArray(node[key])) continue;
-          node[key].forEach((item) => {
-            if (item?.hasOwnProperty("name")) item.label = item.name;
-          });
-        }
+        // 如果没有附加翻译，不做任何处理，保持原生翻译或原文
+        log(`节点 ${class_type} 没有附加翻译，保持原生翻译`);
         return;
       }
       
@@ -239,23 +277,29 @@ export class TUtils {
       for (let key of keys) {
         if (!t.hasOwnProperty(key)) continue;
         if (!node.hasOwnProperty(key)) continue;
+        
         node[key].forEach((item) => {
           if (item?.name in t[key]) {
-            item.label = t[key][item.name];
+            // 🔧 修复：使用安全翻译应用，避免覆盖已存在的翻译
+            this.safeApplyTranslation(item, t[key][item.name]);
           }
         });
-      }
-        if (t.hasOwnProperty("title")) {
+      }        if (t.hasOwnProperty("title")) {
         // 检查节点是否有用户自定义标题标记
         const hasCustomTitle = node._dd_custom_title || false;
         // 检查当前标题是否与原始类型标题不同（表示用户可能已修改）
         const originalTitle = node.constructor.comfyClass || node.constructor.type;
         const isCustomizedTitle = node.title && node.title !== originalTitle && node.title !== t["title"];
         
-        // 如果没有自定义标题且当前标题不是用户修改的，才应用翻译
-        if (!hasCustomTitle && !isCustomizedTitle) {
+        // 🔧 修复：增加原生翻译检测，避免覆盖已存在的原生翻译
+        const hasNativeTranslation = node.title && containsChineseCharacters(node.title);
+        
+        // 如果没有自定义标题、当前标题不是用户修改的、且没有原生翻译，才应用附加翻译
+        if (!hasCustomTitle && !isCustomizedTitle && !hasNativeTranslation) {
           node.title = t["title"];
           node.constructor.title = t["title"];
+        } else if (hasNativeTranslation) {
+          log(`节点 ${class_type} 已有原生标题翻译，保持不变: ${node.title}`);
         }
       }
       
@@ -268,7 +312,8 @@ export class TUtils {
         this.inputs?.forEach((i) => {
           if (oldInputs.includes(i.name)) return;
           if (t["widgets"] && i.widget?.name in t["widgets"]) {
-            i.label = t["widgets"][i.widget?.name];
+            // 🔧 修复：使用安全翻译应用
+            TUtils.safeApplyTranslation(i, t["widgets"][i.widget?.name]);
           }
         });
         return res;
@@ -279,7 +324,10 @@ export class TUtils {
         if (onInputAdded) var res = onInputAdded.apply(this, arguments);
         let t = TUtils.T.Nodes[this.comfyClass];
         if (t?.["widgets"] && slot.name in t["widgets"]) {
-          slot.localized_name = t["widgets"][slot.name];
+          // 🔧 修复：使用安全翻译应用
+          if (TUtils.needsTranslation(slot)) {
+            slot.localized_name = t["widgets"][slot.name];
+          }
         }
         if (onInputAdded) return res;
       };

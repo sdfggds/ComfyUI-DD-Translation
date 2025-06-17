@@ -37,9 +37,33 @@ export function error(...args) {
  */
 export function containsChineseCharacters(text) {
     if (!text) return false;
-    // 匹配中文字符范围
-    const chineseRegex = /[\u4e00-\u9fff\uf900-\ufaff]/;
+    // 匹配中文字符范围（包括中文标点符号）
+    const chineseRegex = /[\u4e00-\u9fff\uf900-\ufaff\u3000-\u303f]/;
     return chineseRegex.test(text);
+}
+
+/**
+ * 检查文本是否看起来已经被翻译过
+ * @param {string} originalName 原始英文名称
+ * @param {string} currentLabel 当前显示标签
+ * @returns {boolean} 是否已被翻译
+ */
+export function isAlreadyTranslated(originalName, currentLabel) {
+    if (!originalName || !currentLabel) return false;
+    
+    // 如果标签与原名不同，且包含中文，认为已被翻译
+    if (currentLabel !== originalName && containsChineseCharacters(currentLabel)) {
+        return true;
+    }
+    
+    // 如果标签与原名不同，且不是简单的小写转换，也可能是翻译
+    if (currentLabel !== originalName && 
+        currentLabel !== originalName.toLowerCase() &&
+        currentLabel !== originalName.toUpperCase()) {
+        return true;
+    }
+    
+    return false;
 }
 
 /**
