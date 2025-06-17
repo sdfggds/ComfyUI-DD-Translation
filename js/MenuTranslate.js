@@ -1,10 +1,7 @@
 import { 
   containsChineseCharacters, 
   nativeTranslatedSettings,
-  log,
-  error,
-  startPerformanceTimer,
-  endPerformanceTimer 
+  error
 } from "./utils.js";
 
 /**
@@ -47,12 +44,6 @@ class TExe {
       return false;
     }
   }
-
-  /**
-   * 翻译KJ插件的文档弹窗
-   * @param {HTMLElement} node DOM节点
-   * @returns {boolean} 是否成功翻译
-   */
   translateKjPopDesc(node) {
     try {
       let T = this.T;
@@ -60,43 +51,30 @@ class TExe {
       if (!node || !node.querySelectorAll) return false;
       if (!node?.classList?.contains("kj-documentation-popup")) return false;
       
-      const startTime = startPerformanceTimer();
       const allElements = node.querySelectorAll("*");
-
       for (const ele of allElements) {
         this.replaceText(ele);
       }
       
-      endPerformanceTimer("KJ文档弹窗翻译", startTime);
       return true;
     } catch (e) {
       error("翻译KJ弹窗出错:", e);
       return false;
     }
   }
-
-  /**
-   * 翻译所有文本内容
-   * @param {HTMLElement} node DOM节点
-   */
   translateAllText(node) {
     try {
       let T = this.T;
       if (!T) return;
       if (!node || !node.querySelectorAll) return;
       
-      const startTime = startPerformanceTimer();
       const allElements = node.querySelectorAll("*");
-
       for (const ele of allElements) {
-        // 跳过ComfyUI原生已经翻译的设置项
         if (ele.textContent && nativeTranslatedSettings.includes(ele.textContent)) {
           continue;
         }
         this.replaceText(ele);
       }
-      
-      endPerformanceTimer("DOM节点翻译", startTime);
     } catch (e) {
       error("翻译所有文本出错:", e);
     }
@@ -180,11 +158,7 @@ class TExe {
       error("替换文本出错:", e);
     }
   }
-  
-  /**
-   * 清理所有注册的观察者
-   */
-  cleanupObservers() {
+    cleanupObservers() {
     try {
       this.observers.forEach(observer => {
         if (observer && typeof observer.disconnect === 'function') {
@@ -192,7 +166,6 @@ class TExe {
         }
       });
       this.observers = [];
-      log("已清理所有观察者");
     } catch (e) {
       error("清理观察者出错:", e);
     }
@@ -202,40 +175,26 @@ class TExe {
 // 创建翻译执行器实例
 let texe = new TExe();
 
-/**
- * 应用菜单翻译
- * @param {Object} T 翻译数据
- */
 export function applyMenuTranslation(T) {
   try {
-    // 清理之前的观察者
     texe.cleanupObservers();
     texe.T = T;
     
-    // 首次翻译现有UI元素
-    const startTime = startPerformanceTimer();
-    
-    // 处理主要的UI元素
     texe.translateAllText(document.querySelector(".litegraph"));
     
-    // 注册主体观察器 - 处理页面动态添加的元素
     const bodyObserver = observeFactory(document.querySelector("body.litegraph"), (mutationsList) => {
       for (let mutation of mutationsList) {
         for (const node of mutation.addedNodes) {
-          // 根据节点类型进行不同处理
           if (node.classList?.contains("comfy-modal")) {
-            // 处理模态框
             texe.translateAllText(node);
             observeModalNode(node);
           } else if (node.classList?.contains("p-dialog-mask")) {
-            // 处理设置对话框
             const dialog = node.querySelector(".p-dialog");
             if (dialog) {
               texe.translateAllText(dialog);
               observeFactory(dialog, handleSettingsDialog, dialog?.role === "dialog");
             }
           } else {
-            // 通用处理
             texe.translateAllText(node);
           }
         }
@@ -244,33 +203,23 @@ export function applyMenuTranslation(T) {
     
     texe.observers.push(bodyObserver);
     
-    // 处理模态框
     document.querySelectorAll(".comfy-modal").forEach(node => {
       observeModalNode(node);
     });
     
-    // 处理新版UI菜单
     if (document.querySelector(".comfyui-menu")) {
       const menuObserver = observeFactory(document.querySelector(".comfyui-menu"), handleComfyNewUIMenu, true);
       texe.observers.push(menuObserver);
     }
     
-    // 处理弹出窗口
     document.querySelectorAll(".comfyui-popup").forEach(node => {
       const popupObserver = observeFactory(node, handleComfyNewUIMenu, true);
       texe.observers.push(popupObserver);
     });
     
-    // 处理历史按钮和队列按钮
     handleHistoryAndQueueButtons();
-    
-    // 处理设置对话框
     handleSettingsDialog();
-    
-    // 处理搜索框
     setupSearchBoxObserver();
-    
-    endPerformanceTimer("菜单翻译初始化", startTime);
   } catch (e) {
     error("应用菜单翻译出错:", e);
   }
@@ -327,16 +276,12 @@ function handleComfyNewUIMenu(mutationsList) {
   }
 }
 
-/**
- * 处理历史和队列按钮
- */
 function handleHistoryAndQueueButtons() {
   const viewHistoryButton = document.getElementById("comfy-view-history-button");
   const viewQueueButton = document.getElementById("comfy-view-queue-button");
 
   [viewHistoryButton, viewQueueButton].filter(Boolean).forEach(btn => {
-    const observer = observeFactory(btn, (mutationsList, observer) => {
-      observer.disconnect();
+    const observer = observeFactory(btn, (mutationsList) => {
       for (let mutation of mutationsList) {
         if (mutation.type === "childList") {
           const translatedValue = texe.MT(mutation.target.textContent);
@@ -345,14 +290,12 @@ function handleHistoryAndQueueButtons() {
           }
         }
       }
-      observer.observe(btn, { childList: true, attributes: true });
     });
     if (observer) {
       texe.observers.push(observer);
     }
   });
   
-  // 处理菜单和列表
   if (document.querySelector(".comfy-menu")) {
     const menuObserver = observeFactory(document.querySelector(".comfy-menu"), handleViewQueueComfyListObserver);
     if (menuObserver) {

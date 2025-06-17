@@ -9,9 +9,6 @@ export const DEBUG_MODE = false;
 // 翻译启用状态的本地存储键
 export const TRANSLATION_ENABLED_KEY = "DD.TranslationEnabled";
 
-// 翻译缓存的本地存储键
-export const TRANSLATION_CACHE_KEY = "DD.TranslationCache";
-
 /**
  * 日志函数 - 仅在调试模式下输出
  * @param  {...any} args 日志参数
@@ -75,10 +72,8 @@ export const nativeTranslatedSettings = [
 
 /**
  * 检查翻译是否启用
- * @returns {boolean} 翻译是否启用
  */
 export function isTranslationEnabled() {
-    // 如果没有设置过，默认启用翻译
     return localStorage.getItem(TRANSLATION_ENABLED_KEY) !== "false";
 }
 
@@ -88,56 +83,5 @@ export function isTranslationEnabled() {
 export function toggleTranslation() {
     const enabled = isTranslationEnabled();
     localStorage.setItem(TRANSLATION_ENABLED_KEY, enabled ? "false" : "true");
-    setTimeout(() => {
-        location.reload();
-    }, 500);
-}
-
-/**
- * 性能计时开始
- * @returns {number} 开始时间戳
- */
-export function startPerformanceTimer() {
-    return performance.now();
-}
-
-/**
- * 性能计时结束并输出耗时
- * @param {string} operation 操作名称
- * @param {number} startTime 开始时间戳
- */
-export function endPerformanceTimer(operation, startTime) {
-    if (!startTime) return;
-    const duration = performance.now() - startTime;
-    log(`${operation} 耗时: ${duration.toFixed(2)}ms`);
-}
-
-/**
- * 从缓存获取翻译
- * @param {string} key 翻译键
- * @returns {string|null} 缓存的翻译或null
- */
-export function getCachedTranslation(key) {
-    try {
-        const cachedTranslations = JSON.parse(localStorage.getItem(TRANSLATION_CACHE_KEY) || '{}');
-        return cachedTranslations[key] || null;
-    } catch (e) {
-        error("读取翻译缓存出错:", e);
-        return null;
-    }
-}
-
-/**
- * 将翻译存入缓存
- * @param {string} key 翻译键
- * @param {string} value 翻译值
- */
-export function setCachedTranslation(key, value) {
-    try {
-        const cachedTranslations = JSON.parse(localStorage.getItem(TRANSLATION_CACHE_KEY) || '{}');
-        cachedTranslations[key] = value;
-        localStorage.setItem(TRANSLATION_CACHE_KEY, JSON.stringify(cachedTranslations));
-    } catch (e) {
-        error("保存翻译缓存出错:", e);
-    }
+    setTimeout(() => location.reload(), 500);
 }

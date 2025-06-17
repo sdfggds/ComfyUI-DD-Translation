@@ -2,17 +2,13 @@ import os
 import json
 import platform
 import sys
-import numpy as np
 import shutil
 import atexit
 import server
-import execution
 import folder_paths
 from functools import lru_cache
 from aiohttp import web
 from pathlib import Path
-from PIL import Image
-from PIL.PngImagePlugin import PngInfo
 
 VERSION = "2.0.0"
 ADDON_NAME = "ComfyUI-DD-Translation"
@@ -67,22 +63,15 @@ def get_menu_translation(locale):
 
 @lru_cache
 def compile_translation(locale):
-    # translations_path = CUR_PATH.joinpath(f"translations_{locale}.json")
-    # if translations_path.exists():
-    #     return try_get_json(translations_path)
-    # Nodes
     nodes_translation = get_nodes_translation(locale)
-    # NodeCategory
     node_category_translation = get_category_translation(locale)
-    # Menus
     menu_translation = get_menu_translation(locale)
-    # compile
+    
     json_data = json.dumps(obj={"Nodes": nodes_translation,
                                 "NodeCategory": node_category_translation,
                                 "Menu": menu_translation
                                 },
                            ensure_ascii=False)
-    # translations_path.write_text(json_data, encoding="utf-8")
     return json_data
 
 
@@ -107,8 +96,6 @@ async def get_translation(request: web.Request):
         if "gzip" in accept_encoding:
             json_data = compress_json(json_data, method="gzip")
             headers["Content-Encoding"] = "gzip"
-            # 指定 charset 为 utf-8
-            # headers["Content-Type"] = "application/json; charset=utf-8"
     except Exception as e:
         sys.stderr.write(f"[agl/get_translation error]: {e}\n")
         sys.stderr.flush()
@@ -147,7 +134,7 @@ def register():
     if hasattr(nodes, "EXTENSION_WEB_DIRS"):
         rmtree(aigodlike_ext_path)
         return
-    # 新版已经不需要复制文件了
+    
     try:
         if os.name == "nt":
             try:
@@ -156,7 +143,6 @@ def register():
             except WindowsError as e:
                 shutil.copytree(CUR_PATH.as_posix(), aigodlike_ext_path.as_posix(), ignore=shutil.ignore_patterns(".git"))
         else:
-            # 复制时过滤 .git
             shutil.copytree(CUR_PATH.as_posix(), aigodlike_ext_path.as_posix(), ignore=shutil.ignore_patterns(".git"))
     except Exception as e:
         sys.stderr.write(f"[agl/register error]: {e}\n")
@@ -164,12 +150,6 @@ def register():
 
 
 def unregister():
-    # 移除缓存json
-    # for data in CUR_PATH.glob("*.json"):
-    #     if not data.name.startswith("translations_"):
-    #         continue
-    #     data.unlink()
-
     aigodlike_ext_path = COMFY_PATH.joinpath("web", "extensions", ADDON_NAME)
     try:
         rmtree(aigodlike_ext_path)
@@ -182,6 +162,5 @@ atexit.register(unregister)
 NODE_CLASS_MAPPINGS = {}
 WEB_DIRECTORY = "./js"
 
-# 插件信息
 __all__ = ["NODE_CLASS_MAPPINGS", "WEB_DIRECTORY"]
 __version__ = VERSION
