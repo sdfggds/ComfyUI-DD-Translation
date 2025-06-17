@@ -180,6 +180,7 @@ export function applyMenuTranslation(T) {
     texe.cleanupObservers();
     texe.T = T;
     
+    // 重新翻译已有的内容
     texe.translateAllText(document.querySelector(".litegraph"));
     
     const bodyObserver = observeFactory(document.querySelector("body.litegraph"), (mutationsList) => {
@@ -220,8 +221,44 @@ export function applyMenuTranslation(T) {
     handleHistoryAndQueueButtons();
     handleSettingsDialog();
     setupSearchBoxObserver();
+    
+    // 重新翻译现有的菜单按钮
+    reapplyExistingTranslations();
   } catch (e) {
     error("应用菜单翻译出错:", e);
+  }
+}
+
+/**
+ * 重新应用现有元素的翻译
+ */
+function reapplyExistingTranslations() {
+  try {
+    // 翻译所有按钮
+    document.querySelectorAll('button').forEach(btn => {
+      texe.replaceText(btn);
+    });
+    
+    // 翻译所有菜单项
+    document.querySelectorAll('.comfy-menu, .comfyui-menu').forEach(menu => {
+      texe.translateAllText(menu);
+    });
+    
+    // 翻译队列和历史按钮
+    const queueButton = document.getElementById('comfy-view-queue-button');
+    const historyButton = document.getElementById('comfy-view-history-button');
+    if (queueButton) texe.replaceText(queueButton);
+    if (historyButton) texe.replaceText(historyButton);
+    
+    // 翻译其他常见元素
+    document.querySelectorAll('label, span, div').forEach(element => {
+      if (element.textContent && element.textContent.trim() && 
+          !containsChineseCharacters(element.textContent)) {
+        texe.replaceText(element);
+      }
+    });
+  } catch (e) {
+    error("重新应用翻译出错:", e);
   }
 }
 
@@ -467,5 +504,23 @@ function setupSearchBoxObserver() {
   
   if (searchObserver) {
     texe.observers.push(searchObserver);
+  }
+}
+
+/**
+ * 恢复原始菜单文本
+ */
+export function restoreMenuTranslation() {
+  try {
+    // 清理观察者
+    texe.cleanupObservers();
+    // 清空翻译数据
+    texe.T = null;
+    
+    // 这里我们不能完全恢复所有文本，因为很难跟踪所有被修改的元素
+    // 最好的方式是提供一个刷新选项，或者在应用翻译时保存原始文本
+    console.log("已清理翻译观察者和数据");
+  } catch (e) {
+    error("恢复菜单翻译出错:", e);
   }
 }

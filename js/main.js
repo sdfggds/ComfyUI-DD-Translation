@@ -1,6 +1,6 @@
 import { app } from "../../../scripts/app.js";
 import { $el } from "../../../scripts/ui.js";
-import { applyMenuTranslation, observeFactory } from "./MenuTranslate.js";
+import { applyMenuTranslation, observeFactory, restoreMenuTranslation } from "./MenuTranslate.js";
 import { 
   containsChineseCharacters, 
   isAlreadyTranslated,
@@ -443,8 +443,37 @@ export class TUtils {
         .dd-translation-btn {
           cursor: pointer;
         }
-      `;
-      document.head.appendChild(styleElem);
+      `;      document.head.appendChild(styleElem);
+      
+      // 监听翻译状态变化事件
+      window.addEventListener('translation-toggle', async (event) => {
+        const enabled = event.detail.enabled;
+        
+        // 更新按钮状态
+        const button = document.getElementById("toggle-translation-button");
+        if (button) {
+          button.textContent = enabled ? "附加翻译" : "官方实现";
+          button.className = enabled ? "dd-translation-btn dd-translation-active" : "dd-translation-btn dd-translation-inactive";
+          button.title = enabled ? "已开启额外附加翻译" : "已使用官方原生翻译";
+        }
+          // 重新同步翻译数据并应用
+        await TUtils.syncTranslation(() => {
+          if (enabled) {
+            // 重新应用所有翻译
+            TUtils.applyNodeTypeTranslation(app);
+            TUtils.applyMenuTranslation(app);
+            
+            // 重新翻译当前页面的所有节点
+            if (app.graph && app.graph._nodes) {
+              app.graph._nodes.forEach(node => {
+                TUtils.applyNodeTranslation(node);
+              });
+            }          } else {
+            // 禁用翻译时，恢复原始文本而不刷新页面
+            TUtils.restoreOriginalTexts(app);
+          }
+        });
+      });
       
       // 添加旧版UI的切换按钮
       if(document.querySelector(".comfy-menu") && !document.getElementById("toggle-translation-button")) {
@@ -481,8 +510,7 @@ export class TUtils {
             content: translationEnabled ? "附加翻译" : "官方实现",
             classList: "toggle-translation-button"
           });
-          
-          // 设置按钮样式
+            // 设置按钮样式
           if(btn.element) {
             btn.element.classList.add("dd-translation-btn");
             btn.element.classList.add(translationEnabled ? "dd-translation-active" : "dd-translation-inactive");
@@ -491,6 +519,17 @@ export class TUtils {
             btn.element.style.padding = "5px 10px";
             btn.element.style.borderRadius = "4px";
           }
+          
+          // 监听翻译状态变化，更新新版UI按钮
+          window.addEventListener('translation-toggle', (event) => {
+            const enabled = event.detail.enabled;
+            if (btn.element) {
+              btn.content = enabled ? "附加翻译" : "官方实现";
+              btn.tooltip = enabled ? "已开启额外附加翻译" : "已使用官方原生翻译";
+              btn.element.classList.remove("dd-translation-active", "dd-translation-inactive");
+              btn.element.classList.add(enabled ? "dd-translation-active" : "dd-translation-inactive");
+            }
+          });
           
           var group = new ComfyButtonGroup(btn.element);
           if(app.menu?.settingsGroup?.element) {
@@ -524,6 +563,92 @@ export class TUtils {
       error("添加节点标题监听失败:", e);
     }
   }
+  static restoreOriginalTexts(app) {
+    try {
+      // 恢复节点标题
+      if (app.graph && app.graph._nodes) {
+        app.graph._nodes.forEach(node => {
+          // 恢复节点标题到原始名称
+          if (!node._dd_custom_title) {
+            const originalTitle = node.constructor.comfyClass || node.constructor.type;
+            if (originalTitle) {
+              node.title = originalTitle;
+            }
+          }
+          
+          // 恢复输入标签
+          if (node.inputs) {
+            node.inputs.forEach(input => {
+              if (input.label && input.name) {
+                input.label = input.name;
+              }
+            });
+          }
+          
+          // 恢复输出标签
+          if (node.outputs) {
+            node.outputs.forEach(output => {
+              if (output.label && output.name) {
+                output.label = output.name;
+              }
+            });
+          }
+          
+          // 恢复小部件标签
+          if (node.widgets) {
+            node.widgets.forEach(widget => {
+              if (widget.label && widget.name) {
+                widget.label = widget.name;
+              }
+            });
+          }
+        });
+      }
+        // 恢复菜单文本 - 简单粗暴的方式是刷新页面，但我们可以尝试恢复一些关键按钮
+      restoreMenuTranslation();
+      this.restoreMenuTexts();
+      
+    } catch (e) {
+      error("恢复原始文本失败:", e);
+      // 如果恢复失败，fallback 到刷新页面
+      setTimeout(() => location.reload(), 500);
+    }
+  }
+
+  static restoreMenuTexts() {
+    try {
+      // 恢复一些主要的菜单按钮文本
+      const buttonTexts = {
+        'comfy-view-queue-button': 'View Queue',
+        'comfy-view-history-button': 'View History',
+        'comfy-save-button': 'Save',
+        'comfy-load-button': 'Load',
+        'comfy-refresh-button': 'Refresh',
+        'comfy-clear-button': 'Clear',
+        'comfy-load-default-button': 'Load Default',
+        'comfy-clipspace-button': 'Clipspace',
+        'queue-front-button': 'Queue Front'
+      };
+      
+      for (const [id, text] of Object.entries(buttonTexts)) {
+        const button = document.getElementById(id);
+        if (button) {
+          button.textContent = text;
+        }
+      }
+      
+      // 恢复队列大小文本
+      const queueSize = document.querySelector('.comfy-queue-size');
+      if (queueSize && queueSize.textContent.includes('队列大小')) {
+        queueSize.textContent = queueSize.textContent.replace('队列大小', 'Queue size');
+      }
+      
+    } catch (e) {
+      error("恢复菜单文本失败:", e);
+    }
+  }
+
+  // ...existing code...
 }
 
 const ext = {
