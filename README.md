@@ -51,13 +51,10 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 
 - msola-ht丶是小张啊
 
-
-
-
 ## 更新日志
 ### v2.1.1 (2025-6-17) 
 - 合并贡献者(是小张啊)提交的一系列节点翻译，包含以下节点的完整翻译内容：
-【ComfyUI-nunchaku丶ComfyUI-MingNodes丶ComfyUI-Align】
+- 【ComfyUI-nunchaku丶ComfyUI-MingNodes丶ComfyUI-Align】
 
 ### v2.1.0 (2025-6-17) 【兼容性修复】
 - 修复了"附加翻译"模式与 ComfyUI 官方原生翻译的兼容性问题，确保真正的增量补充
@@ -72,7 +69,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 解决了在附加翻译模式下，用户手动修改节点标题后重新加载工作流时标题被重置的问题。
 - 重新将Label (rgthree)节点翻译为标签，现在它能在附加模式下正常工作了。
 - 修复了翻译生成器工具的小BUG
-- 添加omfyUI-Redux-Prompt插件的节点翻译
+- 添加ComfyUI-Redux-Prompt插件的节点翻译
 
 ### v1.9.0 (2025-6-15)
 - 由于大部分翻译者其实并没有什么技术基础，原有的翻译贡献指南对于零代码基础的人来说可能太过复杂，所以我删除了它，并制作了一个小工具
