@@ -46,13 +46,19 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 方法3（推荐）：
 直接在Manager中搜索插件名称安装
 
-## 参与贡献
+## 贡献者名单
+感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-欢迎提交 Pull Request 或 Issue 来帮助改进翻译质量或添加新的翻译内容。
+- msola-ht丶是小张啊
 
-Github贡献者名单：msola-ht
+
+
 
 ## 更新日志
+### v2.1.1 (2025-6-17) 
+- 合并贡献者(是小张啊)提交的一系列节点翻译，包含以下节点的完整翻译内容：
+【ComfyUI-nunchaku丶ComfyUI-MingNodes丶ComfyUI-Align】
+
 ### v2.1.0 (2025-6-17) 【兼容性修复】
 - 修复了"附加翻译"模式与 ComfyUI 官方原生翻译的兼容性问题，确保真正的增量补充
 - 实现正确的翻译优先级：附加翻译 > 官方原生翻译 > 英文原文
