@@ -176,7 +176,8 @@
     "box": "方形",
     "round": "圆形",
     "card": "卡片",
-    
-    "cnr_id": "组件ID",
-    "widget_ue_connectable": "可连接组件"
+      "cnr_id": "组件ID",
+    "widget_ue_connectable": "可连接组件",
+    "Hide UE links": "隐藏UE链接",
+    "Convert all UEs to real links": "转换所有UE为真实链接"
 }

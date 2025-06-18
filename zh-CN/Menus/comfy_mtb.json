@@ -5,6 +5,10 @@
     "This will enable debug messages in the console and in the python console respectively, no need to restart the server, but do reload the webui": "这将在控制台和Python控制台中启用调试消息，无需重启服务器，但需要重新加载网页界面",
     
     "Note+": "附加选项",
+    "CSS reset": "CSS重置",
+    "Use shiki to highlight code": "使用shiki进行代码高亮",
+    "This will load a larger version of mtb/markdown-parser that bundles shiki, it supports all shiki transformers (supported langs: html,css,python,markdown)": "这将加载一个更大版本的mtb/markdown-parser，包含shiki代码高亮器，支持所有shiki转换器（支持的语言：html,css,python,markdown）",
+    "This is prepended to all notes": "这会添加到所有笔记的开头",
     
     "PostShot": "PostShot",
     "Path to Postshot CLI": "Postshot CLI路径",
