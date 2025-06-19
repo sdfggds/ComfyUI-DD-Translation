@@ -14,7 +14,7 @@
         }
     },
     "DownloadAndLoadFlorence2Lora": {
-        "Title": "下载并加载 Florence2 LoRA",
+        "title": "下载并加载 Florence2 LoRA",
         "widgets": {
             "model": "模型"
         },

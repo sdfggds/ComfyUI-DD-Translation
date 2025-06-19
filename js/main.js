@@ -19,6 +19,12 @@ export class TUtils {
   static async syncTranslation(OnFinished = () => {}) {
     try {
       if (!isTranslationEnabled()) {
+        // 如果翻译被禁用，清空翻译数据并直接返回
+        TUtils.T = {
+          Menu: {},
+          Nodes: {},
+          NodeCategory: {},
+        };
         OnFinished();
         return;
       }
@@ -171,14 +177,51 @@ export class TUtils {
 
   static safeApplyTranslation(item, translation) {
     if (this.needsTranslation(item) && translation) {
+      // 保存原始名称
+      if (!item._original_name) {
+        item._original_name = item.name;
+      }
       item.label = translation;
     }
   }
+
+  // 新增：还原翻译方法
+  static restoreOriginalTranslation(item) {
+    if (item._original_name) {
+      item.label = item._original_name;
+      delete item._original_name;
+    } else if (item.label && item.name) {
+      // 如果没有保存原始名称，则使用name作为fallback
+      item.label = item.name;
+    }
+  }
+
   static applyNodeTranslation(node) {
     try {
       let keys = ["inputs", "outputs", "widgets"];
       let nodesT = this.T.Nodes;
       let class_type = node.constructor.comfyClass ? node.constructor.comfyClass : node.constructor.type;
+      
+      if (!isTranslationEnabled()) {
+        // 如果翻译被禁用，还原所有翻译
+        for (let key of keys) {
+          if (!node.hasOwnProperty(key)) continue;
+          node[key].forEach((item) => {
+            // 只还原那些确实被我们翻译过的项目（有_original_name标记的）
+            if (item._original_name) {
+              this.restoreOriginalTranslation(item);
+            }
+          });
+        }
+        
+        // 还原标题 - 只还原那些确实被我们翻译过的标题
+        if (node._original_title && !node._dd_custom_title) {
+          node.title = node._original_title;
+          node.constructor.title = node._original_title;
+          delete node._original_title;
+        }
+        return;
+      }
       
       if (!nodesT.hasOwnProperty(class_type)) return;
       
@@ -189,7 +232,13 @@ export class TUtils {
         
         node[key].forEach((item) => {
           if (item?.name in t[key]) {
-            this.safeApplyTranslation(item, t[key][item.name]);
+            // 检查是否有原生翻译
+            const hasNativeTranslation = item.label && containsChineseCharacters(item.label) && !item._original_name;
+            
+            // 如果没有原生翻译，才应用我们的翻译
+            if (!hasNativeTranslation) {
+              this.safeApplyTranslation(item, t[key][item.name]);
+            }
           }
         });
       }
@@ -200,6 +249,10 @@ export class TUtils {
           (node.title && node.title !== (node.constructor.comfyClass || node.constructor.type) && node.title !== t["title"]);
         
         if (!isCustomizedTitle && !hasNativeTranslation) {
+          // 保存原始标题
+          if (!node._original_title) {
+            node._original_title = node.constructor.comfyClass || node.constructor.type;
+          }
           node.title = t["title"];
           node.constructor.title = t["title"];
         }
@@ -237,6 +290,11 @@ export class TUtils {
   }
   static applyNodeDescTranslation(nodeType, nodeData, app) {
     try {
+      // 如果翻译被禁用，直接返回
+      if (!isTranslationEnabled()) {
+        return;
+      }
+      
       let nodesT = this.T.Nodes;
       var t = nodesT[nodeType.comfyClass];
       if (t?.["description"]) {
@@ -567,6 +625,11 @@ const ext = {
   },
     beforeRegisterVueAppNodeDefs(nodeDefs) {
     try {
+      // 如果翻译被禁用，直接返回
+      if (!isTranslationEnabled()) {
+        return;
+      }
+      
       nodeDefs.forEach(TUtils.applyVueNodeDisplayNameTranslation);
       nodeDefs.forEach(TUtils.applyVueNodeTranslation);
     } catch (e) {
@@ -584,9 +647,8 @@ const ext = {
         node._dd_custom_title = true;
       }
       
-      if (isTranslationEnabled()) {
-        TUtils.applyNodeTranslation(node);
-      }
+      // 无论翻译是否启用都调用，让方法内部判断
+      TUtils.applyNodeTranslation(node);
     } catch (e) {
       error(`加载图表节点处理失败 (${node?.title || '未知'}):`, e);
     }
@@ -594,9 +656,8 @@ const ext = {
   
   nodeCreated(node, app) {
     try {
-      if (isTranslationEnabled()) {
-        TUtils.applyNodeTranslation(node);
-      }
+      // 无论翻译是否启用都调用，让方法内部判断
+      TUtils.applyNodeTranslation(node);
     } catch (e) {
       error(`创建节点处理失败 (${node?.title || '未知'}):`, e);
     }

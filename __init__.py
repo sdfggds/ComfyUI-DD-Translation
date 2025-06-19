@@ -67,12 +67,11 @@ def compile_translation(locale):
     node_category_translation = get_category_translation(locale)
     menu_translation = get_menu_translation(locale)
     
-    json_data = json.dumps(obj={"Nodes": nodes_translation,
-                                "NodeCategory": node_category_translation,
-                                "Menu": menu_translation
-                                },
-                           ensure_ascii=False)
-    return json_data
+    return json.dumps({
+        "Nodes": nodes_translation,
+        "NodeCategory": node_category_translation,
+        "Menu": menu_translation
+    }, ensure_ascii=False)
 
 
 @lru_cache
@@ -80,8 +79,7 @@ def compress_json(data, method="gzip"):
     if method == "gzip":
         import gzip
         return gzip.compress(data.encode("utf-8"))
-    else:
-        return data
+    return data
 
 
 @server.PromptServer.instance.routes.post("/agl/get_translation")
@@ -91,19 +89,19 @@ async def get_translation(request: web.Request):
     accept_encoding = request.headers.get("Accept-Encoding", "")
     json_data = "{}"
     headers = {}
+    
     try:
         json_data = compile_translation(locale)
         if "gzip" in accept_encoding:
             json_data = compress_json(json_data, method="gzip")
             headers["Content-Encoding"] = "gzip"
-    except Exception as e:
-        sys.stderr.write(f"[agl/get_translation error]: {e}\n")
-        sys.stderr.flush()
+    except Exception:
+        pass
+        
     return web.Response(status=200, body=json_data, headers=headers)
 
 
 def rmtree(path: Path):
-    # unlink symbolic link
     if not path.exists():
         return
     if Path(path.resolve()).as_posix() != path.as_posix():
@@ -112,7 +110,6 @@ def rmtree(path: Path):
     if path.is_file():
         path.unlink()
     elif path.is_dir():
-        # 移除 .git
         if path.name == ".git":
             if platform.system() == "darwin":
                 from subprocess import call
@@ -123,9 +120,9 @@ def rmtree(path: Path):
         for child in path.iterdir():
             rmtree(child)
         try:
-            path.rmdir()  # nas 的共享盘可能会有残留
+            path.rmdir()
         except BaseException:
-            ...
+            pass
 
 
 def register():
@@ -140,13 +137,12 @@ def register():
             try:
                 import _winapi
                 _winapi.CreateJunction(CUR_PATH.as_posix(), aigodlike_ext_path.as_posix())
-            except WindowsError as e:
+            except WindowsError:
                 shutil.copytree(CUR_PATH.as_posix(), aigodlike_ext_path.as_posix(), ignore=shutil.ignore_patterns(".git"))
         else:
             shutil.copytree(CUR_PATH.as_posix(), aigodlike_ext_path.as_posix(), ignore=shutil.ignore_patterns(".git"))
-    except Exception as e:
-        sys.stderr.write(f"[agl/register error]: {e}\n")
-        sys.stderr.flush()
+    except Exception:
+        pass
 
 
 def unregister():
@@ -154,12 +150,16 @@ def unregister():
     try:
         rmtree(aigodlike_ext_path)
     except BaseException:
-        ...
+        pass
 
 
 register()
 atexit.register(unregister)
 NODE_CLASS_MAPPINGS = {}
+WEB_DIRECTORY = "./js"
+
+__all__ = ["NODE_CLASS_MAPPINGS", "WEB_DIRECTORY"]
+__version__ = VERSION
 WEB_DIRECTORY = "./js"
 
 __all__ = ["NODE_CLASS_MAPPINGS", "WEB_DIRECTORY"]

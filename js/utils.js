@@ -1,26 +1,12 @@
 /**
  * ComfyUI-DD-Translation 工具模块
- * 包含通用功能和工具函数
  */
-
-// 调试模式开关
-export const DEBUG_MODE = false;
 
 // 翻译启用状态的本地存储键
 export const TRANSLATION_ENABLED_KEY = "DD.TranslationEnabled";
 
 /**
- * 日志函数 - 仅在调试模式下输出
- * @param  {...any} args 日志参数
- */
-export function log(...args) {
-    if (DEBUG_MODE) {
-        console.log("[DD-Translation]", ...args);
-    }
-}
-
-/**
- * 错误日志函数 - 始终输出
+ * 错误日志函数
  * @param  {...any} args 错误信息参数
  */
 export function error(...args) {
@@ -34,7 +20,6 @@ export function error(...args) {
  */
 export function containsChineseCharacters(text) {
     if (!text) return false;
-    // 匹配中文字符范围（包括中文标点符号）
     const chineseRegex = /[\u4e00-\u9fff\uf900-\ufaff\u3000-\u303f]/;
     return chineseRegex.test(text);
 }
@@ -48,12 +33,10 @@ export function containsChineseCharacters(text) {
 export function isAlreadyTranslated(originalName, currentLabel) {
     if (!originalName || !currentLabel) return false;
     
-    // 如果标签与原名不同，且包含中文，认为已被翻译
     if (currentLabel !== originalName && containsChineseCharacters(currentLabel)) {
         return true;
     }
     
-    // 如果标签与原名不同，且不是简单的小写转换，也可能是翻译
     if (currentLabel !== originalName && 
         currentLabel !== originalName.toLowerCase() &&
         currentLabel !== originalName.toUpperCase()) {
@@ -64,7 +47,7 @@ export function isAlreadyTranslated(originalName, currentLabel) {
 }
 
 /**
- * 不需要翻译的设置项列表 - 这些项目已在原生ComfyUI中翻译
+ * 不需要翻译的设置项列表
  */
 export const nativeTranslatedSettings = [
     "Comfy", "画面", "外观", "3D", "遮罩编辑器",
@@ -83,5 +66,5 @@ export function isTranslationEnabled() {
 export function toggleTranslation() {
     const enabled = isTranslationEnabled();
     localStorage.setItem(TRANSLATION_ENABLED_KEY, enabled ? "false" : "true");
-    setTimeout(() => location.reload(), 500);
+    setTimeout(() => location.reload(), 100);
 }
