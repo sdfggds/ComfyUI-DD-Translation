@@ -195,17 +195,33 @@ export class TUtils {
       item.label = item.name;
     }
   }
-
   static applyNodeTranslation(node) {
     try {
+      // 基本验证
+      if (!node) {
+        error("applyNodeTranslation: 节点为空");
+        return;
+      }
+      
+      if (!node.constructor) {
+        error("applyNodeTranslation: 节点构造函数为空");
+        return;
+      }
+
       let keys = ["inputs", "outputs", "widgets"];
       let nodesT = this.T.Nodes;
       let class_type = node.constructor.comfyClass ? node.constructor.comfyClass : node.constructor.type;
       
+      if (!class_type) {
+        error("applyNodeTranslation: 无法获取节点类型");
+        return;
+      }
+
       if (!isTranslationEnabled()) {
         // 如果翻译被禁用，还原所有翻译
         for (let key of keys) {
           if (!node.hasOwnProperty(key)) continue;
+          if (!node[key] || !Array.isArray(node[key])) continue;
           node[key].forEach((item) => {
             // 只还原那些确实被我们翻译过的项目（有_original_name标记的）
             if (item._original_name) {
@@ -220,18 +236,21 @@ export class TUtils {
           node.constructor.title = node._original_title;
           delete node._original_title;
         }
-        return;
-      }
+        return;      }
       
-      if (!nodesT.hasOwnProperty(class_type)) return;
+      if (!nodesT || !nodesT.hasOwnProperty(class_type)) return;
       
       var t = nodesT[class_type];
+      if (!t) return;
+      
       for (let key of keys) {
         if (!t.hasOwnProperty(key)) continue;
         if (!node.hasOwnProperty(key)) continue;
+        if (!node[key] || !Array.isArray(node[key])) continue;
         
         node[key].forEach((item) => {
-          if (item?.name in t[key]) {
+          if (!item || !item.name) return;
+          if (item.name in t[key]) {
             // 检查是否有原生翻译
             const hasNativeTranslation = item.label && containsChineseCharacters(item.label) && !item._original_name;
             
@@ -257,32 +276,37 @@ export class TUtils {
           node.constructor.title = t["title"];
         }
       }
-      
-      // 转换 widget 到 input 时需要刷新socket信息
+        // 转换 widget 到 input 时需要刷新socket信息
       let addInput = node.addInput;
       node.addInput = function (name, type, extra_info) {
         var oldInputs = [];
-        this.inputs?.forEach((i) => oldInputs.push(i.name));
+        if (this.inputs && Array.isArray(this.inputs)) {
+          this.inputs.forEach((i) => oldInputs.push(i.name));
+        }
         var res = addInput.apply(this, arguments);
-        this.inputs?.forEach((i) => {
-          if (oldInputs.includes(i.name)) return;
-          if (t["widgets"] && i.widget?.name in t["widgets"]) {
-            TUtils.safeApplyTranslation(i, t["widgets"][i.widget?.name]);
-          }
-        });
+        if (this.inputs && Array.isArray(this.inputs)) {
+          this.inputs.forEach((i) => {
+            if (oldInputs.includes(i.name)) return;
+            if (t["widgets"] && i.widget?.name in t["widgets"]) {
+              TUtils.safeApplyTranslation(i, t["widgets"][i.widget?.name]);
+            }
+          });
+        }
         return res;
       };
-      
-      let onInputAdded = node.onInputAdded;
+        let onInputAdded = node.onInputAdded;
       node.onInputAdded = function (slot) {
-        if (onInputAdded) var res = onInputAdded.apply(this, arguments);
+        let res;
+        if (onInputAdded) {
+          res = onInputAdded.apply(this, arguments);
+        }
         let t = TUtils.T.Nodes[this.comfyClass];
         if (t?.["widgets"] && slot.name in t["widgets"]) {
           if (TUtils.needsTranslation(slot)) {
             slot.localized_name = t["widgets"][slot.name];
           }
         }
-        if (onInputAdded) return res;
+        return res;
       };
     } catch (e) {
       error(`为节点 ${node?.title || '未知'} 应用翻译失败:`, e);
