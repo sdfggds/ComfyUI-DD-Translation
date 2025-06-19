@@ -1070,6 +1070,218 @@
                 max-width: 500px;
             }
         }
+
+        /* 导入功能区域样式 */
+        .import-section {
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(14, 165, 233, 0.2);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .import-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6, #6366f1);
+            opacity: 0.8;
+        }
+
+        .import-section h2 {
+            color: #1e40af;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .import-area {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+        }
+
+        .import-description {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .import-description p {
+            margin: 0 0 8px 0;
+            color: #1e40af;
+            line-height: 1.6;
+        }
+
+        .import-description p:last-child {
+            margin-bottom: 0;
+            color: #374151;
+        }
+
+        .import-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn-import {
+            background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+            color: white;
+            padding: 14px 28px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-import::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-import:hover::before {
+            left: 100%;
+        }
+
+        .btn-import:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+        }
+
+        .btn-import-process {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 14px 28px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-import-process:disabled {
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            color: #9ca3af;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none !important;
+        }
+
+        .btn-import-process:not(:disabled)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-import-process:not(:disabled):hover::before {
+            left: 100%;
+        }
+
+        .btn-import-process:not(:disabled):hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .file-info {
+            color: #64748b;
+            font-size: 0.95em;
+            font-weight: 500;
+            padding: 8px 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+
+        .file-info.selected {
+            color: #059669;
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+        }
+
+        .import-preview {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #374151;
+        }
+
+        .import-preview h4 {
+            color: #3b82f6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .import-preview-content {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .import-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-import, .btn-import-process {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .file-info {
+                max-width: none;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1087,6 +1299,31 @@
                     <button class="type-btn" data-type="categories">📁 分类翻译</button>
                     <button class="type-btn" data-type="nodes">🔧 节点翻译</button>
                     <button class="type-btn" data-type="menus">⚙️ 设置菜单</button>
+                </div>
+            </div>
+
+            <!-- JSON文件导入功能区域 -->
+            <div class="import-section">
+                <h2>📥 导入现有翻译文件</h2>
+                <div class="import-area">
+                    <div class="import-description">
+                        <p>💡 <strong>快速更新现有翻译：</strong></p>
+                        <p>选择已有的翻译JSON文件进行导入，在此基础上添加新的节点或修改现有翻译。</p>
+                    </div>
+                    <div class="import-controls">
+                        <input type="file" id="json-file-input" accept=".json" style="display: none;">
+                        <button class="btn btn-import" onclick="triggerFileInput()">
+                            📁 选择JSON文件
+                        </button>
+                        <span class="file-info" id="file-info">未选择文件</span>
+                        <button class="btn btn-import-process" onclick="processImportedFile()" disabled>
+                            🚀 导入并编辑
+                        </button>
+                    </div>
+                    <div class="import-preview" id="import-preview" style="display: none;">
+                        <h4>📄 文件预览：</h4>
+                        <div class="import-preview-content" id="import-preview-content"></div>
+                    </div>
                 </div>
             </div>
 
@@ -1666,6 +1903,9 @@
                 // 清空所有输入
                 document.querySelectorAll('input').forEach(input => input.value = '');
                 
+                // 重置导入状态
+                resetImportState();
+                
                 // 重置分类和菜单容器
                 const simpleContainers = ['categories-pairs', 'menus-pairs'];
                 simpleContainers.forEach(id => {
@@ -1762,7 +2002,7 @@
                 document.querySelectorAll('.config-section').forEach(section => section.classList.remove('active'));
                 currentType = '';
             }
-        }        // 贡献翻译
+        }// 贡献翻译
         function contributeTranslation() {
             if (!currentType) {
                 alert('请先选择翻译类型！');
@@ -1808,6 +2048,423 @@
             
             // 打开GitHub Issue页面
             window.open(issueUrl, '_blank');
+        }
+
+        // JSON文件导入功能相关变量
+        let importedJsonData = null;
+        let importedFileName = '';
+
+        // 触发文件选择
+        function triggerFileInput() {
+            document.getElementById('json-file-input').click();
+        }
+
+        // 监听文件选择
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('json-file-input');
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    handleFileSelection(file);
+                }
+            });
+        });
+
+        // 处理文件选择
+        function handleFileSelection(file) {
+            if (file.type !== 'application/json' && !file.name.toLowerCase().endsWith('.json')) {
+                alert('请选择有效的JSON文件！');
+                return;
+            }
+
+            const fileInfo = document.getElementById('file-info');
+            const importPreview = document.getElementById('import-preview');
+            const importBtn = document.querySelector('.btn-import-process');
+
+            // 更新文件信息显示
+            fileInfo.textContent = file.name;
+            fileInfo.classList.add('selected');
+            importedFileName = file.name.replace('.json', '');
+
+            // 读取文件内容
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const jsonContent = e.target.result;
+                    importedJsonData = JSON.parse(jsonContent);
+                    
+                    // 显示预览
+                    const previewContent = document.getElementById('import-preview-content');
+                    previewContent.textContent = JSON.stringify(importedJsonData, null, 2);
+                    importPreview.style.display = 'block';
+                    
+                    // 启用导入按钮
+                    importBtn.disabled = false;
+                    
+                    // 自动设置文件名
+                    const filenameInput = document.getElementById('filename');
+                    if (!filenameInput.value.trim()) {
+                        filenameInput.value = importedFileName;
+                    }
+                    
+                } catch (error) {
+                    alert('JSON文件格式错误，请检查文件内容！\n错误信息：' + error.message);
+                    resetImportState();
+                }
+            };
+            
+            reader.onerror = function() {
+                alert('文件读取失败，请重试！');
+                resetImportState();
+            };
+            
+            reader.readAsText(file);
+        }
+
+        // 重置导入状态
+        function resetImportState() {
+            importedJsonData = null;
+            importedFileName = '';
+            
+            const fileInfo = document.getElementById('file-info');
+            const importPreview = document.getElementById('import-preview');
+            const importBtn = document.querySelector('.btn-import-process');
+            const fileInput = document.getElementById('json-file-input');
+            
+            fileInfo.textContent = '未选择文件';
+            fileInfo.classList.remove('selected');
+            importPreview.style.display = 'none';
+            importBtn.disabled = true;
+            fileInput.value = '';
+        }
+
+        // 处理导入的文件
+        function processImportedFile() {
+            if (!importedJsonData) {
+                alert('请先选择要导入的JSON文件！');
+                return;
+            }
+
+            // 检测翻译类型
+            const detectedType = detectTranslationType(importedJsonData);
+            if (!detectedType) {
+                alert('无法识别翻译文件的类型，请确保文件格式正确！');
+                return;
+            }
+
+            // 自动选择相应的翻译类型
+            selectTranslationType(detectedType);
+
+            // 填充数据
+            populateDataFromImport(detectedType, importedJsonData);
+
+            // 显示成功提示
+            alert(`✅ 成功导入${getTypeDisplayName(detectedType)}翻译文件！\n文件名：${importedFileName}.json\n您现在可以在此基础上进行编辑和补充。`);
+
+            // 滚动到相应的配置区域
+            const configSection = document.getElementById(detectedType + '-config');
+            if (configSection) {
+                configSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 检测翻译类型
+        function detectTranslationType(data) {
+            // 检查是否为节点翻译
+            for (const key in data) {
+                const item = data[key];
+                if (typeof item === 'object' && (item.title || item.inputs || item.widgets || item.outputs)) {
+                    return 'nodes';
+                }
+            }
+            
+            // 检查是否为简单的键值对（分类或菜单）
+            let hasSimpleValues = true;
+            for (const key in data) {
+                if (typeof data[key] !== 'string') {
+                    hasSimpleValues = false;
+                    break;
+                }
+            }
+            
+            if (hasSimpleValues) {
+                // 根据文件名或内容推断类型
+                if (importedFileName.toLowerCase().includes('categor') || 
+                    importedFileName.toLowerCase().includes('分类')) {
+                    return 'categories';
+                } else {
+                    return 'menus'; // 默认为菜单类型
+                }
+            }
+            
+            return null;
+        }
+
+        // 选择翻译类型
+        function selectTranslationType(type) {
+            // 移除所有活动状态
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.config-section').forEach(section => section.classList.remove('active'));
+            
+            // 设置当前类型
+            currentType = type;
+            const typeBtn = document.querySelector(`[data-type="${type}"]`);
+            if (typeBtn) {
+                typeBtn.classList.add('active');
+            }
+            
+            const configSection = document.getElementById(type + '-config');
+            if (configSection) {
+                configSection.classList.add('active');
+            }
+        }
+
+        // 填充导入的数据
+        function populateDataFromImport(type, data) {
+            if (type === 'categories') {
+                populateCategoriesData(data);
+            } else if (type === 'menus') {
+                populateMenusData(data);
+            } else if (type === 'nodes') {
+                populateNodesData(data);
+            }
+        }
+
+        // 填充分类数据
+        function populateCategoriesData(data) {
+            const container = document.getElementById('categories-pairs');
+            container.innerHTML = '';
+            
+            Object.keys(data).forEach(key => {
+                const pair = createKeyValuePair('categories-pairs', 'removeCategoryPair');
+                const inputs = pair.querySelectorAll('input');
+                inputs[0].value = key;
+                inputs[1].value = data[key];
+                container.appendChild(pair);
+            });
+
+            if (container.children.length === 0) {
+                container.innerHTML = '<div class="empty-state">点击下方 + 按钮添加分类翻译项</div>';
+            }
+        }
+
+        // 填充菜单数据
+        function populateMenusData(data) {
+            const container = document.getElementById('menus-pairs');
+            container.innerHTML = '';
+            
+            Object.keys(data).forEach(key => {
+                const pair = createKeyValuePair('menus-pairs', 'removeMenuPair');
+                const inputs = pair.querySelectorAll('input');
+                inputs[0].value = key;
+                inputs[1].value = data[key];
+                container.appendChild(pair);
+            });
+
+            if (container.children.length === 0) {
+                container.innerHTML = '<div class="empty-state">点击下方 + 按钮添加菜单翻译项</div>';
+            }
+        }
+
+        // 填充节点数据
+        function populateNodesData(data) {
+            // 清理现有节点
+            clearExistingNodes();
+            
+            const nodeNames = Object.keys(data);
+            let nodeIndex = 0;
+            
+            nodeNames.forEach((nodeName, index) => {
+                const nodeData = data[nodeName];
+                
+                // 如果不是第一个节点，创建新节点
+                if (index > 0) {
+                    addNewNodeForImport(nodeIndex + 1);
+                    nodeIndex++;
+                }
+                
+                // 填充节点基本信息
+                const nodeNameInput = document.getElementById(`node-name-${nodeIndex}`);
+                const nodeTitleInput = document.getElementById(`node-title-${nodeIndex}`);
+                const nodeDescInput = document.getElementById(`node-desc-${nodeIndex}`);
+                
+                if (nodeNameInput) nodeNameInput.value = nodeName;
+                if (nodeTitleInput && nodeData.title) nodeTitleInput.value = nodeData.title;
+                if (nodeDescInput && nodeData.description) nodeDescInput.value = nodeData.description;
+                
+                // 更新节点标签
+                updateNodeTab(nodeIndex);
+                
+                // 填充输入、控件、输出数据
+                if (nodeData.inputs) {
+                    populateKeyValueSection(`inputs-pairs-${nodeIndex}`, nodeData.inputs, 'removeInputPair');
+                }
+                if (nodeData.widgets) {
+                    populateKeyValueSection(`widgets-pairs-${nodeIndex}`, nodeData.widgets, 'removeWidgetPair');
+                }
+                if (nodeData.outputs) {
+                    populateKeyValueSection(`outputs-pairs-${nodeIndex}`, nodeData.outputs, 'removeOutputPair');
+                }
+                
+                nodeIndex++;
+            });
+            
+            // 更新全局变量
+            nodeCount = nodeIndex;
+            
+            // 切换到第一个节点
+            switchToNode(0);
+        }
+
+        // 为导入创建新节点（不触发默认事件）
+        function addNewNodeForImport(nodeIndex) {
+            // 添加节点标签
+            const tabsContainer = document.querySelector('.node-tabs');
+            const addButton = tabsContainer.querySelector('.btn-add-node');
+            
+            const newTab = document.createElement('button');
+            newTab.className = 'node-tab';
+            newTab.setAttribute('data-node', nodeIndex);
+            newTab.onclick = () => switchToNode(nodeIndex);
+            newTab.innerHTML = `
+                <span>节点 ${nodeIndex + 1}</span>
+                <button class="tab-close" onclick="removeNode(${nodeIndex}, event)">×</button>
+            `;
+            
+            tabsContainer.insertBefore(newTab, addButton);
+
+            // 创建新的节点配置
+            const nodesContainer = document.getElementById('nodes-container');
+            const newNodeConfig = document.createElement('div');
+            newNodeConfig.className = 'single-node-config';
+            newNodeConfig.id = `node-config-${nodeIndex}`;
+            newNodeConfig.innerHTML = `
+                <div class="node-basic-info">
+                    <div class="node-name-input">
+                        <label for="node-name-${nodeIndex}">🎯 节点类名 (Class Name):</label>
+                        <input type="text" id="node-name-${nodeIndex}" placeholder="例如: KSampler" onchange="updateNodeTab(${nodeIndex})">
+                    </div>
+                    
+                    <div class="node-title-input">
+                        <label for="node-title-${nodeIndex}">🏷️ 翻译后标题 (必填):</label>
+                        <input type="text" id="node-title-${nodeIndex}" placeholder="例如: K采样器" required>
+                    </div>
+                    
+                    <div class="node-description-input">
+                        <label for="node-desc-${nodeIndex}">📝 节点功能描述 (可选):</label>
+                        <input type="text" id="node-desc-${nodeIndex}" placeholder="例如: 使用不同的采样器和调度器进行图像生成">
+                    </div>
+                </div>
+
+                <div class="node-sections">
+                    <!-- 输入项 -->
+                    <div class="key-value-section">
+                        <div class="section-title">📥 输入 (Inputs)</div>
+                        <div id="inputs-pairs-${nodeIndex}">
+                            <div class="empty-state">点击下方 + 按钮添加输入项</div>
+                        </div>
+                        <div class="add-section">
+                            <button class="btn btn-add" onclick="addInputPair(${nodeIndex})">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 控件项 -->
+                    <div class="key-value-section">
+                        <div class="section-title">🎛️ 控件 (Widgets)</div>
+                        <div id="widgets-pairs-${nodeIndex}">
+                            <div class="empty-state">点击下方 + 按钮添加控件项</div>
+                        </div>
+                        <div class="add-section">
+                            <button class="btn btn-add" onclick="addWidgetPair(${nodeIndex})">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 输出项 -->
+                    <div class="key-value-section">
+                        <div class="section-title">📤 输出 (Outputs)</div>
+                        <div id="outputs-pairs-${nodeIndex}">
+                            <div class="empty-state">点击下方 + 按钮添加输出项</div>
+                        </div>
+                        <div class="add-section">
+                            <button class="btn btn-add" onclick="addOutputPair(${nodeIndex})">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            nodesContainer.appendChild(newNodeConfig);
+        }
+
+        // 清理现有节点
+        function clearExistingNodes() {
+            // 重置节点计数和当前索引
+            nodeCount = 1;
+            currentNodeIndex = 0;
+            
+            // 清理节点标签（保留第一个）
+            const tabsContainer = document.querySelector('.node-tabs');
+            const allTabs = tabsContainer.querySelectorAll('.node-tab[data-node]');
+            allTabs.forEach((tab, index) => {
+                if (index > 0) { // 保留第一个节点
+                    tab.remove();
+                }
+            });
+            
+            // 清理节点配置（保留第一个）
+            const nodesContainer = document.getElementById('nodes-container');
+            const allConfigs = nodesContainer.querySelectorAll('.single-node-config');
+            allConfigs.forEach((config, index) => {
+                if (index > 0) { // 保留第一个节点
+                    config.remove();
+                }
+            });
+            
+            // 清空第一个节点的内容
+            const firstNodeIndex = 0;
+            document.getElementById(`node-name-${firstNodeIndex}`).value = '';
+            document.getElementById(`node-title-${firstNodeIndex}`).value = '';
+            document.getElementById(`node-desc-${firstNodeIndex}`).value = '';
+            
+            // 清空第一个节点的键值对
+            clearKeyValueSection(`inputs-pairs-${firstNodeIndex}`, '点击下方 + 按钮添加输入项');
+            clearKeyValueSection(`widgets-pairs-${firstNodeIndex}`, '点击下方 + 按钮添加控件项');
+            clearKeyValueSection(`outputs-pairs-${firstNodeIndex}`, '点击下方 + 按钮添加输出项');
+            
+            // 重置第一个节点标签
+            const firstTab = document.querySelector('[data-node="0"] span');
+            if (firstTab) {
+                firstTab.textContent = '节点 1';
+            }
+        }
+
+        // 填充键值对区域
+        function populateKeyValueSection(containerId, data, removeFunction) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            Object.keys(data).forEach(key => {
+                const pair = createKeyValuePair(containerId, removeFunction);
+                const inputs = pair.querySelectorAll('input');
+                inputs[0].value = key;
+                inputs[1].value = data[key];
+                container.appendChild(pair);
+            });
+        }
+
+        // 清空键值对区域
+        function clearKeyValueSection(containerId, emptyText) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="empty-state">${emptyText}</div>`;
+        }
+
+        // 获取类型显示名称
+        function getTypeDisplayName(type) {
+            const names = {
+                'categories': '分类',
+                'nodes': '节点',
+                'menus': '设置菜单'
+            };
+            return names[type] || type;
         }
     </script>
 </body>
