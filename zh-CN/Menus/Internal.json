@@ -179,5 +179,11 @@
       "cnr_id": "组件ID",
     "widget_ue_connectable": "可连接组件",
     "Hide UE links": "隐藏UE链接",
-    "Convert all UEs to real links": "转换所有UE为真实链接"
+    "Show UE links": "显示UE链接",
+    "Reject UE Links": "拒绝UE链接",
+    "Allow UE Links": "允许UE链接",
+    "UE Connectable Widgets": "可连接UE的组件",
+    "Show/Hide Last Seed Value": "显示/隐藏最后的种子值",
+    "Convert all UEs to real links": "转换所有UE为真实链接",
+    "Convert To Context Switch ": "转换为上下文切换"
 }

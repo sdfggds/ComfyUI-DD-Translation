@@ -52,6 +52,11 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊
 
 ## 更新日志
+
+### v2.1.2 (2025-6-19) 
+- 合并贡献者(是小张啊)提交的RG节点补全翻译
+- 补全UE节点的界面翻译
+
 ### v2.1.1 (2025-6-18) 
 - 合并贡献者(是小张啊)提交的一系列节点翻译，包含以下节点的完整翻译内容：
 - 【ComfyUI-nunchaku丶ComfyUI-MingNodes丶ComfyUI-Align】

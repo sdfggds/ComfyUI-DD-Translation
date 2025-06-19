@@ -57,6 +57,12 @@
     "Show quick toggles in Groups' Headers to quickly mute, bypass or queue.": "在分组标题中显示快速开关，用于快速静音、绕过或执行",
     "Detect Corrupt Workflows": "检测损坏的工作流",
     "Will show a message at the top of the screen when loading a workflow that has corrupt linking data.": "当加载具有损坏链接数据的工作流时，将在屏幕顶部显示消息",
+    "Number of items needed to trigger nesting.": "触发嵌套所需的项目数量 ",
+    "Which toggles to show.": "显示哪些切换项 ",
+    "When to show them.": "何时显示",
+    "queue": "队列",
+    "bypass": "绕过",
+    "mute": "禁用",
     "Save": "保存",
     "Close": "关闭"
 }
