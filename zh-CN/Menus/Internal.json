@@ -185,5 +185,7 @@
     "UE Connectable Widgets": "可连接UE的组件",
     "Show/Hide Last Seed Value": "显示/隐藏最后的种子值",
     "Convert all UEs to real links": "转换所有UE为真实链接",
-    "Convert To Context Switch ": "转换为上下文切换"
+    "Convert To Context Switch": "转换为上下文切换",
+    "Convert To Context Merge Big": "转换为上下文合并"
+
 }
