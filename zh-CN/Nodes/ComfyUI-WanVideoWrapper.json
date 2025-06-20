@@ -56,7 +56,7 @@
             "samples": "采样输入",
             "feta_args": "FETA参数",
             "context_options": "上下文选项",
-            "teacache_args": "TEA缓存参数",
+            "cache_args": "缓存参数",
             "flowedit_args": "FlowEdit参数",
             "slg_args": "SLG参数",
             "loop_args": "循环参数",
