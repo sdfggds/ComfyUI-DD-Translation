@@ -49,9 +49,13 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊
+- msola-ht丶是小张啊丶alinuo666
 
 ## 更新日志
+### v2.1.4 (2025-6-19) 
+- 合并贡献者(是小张啊)提交的官方原生节点分类，删除了原来的官方翻译文件（因为太多重复翻译，很多内容官方已经有中文实现）
+- 合并贡献者（alinuo666）提交的ComfyUI-VideoUpscale_WithModel插件的翻译
+
 ### v2.1.3 (2025-6-19) 
 - 翻译生成器添加新功能，现在可以导入Json翻译文件直接进行编辑了
 
