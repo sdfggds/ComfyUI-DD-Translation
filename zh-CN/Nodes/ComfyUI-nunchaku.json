@@ -22,7 +22,7 @@
         }
     },
     "NunchakuTextEncoderLoader": {
-        "title": "Nunchaku 文本编码加载器",
+        "title": "Nunchaku CLIP文本编码加载器",
         "widgets": {
             "model_type": "模型类型",
             "text_encoder1": "文本编码器 1",
@@ -33,7 +33,7 @@
         }
     },
     "NunchakuTextEncoderLoaderV2": {
-        "title": "Nunchaku 文本编码加载器 V2",
+        "title": "Nunchaku CLIP文本编码加载器",
         "widgets": {
             "model_type": "模型类型",
             "text_encoder1": "文本编码器 1",
