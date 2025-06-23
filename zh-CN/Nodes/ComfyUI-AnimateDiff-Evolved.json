@@ -1,6 +1,6 @@
 {
     "ADE_MultivalDynamic": {
-        "title": "多值",
+        "title": "多值🎭🅐🅓",
         "inputs": {
             "mask_optional": "遮罩(可选)"
         },
@@ -12,7 +12,7 @@
         }
     },
     "ADE_MultivalDynamicFloatInput": {
-        "title": "多值（浮点列表）",
+        "title": "多值(浮点列表)🎭🅐🅓",
         "inputs": {
             "mask_optional": "遮罩(可选)",
             "float_val": "浮点"
@@ -22,7 +22,7 @@
         }
     },
     "ADE_MultivalDynamicFloats": {
-        "title": "多值（浮点组）",
+        "title": "多值(浮点组)🎭🅐🅓",
         "inputs": {
             "floats": "浮点组",
             "mask_optional": "遮罩(可选)"
@@ -32,7 +32,7 @@
         }
     },
     "ADE_MultivalScaledMask": {
-        "title": "多值缩放遮罩",
+        "title": "多值缩放遮罩🎭🅐🅓",
         "inputs": {
             "mask": "遮罩"
         },
@@ -48,7 +48,7 @@
         }
     },
     "ADE_MultivalConvertToMask": {
-        "title": "多值转换为遮罩",
+        "title": "多值转换为遮罩🎭🅐🅓",
         "inputs": {
             "multival": "多值"
         },
@@ -59,7 +59,7 @@
 
 
     "ADE_StandardStaticViewOptions": {
-        "title": "视图设置(标准静态)",
+        "title": "视图设置(标准静态)🎭🅐🅓",
         "widgets": {
             "view_length": "视图长度",
             "view_overlap": "视图重叠",
@@ -72,7 +72,7 @@
         }
     },
     "ADE_StandardUniformViewOptions": {
-        "title": "视图设置(标准统一)",
+        "title": "视图设置(标准统一)🎭🅐🅓",
         "widgets": {
             "view_length": "视图长度",
             "view_overlap": "视图重叠",
@@ -84,7 +84,7 @@
         }
     },
     "ADE_LoopedUniformViewOptions": {
-        "title": "视图设置(循环统一)",
+        "title": "视图设置(循环统一)🎭🅐🅓",
         "widgets": {
             "view_length": "视图长度",
             "view_overlap": "视图重叠",
@@ -100,7 +100,7 @@
 
 
     "ADE_VisualizeContextOptionsK": {
-        "title": "可视化上下文设置 K",
+        "title": "可视化上下文设置 K🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "context_opts": "上下文设置"
@@ -118,7 +118,7 @@
         }
     },
     "ADE_VisualizeContextOptionsKAdv": {
-        "title": "可视化上下文设置 K.Adv",
+        "title": "可视化上下文设置 K.Adv🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "context_opts": "上下文设置"
@@ -137,11 +137,11 @@
         }
     },
     "ADE_VisualizeContextOptionsSCustom": {
-        "title": "可视化上下文设置 S.Cus",
+        "title": "ADE_可视化上下文选项 自定义🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "context_opts": "上下文设置",
-            "sigmas": "Sigmas"
+            "sigmas": "调度器"
         },
         "widgets": {
             "visual_width": "视图宽度",
@@ -154,7 +154,7 @@
 
 
     "ADE_StandardStaticContextOptions": {
-        "title": "上下文设置(标准静态)",
+        "title": "上下文设置(标准静态)🎭🅐🅓",
         "inputs": {
             "prev_context": "前上下文",
             "view_opts": "视图设置"
@@ -172,7 +172,7 @@
         }
     },
     "ADE_StandardUniformContextOptions": {
-        "title": "上下文设置(标准统一)",
+        "title": "上下文设置(标准统一)🎭🅐🅓",
         "inputs": {
             "prev_context": "前上下文",
             "view_opts": "视图设置"
@@ -191,7 +191,7 @@
         }
     },
     "ADE_LoopedUniformContextOptions": {
-        "title": "上下文设置(循环统一)",
+        "title": "上下文设置(循环统一)🎭🅐🅓",
         "inputs": {
             "prev_context": "前上下文",
             "view_opts": "视图设置"
@@ -211,7 +211,7 @@
         }
     },
     "ADE_ViewsOnlyContextOptions": {
-        "title": "上下文设置(仅视图)[VRAM警告]",
+        "title": "上下文设置(仅视图)[VRAM警告]🎭🅐🅓",
         "inputs": {
             "view_opts_req": "视图设置",
             "prev_context": "前上下文"
@@ -225,7 +225,7 @@
         }
     },
     "ADE_BatchedContextOptions": {
-        "title": "上下文设置(批次)",
+        "title": "上下文设置(批次)🎭🅐🅓",
         "inputs": {
             "prev_context": "前上下文"
         },
@@ -238,7 +238,7 @@
 
 
     "ADE_IterationOptsDefault": {
-        "title": "迭代设置(默认)",
+        "title": "迭代设置(默认)🎭🅐🅓",
         "widgets": {
             "iterations": "迭代次数",
             "iter_batch_offset": "迭代批次偏移",
@@ -249,14 +249,14 @@
         }
     },
     "ADE_IterationOptsFreeInit": {
-        "title": "迭代设置",
+        "title": "迭代设置🎭🅐🅓",
         "widgets": {
             "iterations": "迭代次数",
             "filter": "滤波器",
             "d_s": "空间停止频率",
             "d_t": "时间停止频率",
             "n_butterworth": "Butterworth阶数",
-            "sigma_step": "Sigma步数",
+            "sigma_step": "调度器步数",
             "apply_to_1st_iter": "应用至第1次迭代",
             "init_type": "初始化类型",
             "iter_batch_offset": "迭代批次偏移",
@@ -269,7 +269,7 @@
 
 
     "ADE_NoiseLayerAdd": {
-        "title": "噪波层(添加)",
+        "title": "噪波层(添加)🎭🅐🅓",
         "inputs": {
             "prev_noise_layers": "前噪波层",
             "mask_optional": "遮罩",
@@ -290,7 +290,7 @@
         }
     },
     "ADE_NoiseLayerAddWeighted": {
-        "title": "噪波层(添加权重)",
+        "title": "噪波层(添加权重)🎭🅐🅓",
         "inputs": {
             "prev_noise_layers": "前噪波层",
             "mask_optional": "遮罩",
@@ -312,7 +312,7 @@
         }
     },
     "ADE_NoiseLayerReplace": {
-        "title": "噪波层(替换)",
+        "title": "噪波层(替换)🎭🅐🅓",
         "inputs": {
             "prev_noise_layers": "前噪波层",
             "mask_optional": "遮罩",
@@ -331,16 +331,33 @@
             "NOISE_LAYERS": "噪波层"
         }
     },
-
+    "ADE_NoiseLayerNormalizedSum": {
+        "title": "噪波层(标准化和)🎭🅐🅓",
+        "inputs": {
+            "prev_noise_layers": "前噪波层",
+            "mask_optional": "遮罩",
+            "seed_override": "随机种"
+        },
+        "widgets": {
+            "batch_offset": "批次偏移",
+            "noise_type": "噪波类型",
+            "seed_gen_override": "随机种生成",
+            "noise_weight": "噪声权重",
+            "seed_offset": "随机种偏移"
+        },
+        "outputs": {
+            "NOISE_LAYERS": "噪波层"
+        }
+    },
 
     "ADE_AdjustPESweetspotStretch": {
-        "title": "调整PE拉伸(sweetspot)",
+        "title": "调整PE拉伸(最佳位置)🎭🅐🅓",
         "inputs": {
             "prev_pe_adjust": "前PE设置"
         },
         "widgets": {
-            "sweetspot": "Sweetspot",
-            "new_sweetspot": "新Sweetspot",
+            "sweetspot": "最佳位置",
+            "new_sweetspot": "新最佳位置",
             "print_adjustment": "输出调整量"
         },
         "outputs": {
@@ -348,7 +365,7 @@
         }
     },
     "ADE_AdjustPEFullStretch": {
-        "title": "调整PE拉伸",
+        "title": "调整PE拉伸🎭🅐🅓",
         "inputs": {
             "prev_pe_adjust": "前PE设置"
         },
@@ -361,7 +378,7 @@
         }
     },
     "ADE_AdjustPEManual": {
-        "title": "调整PE(手动)",
+        "title": "调整PE(手动)🎭🅐🅓",
         "inputs": {
             "prev_pe_adjust": "前PE设置"
         },
@@ -379,7 +396,7 @@
 
 
     "ADE_AdjustWeightAllAdd": {
-        "title": "微调权重(全部-相加)",
+        "title": "微调权重(全部-相加)🎭🅐🅓",
         "inputs": {
             "prev_weight_adjust": "前权重微调"
         },
@@ -392,7 +409,7 @@
         }
     },
     "ADE_AdjustWeightAllMult": {
-        "title": "微调权重(全部-相乘)",
+        "title": "微调权重(全部-相乘)🎭🅐🅓",
         "inputs": {
             "prev_weight_adjust": "前权重微调"
         },
@@ -405,7 +422,7 @@
         }
     },
     "ADE_AdjustWeightIndivAdd": {
-        "title": "微调权重(独立-相加)",
+        "title": "微调权重(独立-相加)🎭🅐🅓",
         "inputs": {
             "prev_weight_adjust": "前权重微调"
         },
@@ -420,7 +437,7 @@
         }
     },
     "ADE_AdjustWeightIndivMult": {
-        "title": "微调权重(独立-相乘)",
+        "title": "微调权重(独立-相乘)🎭🅐🅓",
         "inputs": {
             "prev_weight_adjust": "前权重微调"
         },
@@ -435,7 +452,27 @@
         }
     },
     "ADE_AdjustWeightIndivAttnMult": {
-        "title": "微调权重(独立-关注层-相加)",
+        "title": "微调权重(独立-关注层-相乘)🎭🅐🅓",
+        "inputs": {
+            "prev_weight_adjust": "前权重微调"
+        },
+        "widgets": {
+            "pe_MULT": "PE_相乘",
+            "attn_MULT": "关注层_相乘",
+            "attn_q_MULT": "关注层_q_相乘",
+            "attn_k_MULT": "关注层_k_相乘",
+            "attn_v_MULT": "关注层_v_相乘",
+            "attn_out_weight_MULT": "关注层输出权重 相乘",
+            "attn_out_bias_MULT": "注意力输出偏差 相乘",
+            "other_MULT": "其他_相乘",
+            "print_adjustment": "输出调整量"
+        },
+        "outputs": {
+            "WEIGHT_ADJUST": "权重微调"
+        }
+    },
+    "ADE_AdjustWeightIndivAttnAdd": {
+        "title": "微调权重(独立-关注层-相加)🎭🅐🅓",
         "inputs": {
             "prev_weight_adjust": "前权重微调"
         },
@@ -445,29 +482,9 @@
             "attn_q_ADD": "关注层_q_相加",
             "attn_k_ADD": "关注层_k_相加",
             "attn_v_ADD": "关注层_v_相加",
-            "attn_out_weight_ADD": "attn_out_weight_ADD",
-            "attn_out_bias_ADD": "attn_out_bias_ADD",
+            "attn_out_weight_ADD": "关注层输出权重 相加",
+            "attn_out_bias_ADD": "注意力输出偏差 相加",
             "other_ADD": "其他_相加",
-            "print_adjustment": "输出调整量"
-        },
-        "outputs": {
-            "WEIGHT_ADJUST": "权重微调"
-        }
-    },
-    "ADE_AdjustWeightIndivAttnAdd": {
-        "title": "微调权重(独立-关注层-相乘)",
-        "inputs": {
-            "prev_weight_adjust": "前权重微调"
-        },
-        "widgets": {
-            "pe_ADD": "PE_相乘",
-            "attn_ADD": "关注层_相乘",
-            "attn_q_ADD": "关注层_q_相乘",
-            "attn_k_ADD": "关注层_k_相乘",
-            "attn_v_ADD": "关注层_v_相乘",
-            "attn_out_weight_ADD": "attn_out_weight_ADD",
-            "attn_out_bias_ADD": "attn_out_bias_ADD",
-            "other_ADD": "其他_相乘",
             "print_adjustment": "输出调整量"
         },
         "outputs": {
@@ -477,7 +494,7 @@
 
 
     "ADE_SetLoraHookKeyframe": {
-        "title": "设置LoRA约束关键帧",
+        "title": "设置LoRA约束关键帧🎭🅐🅓",
         "inputs": {
             "lora_hook": "LoRA约束",
             "hook_kf": "约束关键帧"
@@ -487,7 +504,7 @@
         }
     },
     "ADE_AttachLoraHookToCLIP": {
-        "title": "LoRA约束到CLIP",
+        "title": "LoRA约束到CLIP🎭🅐🅓",
         "inputs": {
             "clip": "CLIP",
             "lora_hook": "LoRA约束"
@@ -497,7 +514,7 @@
         }
     },
     "ADE_TimestepsConditioning": {
-        "title": "时间戳条件",
+        "title": "时间戳条件🎭🅐🅓",
         "widgets": {
             "start_percent": "开始位置",
             "end_percent": "结束位置"
@@ -509,7 +526,7 @@
 
 
     "ADE_ContextExtras_ContextRef_ModeFirst": {
-        "title": "ContextRef 模式 初始",
+        "title": "ContextRef 模式 初始🎭🅐🅓",
         "outputs": {
             "CONTEXTREF_MODE": "ContextRef 模式"
         }
@@ -523,8 +540,8 @@
             "CONTEXTREF_MODE": "ContextRef 模式"
         }
     },
-    "ADE_ContextExtras_ContextRefMode_Indexes": {
-        "title": "ContextRef 模式 索引",
+    "ADE_ContextExtras_ContextRef_ModeIndexes": {
+        "title": "ContextRef 模式 索引🎭🅐🅓",
         "widgets": {
             "switch_on_idxs": "切换到索引",
             "always_include_0": "包括0"
@@ -534,7 +551,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef_TuneAttn": {
-        "title": "ContextRef 微调 注意力",
+        "title": "ContextRef 微调 注意力🎭🅐🅓",
         "widgets": {
             "attn_style_fidelity": "风格精确度",
             "attn_ref_weight": "Ref权重",
@@ -545,7 +562,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef_TuneAttnAdain": {
-        "title": "ContextRef 微调 注意力+Adain",
+        "title": "ContextRef 微调 注意力+Adain🎭🅐🅓",
         "widgets": {
             "attn_style_fidelity": "风格精确度",
             "attn_ref_weight": "Ref权重",
@@ -559,7 +576,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef_Keyframe": {
-        "title": "ContextRef 关键帧",
+        "title": "ContextRef 关键帧🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值",
@@ -577,7 +594,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef_KeyframeInterpolation": {
-        "title": "ContextRef 关键帧插值",
+        "title": "ContextRef 关键帧插值🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值",
@@ -599,7 +616,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef_KeyframeFromList": {
-        "title": "ContextRef 列表到关键帧",
+        "title": "ContextRef 列表到关键帧🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值",
@@ -618,7 +635,7 @@
         }
     },
     "ADE_ContextExtras_NaiveReuse_Keyframe": {
-        "title": "NaiveReuse 关键帧",
+        "title": "NaiveReuse 关键帧🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值"
@@ -634,7 +651,7 @@
         }
     },
     "ADE_ContextExtras_NaiveReuse_KeyframeInterpolation": {
-        "title": "NaiveReuse ",
+        "title": "NaiveReuse简单复用 🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值"
@@ -654,7 +671,7 @@
         }
     },
     "ADE_ContextExtras_NaiveReuse_KeyframeFromList": {
-        "title": "NaiveReuse 列表到关键帧",
+        "title": "NaiveReuse简单复用列表到关键帧🎭🅐🅓",
         "inputs": {
             "prev_kf": "前关键帧",
             "mult_multival": "多值",
@@ -675,9 +692,10 @@
 
 
     "ADE_ContextExtras_Set": {
-        "title": "上下文附加设置",
+        "title": "上下文附加设置🎭🅐🅓",
         "inputs": {
             "context_options": "上下文设置",
+            "context_opts": "上下文选项",
             "context_extras": "上下文附加"
         },
         "outputs": {
@@ -685,7 +703,7 @@
         }
     },
     "ADE_ContextExtras_ContextRef": {
-        "title": "上下文附加 ContextRef",
+        "title": "上下文附加 ContextRef🎭🅐🅓",
         "inputs": {
             "prev_extras": "前附加组",
             "strength_multival": "强度多值",
@@ -702,7 +720,7 @@
         }
     },
     "ADE_ContextExtras_NaiveReuse": {
-        "title": "上下文附加 NaiveReuse",
+        "title": "上下文附加 简单复用🎭🅐🅓",
         "inputs": {
             "prev_extras": "前附加组",
             "strength_multival": "强度多值",
@@ -720,7 +738,7 @@
 
 
     "ADE_PairedConditioningSetUnmaskedAndCombine": {
-        "title": "条件对设置非遮罩并合并",
+        "title": "条件对设置非遮罩并合并🎭🅐🅓",
         "inputs": {
             "positive": "正面条件",
             "negative": "负面条件",
@@ -734,7 +752,7 @@
         }
     },
     "ADE_PairedConditioningSetMask": {
-        "title": "条件对设置遮罩",
+        "title": "条件对设置遮罩🎭🅐🅓",
         "inputs": {
             "positive_ADD": "正面条件_ADD",
             "negative_ADD": "负面条件_ADD",
@@ -752,7 +770,7 @@
         }
     },
     "ADE_PairedConditioningSetMaskAndCombine": {
-        "title": "条件对设置遮罩合并",
+        "title": "条件对设置遮罩合并🎭🅐🅓",
         "inputs": {
             "positive": "正面条件",
             "negative": "负面条件",
@@ -774,7 +792,7 @@
 
 
     "ADE_CombineLoraHooks": {
-        "title": "合并LoRA约束_2",
+        "title": "合并LoRA约束_2🎭🅐🅓",
         "inputs": {
             "lora_hook_A": "LoRA约束_A",
             "lora_hook_B": "LoRA约束_B"
@@ -784,7 +802,7 @@
         }
     },
     "ADE_CombineLoraHooksFour": {
-        "title": "合并LoRA约束_4",
+        "title": "合并LoRA约束_4🎭🅐🅓",
         "inputs": {
             "lora_hook_A": "LoRA约束_A",
             "lora_hook_B": "LoRA约束_B",
@@ -796,7 +814,7 @@
         }
     },
     "ADE_CombineLoraHooksEight": {
-        "title": "合并LoRA约束_8",
+        "title": "合并LoRA约束_8🎭🅐🅓",
         "inputs": {
             "lora_hook_A": "LoRA约束_A",
             "lora_hook_B": "LoRA约束_B",
@@ -814,7 +832,7 @@
 
 
     "ADE_RegisterLoraHook": {
-        "title": "注册LoRA约束",
+        "title": "注册LoRA约束🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "clip": "CLIP"
@@ -831,7 +849,7 @@
         }
     },
     "ADE_RegisterLoraHookModelOnly": {
-        "title": "注册LoRA约束（仅模型）",
+        "title": "注册LoRA约束(仅模型)🎭🅐🅓",
         "inputs": {
             "model": "模型"
         },
@@ -845,7 +863,7 @@
         }
     },
     "ADE_RegisterModelAsLoraHook": {
-        "title": "注册模型为LoRA约束",
+        "title": "注册模型为LoRA约束🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "clip": "CLIP"
@@ -862,7 +880,7 @@
         }
     },
     "ADE_RegisterModelAsLoraHookModelOnly": {
-        "title": "注册模型为LoRA约束（仅模型）",
+        "title": "注册模型为LoRA约束(仅模型)🎭🅐🅓",
         "inputs": {
             "model": "模型"
         },
@@ -878,7 +896,7 @@
 
 
     "ADE_LoraHookKeyframe": {
-        "title": "LoRA约束关键帧",
+        "title": "LoRA约束关键帧🎭🅐🅓",
         "inputs": {
             "prev_hook_kf": "前约束关键帧"
         },
@@ -892,7 +910,7 @@
         }
     },
     "ADE_LoraHookKeyframeInterpolation": {
-        "title": "LoRA约束关键帧（插帧）",
+        "title": "LoRA约束关键帧(插帧)🎭🅐🅓",
         "inputs": {
             "prev_hook_kf": "前约束关键帧"
         },
@@ -910,7 +928,7 @@
         }
     },
     "ADE_LoraHookKeyframeFromStrengthList": {
-        "title": "LoRA约束关键帧（强度数列）",
+        "title": "LoRA约束关键帧(强度数列)🎭🅐🅓",
         "inputs": {
             "prev_hook_kf": "前约束关键帧",
             "strengths_float": "强度浮点"
@@ -925,7 +943,7 @@
 
 
     "ADE_AttachLoraHookToConditioning": {
-        "title": "连结LoRA约束到条件",
+        "title": "连结LoRA约束到条件🎭🅐🅓",
         "inputs": {
             "conditioning": "条件",
             "lora_hook": "LoRA约束"
@@ -935,7 +953,7 @@
         }
     },
     "ADE_ConditioningSetMask": {
-        "title": "条件设置遮罩",
+        "title": "条件设置遮罩🎭🅐🅓",
         "inputs": {
             "cond_ADD": "条件_ADD",
             "opt_mask": "遮罩(可选)",
@@ -951,7 +969,7 @@
         }
     },
     "ADE_ConditioningSetMaskAndCombine": {
-        "title": "条件设置遮罩",
+        "title": "条件设置遮罩🎭🅐🅓",
         "inputs": {
             "cond": "条件",
             "cond_ADD": "条件_ADD",
@@ -968,7 +986,7 @@
         }
     },
     "ADE_ConditioningSetUnmaskedAndCombine": {
-        "title": "条件设置非遮罩并合并",
+        "title": "条件设置非遮罩并合并🎭🅐🅓",
         "inputs": {
             "cond": "条件",
             "cond_DEFAULT": "条件_默认",
@@ -979,7 +997,7 @@
         }
     },
     "ADE_ConditioningCombine": {
-        "title": "条件合并",
+        "title": "条件合并🎭🅐🅓",
         "inputs": {
             "cond_A": "条件_A",
             "cond_B": "条件_B"
@@ -991,19 +1009,19 @@
 
 
     "ADE_AnimateDiffSettings": {
-        "title": "AnimateDiff设置",
+        "title": "动态扩散设置🎭🅐🅓",
         "inputs": {
             "pe_adjust": "PE设置",
             "weight_adjust": "微调权重"
         },
         "outputs": {
-            "AD_SETTINGS": "AD设置"
+            "AD_SETTINGS": "动态扩散设置"
         }
     },
 
 
     "ADE_AnimateDiffUnload": {
-        "title": "动态扩散卸载器",
+        "title": "动态扩散卸载器🎭🅐🅓",
         "inputs": {
             "model": "模型"
         },
@@ -1012,7 +1030,7 @@
         }
     },
     "ADE_EmptyLatentImageLarge": {
-        "title": "空Latent(大型)",
+        "title": "空Latent(大型)🎭🅐🅓",
         "widgets": {
             "width": "宽度",
             "height": "高度",
@@ -1023,7 +1041,7 @@
         }
     },
     "CheckpointLoaderSimpleWithNoiseSelect": {
-        "title": "Checkpoint加载器（简易噪波）",
+        "title": "Checkpoint加载器(简易噪波)🎭🅐🅓",
         "widgets": {
             "ckpt_name": "ckpt名称",
             "beta_schedule": "调度器",
@@ -1037,7 +1055,7 @@
         }
     },
     "ADE_PerturbedAttentionGuidanceMultival": {
-        "title": "PAG注意力引导（多值）",
+        "title": "PAG注意力引导(多值)🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "scale_multival": "缩放多值"
@@ -1047,9 +1065,10 @@
         }
     },
     "ADE_RescaleCFGMultival": {
-        "title": "缩放CFG（多值）",
+        "title": "缩放CFG(多值)🎭🅐🅓",
         "inputs": {
             "model": "模型",
+            "mult_multival": "多值",
             "scale_multival": "缩放多值"
         },
         "outputs": {
@@ -1059,16 +1078,17 @@
 
 
     "ADE_AnimateDiffLoaderGen1": {
-        "title": "AnimateDiff加载器Gen1",
+        "title": "动态扩散加载器Gen1🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "context_options": "上下文设置",
             "motion_lora": "动态LoRA",
-            "ad_settings": "AD设置",
-            "ad_keyframes": "AD关键帧",
+            "ad_settings": "动态扩散设置",
+            "ad_keyframes": "动态扩散关键帧",
             "sample_settings": "采样设置",
             "scale_multival": "缩放多值",
-            "effect_multival": "效果多值"
+            "effect_multival": "效果多值",
+            "per_block": "每块"
         },
         "widgets": {
             "model_name": "模型名称",
@@ -1079,15 +1099,15 @@
         }
     },
     "ADE_AnimateDiffLoaderWithContext": {
-        "title": "动态扩散加载器",
+        "title": "动态扩散加载器🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "context_options": "上下文设置",
             "motion_lora": "动态LoRA",
             "motion_model_settings": "动态模型设置",
             "sample_settings": "采样设置",
-            "ad_settings": "AD设置",
-            "ad_keyframes": "AD关键帧"
+            "ad_settings": "动态扩散设置",
+            "ad_keyframes": "动态扩散关键帧"
         },
         "widgets": {
             "model_name": "模型名称",
@@ -1102,10 +1122,10 @@
 
 
     "ADE_InjectI2VIntoAnimateDiffModel": {
-        "title": "插入I2V到AnimateDiff模型",
+        "title": "🧪插入I2V到动态扩散模型中 🎭🅐🅓②",
         "inputs": {
             "motion_model": "动态模型",
-            "ad_settings": "AD设置"
+            "ad_settings": "动态扩散设置"
         },
         "widgets": {
             "model_name": "模型名称"
@@ -1117,7 +1137,7 @@
     
 
     "ADE_ApplyAnimateDiffModelWithCameraCtrl": {
-        "title": "应用镜头控制到AnimateDiff模型",
+        "title": "应用镜头控制到动态扩散模型🎭🅐🅓",
         "inputs": {
             "motion_model": "动态模型",
             "cameractrl_poses": "镜头控制姿态",
@@ -1125,8 +1145,9 @@
             "scale_multival": "缩放多值",
             "effect_multival": "效果多值",
             "cameractrl_multival": "镜头控制多值",
-            "ad_keyframes": "AD关键帧",
-            "prev_m_models": "前动态模型组"
+            "ad_keyframes": "动态扩散关键帧",
+            "prev_m_models": "前动态模型组",
+            "per_block": "每块"
         },
         "widgets": {
             "start_percent": "开始位置",
@@ -1137,9 +1158,9 @@
         }
     },
     "ADE_LoadAnimateDiffModelWithCameraCtrl": {
-        "title": "加载镜头控制与AnimateDiff模型",
+        "title": "加载镜头控制与动态扩散模型🎭🅐🅓",
         "inputs": {
-            "ad_settings": "AD设置"
+            "ad_settings": "动态扩散设置"
         },
         "widgets": {
             "model_name": "模型名称",
@@ -1150,9 +1171,9 @@
         }
     },
     "ADE_CameraCtrlAnimateDiffKeyframe": {
-        "title": "镜头控制AnimateDiff关键帧",
+        "title": "镜头控制动态扩散关键帧🎭🅐🅓",
         "inputs": {
-            "prev_ad_keyframes": "前AD关键帧",
+            "prev_ad_keyframes": "前动态扩散关键帧",
             "scale_multival": "缩放多值",
             "effect_multival": "效果多值",
             "cameractrl_multival": "镜头控制多值"
@@ -1163,13 +1184,13 @@
             "guarantee_steps": "最小采样步数"
         },
         "outputs": {
-            "AD_KEYFRAMES": "AD关键帧"
+            "AD_KEYFRAMES": "动态扩散关键帧"
         }
     },
 
 
     "ADE_LoadCameraPoses": {
-        "title": "加载镜头姿态",
+        "title": "加载镜头姿态🎭🅐🅓",
         "widgets": {
             "pose_filename": "姿态文件名"
         },
@@ -1178,7 +1199,7 @@
         }
     },
     "ADE_LoadCameraPosesFromPath": {
-        "title": "加载镜头姿态（路径）",
+        "title": "加载镜头姿态(路径)🎭🅐🅓",
         "widgets": {
             "file_path": "文件路径"
         },
@@ -1187,7 +1208,7 @@
         }
     },
     "ADE_CameraPoseBasic": {
-        "title": "镜头姿态",
+        "title": "镜头姿态🎭🅐🅓",
         "inputs": {
             "prev_poses": "前姿态"
         },
@@ -1201,7 +1222,7 @@
         }
     },
     "ADE_CameraPoseCombo": {
-        "title": "镜头姿态连锁",
+        "title": "镜头姿态连锁🎭🅐🅓",
         "inputs": {
             "prev_poses": "前姿态"
         },
@@ -1220,7 +1241,7 @@
         }
     },
     "ADE_CameraPoseAdvanced": {
-        "title": "镜头姿态（高级）",
+        "title": "镜头姿态(高级)🎭🅐🅓",
         "inputs": {
             "prev_poses": "前姿态"
         },
@@ -1245,7 +1266,7 @@
         }
     },
     "ADE_CameraManualPoseAppend": {
-        "title": "镜头姿态相加",
+        "title": "镜头姿态相加🎭🅐🅓",
         "inputs": {
             "poses_first": "姿态_先",
             "poses_last": "姿态_后"
@@ -1255,7 +1276,7 @@
         }
     },
     "ADE_ReplaceCameraParameters": {
-        "title": "替换镜头参数",
+        "title": "替换镜头参数🎭🅐🅓",
         "inputs": {
             "poses": "姿态"
         },
@@ -1270,7 +1291,7 @@
         }
     },
     "ADE_ReplaceOriginalPoseAspectRatio": {
-        "title": "替换初始姿态宽高比",
+        "title": "替换初始姿态宽高比🎭🅐🅓",
         "inputs": {
             "poses": "姿态"
         },
@@ -1285,41 +1306,42 @@
 
 
     "ADE_ApplyAnimateLCMI2VModel": {
-        "title": "应用AnimateLCM-I2V模型",
+        "title": "应用AnimateLCM-I2V模型🎭🅐🅓",
         "inputs": {
             "motion_model": "动态模型",
             "ref_latent": "参考Latent",
             "motion_lora": "动态LoRA",
             "scale_multival": "缩放多值",
             "effect_multival": "效果多值",
-            "ad_keyframes": "AD关键帧",
-            "prev_m_models": "前动态模型组"
+            "ad_keyframes": "动态扩散关键帧",
+            "prev_m_models": "前动态模型组",
+            "per_block": "每块"
         },
         "widgets": {
-            "ref_drift": "ref_drift",
-            "apply_ref_when_disabled": "apply_ref_when_disabled",
-            "start_percent": "开始位置",
-            "end_percent": "结束位置"
+            "ref_drift": "参考帧偏移",
+            "apply_ref_when_disabled": "禁用时仍应用参考",
+            "start_percent": "开始百分比",
+            "end_percent": "结束百分比"
         },
         "outputs": {
             "M_MODELS": "动态模型组"
         }
     },
     "ADE_LoadAnimateLCMI2VModel": {
-        "title": "加载AnimateLCM-I2V模型",
+        "title": "加载AnimateLCM-I2V模型🎭🅐🅓",
         "inputs": {
-            "ad_settings": "AD设置"
+            "ad_settings": "动态扩散设置"
         },
         "widgets": {
             "model_name": "模型名称"
         },
         "outputs": {
             "MOTION_MODEL": "动态模型",
-            "encoder_only": "仅encoder"
+            "encoder_only": "仅编码器"
         }
     },
     "ADE_UpscaleAndVAEEncode": {
-        "title": "放大并VAE编码",
+        "title": "放大并VAE编码🎭🅐🅓",
         "inputs": {
             "image": "图像",
             "vae": "VAE",
@@ -1336,7 +1358,7 @@
 
 
     "ADE_UseEvolvedSampling": {
-        "title": "使用高级采样",
+        "title": "使用高级采样🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "m_models": "动态模型组",
@@ -1351,27 +1373,29 @@
         }
     },
     "ADE_ApplyAnimateDiffModelSimple": {
-        "title": "应用动态模型(简易)",
+        "title": "应用动态模型(简易)🎭🅐🅓",
         "inputs": {
             "motion_model": "动态模型",
             "motion_lora": "动态LoRA",
             "scale_multival": "缩放多值",
             "effect_multival": "效果多值",
-            "ad_keyframes": "AD关键帧"
+            "ad_keyframes": "动态扩散关键帧",
+            "per_block": "每块"
         },
         "outputs": {
             "M_MODELS": "动态模型组"
         }
     },
     "ADE_ApplyAnimateDiffModel": {
-        "title": "应用动态模型",
+        "title": "应用动态模型🎭🅐🅓",
         "inputs": {
             "motion_model": "动态模型",
             "motion_lora": "动态LoRA",
             "scale_multival": "缩放多值",
             "effect_multival": "效果多值",
-            "ad_keyframes": "AD关键帧",
-            "prev_m_models": "前动态模型组"
+            "ad_keyframes": "动态扩散关键帧",
+            "prev_m_models": "前动态模型组",
+            "per_block": "每块"
         },
         "widgets": {
             "start_percent": "开始位置",
@@ -1382,9 +1406,9 @@
         }
     },
     "ADE_LoadAnimateDiffModel": {
-        "title": "加载动态模型",
+        "title": "加载动态模型🎭🅐🅓",
         "inputs": {
-            "ad_settings": "AD设置"
+            "ad_settings": "动态扩散设置"
         },
         "widgets": {
             "model_name": "模型名称"
@@ -1396,12 +1420,13 @@
 
 
     "ADE_AnimateDiffLoRALoader": {
-        "title": "动态LoRA加载器",
+        "title": "动态LoRA加载器🎭🅐🅓",
         "inputs": {
             "prev_motion_lora": "前LoRA"
         },
         "widgets": {
             "lora_name": "LoRA名称",
+            "name": "名称",
             "strength": "强度"
         },
         "outputs": {
@@ -1409,13 +1434,15 @@
         }
     },
     "ADE_AnimateDiffSamplingSettings": {
-        "title": "AnimateDiff采样设置",
+        "title": "动态扩散采样设置🎭🅐🅓",
         "inputs": {
             "noise_layers": "噪波层",
             "iteration_opts": "迭代设置",
             "custom_cfg": "自定CFG",
             "sigma_schedule": "Sigma调度",
-            "seed_override": "覆盖随机种"
+            "seed_override": "覆盖随机种",
+            "image_inject": "图像注入",
+            "ancestral_opts": "先前选项"
         },
         "widgets": {
             "batch_offset": "批次偏移",
@@ -1429,11 +1456,12 @@
         }
     },
     "ADE_AnimateDiffKeyframe": {
-        "title": "AnimateDiff关键帧",
+        "title": "动态扩散关键帧🎭🅐🅓",
         "inputs": {
-            "prev_ad_keyframes": "前AD关键帧",
+            "prev_ad_keyframes": "前动态扩散关键帧",
             "scale_multival": "缩放多值",
-            "effect_multival": "效果多值"
+            "effect_multival": "效果多值",
+            "per_block_replace": "每块替换"
         },
         "widgets": {
             "start_percent": "开始位置",
@@ -1441,22 +1469,22 @@
             "guarantee_steps": "最小采样步数"
         },
         "outputs": {
-            "AD_KEYFRAMES": "AD关键帧"
+            "AD_KEYFRAMES": "动态扩散关键帧"
         }
     },
 
 
     "ADE_SigmaSchedule": {
-        "title": "Sigma调度",
+        "title": "Sigma调度器🎭🅐🅓",
         "widgets": {
             "beta_schedule": "调度器"
         },
         "outputs": {
-            "SIGMA_SCHEDULE": "Sigma调度"
+            "SIGMA_SCHEDULE": "Sigma调度器"
         }
     },
     "ADE_RawSigmaSchedule": {
-        "title": "Sigma调度(高级)",
+        "title": "Sigma调度器(高级)🎭🅐🅓",
         "widgets": {
             "raw_beta_schedule": "调度器",
             "linear_start": "线性开始位置",
@@ -1473,7 +1501,7 @@
         }
     },
     "ADE_SigmaScheduleWeightedAverage": {
-        "title": "Sigma调度平均",
+        "title": "Sigma调度平均🎭🅐🅓",
         "inputs": {
             "schedule_A": "调度_A",
             "schedule_B": "调度_B"            
@@ -1486,7 +1514,7 @@
         }
     },
     "ADE_SigmaScheduleWeightedAverageInterp": {
-        "title": "Sigma调度平均(插值)",
+        "title": "Sigma调度器平均(插值)🎭🅐🅓",
         "inputs": {
             "schedule_A": "调度_A",
             "schedule_B": "调度_B"
@@ -1501,7 +1529,7 @@
         }
     },
     "ADE_SigmaScheduleSplitAndCombine": {
-        "title": "Sigma调度拆分合并",
+        "title": "Sigma调度拆分合并🎭🅐🅓",
         "inputs": {
             "schedule_Start": "调度_起始",
             "schedule_End": "调度_结束"
@@ -1514,7 +1542,7 @@
         }
     },
     "ADE_SigmaScheduleToSigmas": {
-        "title": "Sigma调度到Sigmas",
+        "title": "Sigma调度器到调度器Sigmas🎭🅐🅓",
         "inputs": {
             "sigma_schedule": "Sigma调度"
         },
@@ -1524,13 +1552,13 @@
             "denoise": "降噪"
         },
         "outputs": {
-            "SIGMAS": "Sigmas"
+            "SIGMAS": "调度器"
         }
     },
 
 
     "ADE_PromptScheduling": {
-        "title": "提示词调度",
+        "title": "提示词调度🎭🅐🅓",
         "inputs": {
             "clip": "CLIP",
             "values_replace": "值替换",
@@ -1539,7 +1567,7 @@
         },
         "widgets": {
             "prompts": "提示词",
-            "print_shcedule": "输出调度到控制台",
+            "print_schedule": "输出调度到控制台",
             "max_length": "最大长度",
             "tensor_interp": "Tensor插值"
         },
@@ -1548,7 +1576,7 @@
         }
     },
     "ADE_PromptSchedulingLatents": {
-        "title": "提示词调度Latent",
+        "title": "提示词调度Latent🎭🅐🅓",
         "inputs": {
             "clip": "CLIP",
             "latent": "Latent",
@@ -1558,7 +1586,8 @@
         },
         "widgets": {
             "prompts": "提示词",
-            "print_shcedule": "输出调度到控制台",
+            "print_schedule": "输出调度到控制台",
+            "tensor_interp": "张量插值",
             "max_length": "最大长度"
         },
         "outputs": {
@@ -1567,10 +1596,10 @@
         }
     },
     "ADE_ValueScheduling": {
-        "title": "值调度",
+        "title": "值调度🎭🅐🅓",
         "widgets": {
             "values": "值",
-            "print_shcedule": "输出调度到控制台",
+            "print_schedule": "输出调度到控制台",
             "max_length": "最大长度"
         },
         "outputs": {
@@ -1581,13 +1610,13 @@
         }
     },
     "ADE_ValueSchedulingLatents": {
-        "title": "值调度Latent",
+        "title": "值调度Latent🎭🅐🅓",
         "inputs": {
             "latent": "Latent"
         },
         "widgets": {
             "values": "值",
-            "print_shcedule": "输出调度到控制台"
+            "print_schedule": "输出调度到控制台"
         },
         "outputs": {
             "FLOAT": "浮点",
@@ -1597,7 +1626,7 @@
         }
     },
     "ADE_ValuesReplace": {
-        "title": "值替换",
+        "title": "值替换🎭🅐🅓",
         "inputs": {
             "floats": "浮点组",
             "prev_replace": "前替换"
@@ -1610,7 +1639,7 @@
         }
     },
     "ADE_FloatToFloats": {
-        "title": "浮点到浮点组",
+        "title": "浮点到浮点组🎭🅐🅓",
         "inputs": {
             "FLOAT": "浮点"
         },
@@ -1621,7 +1650,7 @@
 
 
     "ADE_CFGExtrasPAGSimple": {
-        "title": "CFG附加组（PAG简易）",
+        "title": "CFG附加组(PAG简易)🎭🅐🅓",
         "inputs": {
             "prev_extras": "前附加组"
         },
@@ -1633,7 +1662,7 @@
         }
     },
     "ADE_CFGExtrasPAG": {
-        "title": "CFG附加组（PAG）",
+        "title": "CFG附加组(PAG)🎭🅐🅓",
         "inputs": {
             "scale_multival": "缩放多值",
             "prev_extras": "前附加组"
@@ -1643,7 +1672,7 @@
         }
     },
     "ADE_CFGExtrasRescaleCFGSimple": {
-        "title": "CFG附加组（缩放CFG简易）",
+        "title": "CFG附加组(缩放CFG简易)🎭🅐🅓",
         "inputs": {
             "prev_extras": "前附加组"
         },
@@ -1655,7 +1684,7 @@
         }
     },
     "ADE_CFGExtrasRescaleCFG": {
-        "title": "CFG附加组（缩放CFG）",
+        "title": "CFG附加组(缩放CFG)🎭🅐🅓",
         "inputs": {
             "scale_multival": "缩放多值",
             "prev_extras": "前附加组"
@@ -1666,7 +1695,7 @@
     },
 
     "ADE_CustomCFGSimple": {
-        "title": "自定义CFG（简易）",
+        "title": "自定义CFG(简易)🎭🅐🅓",
         "inputs": {
             "cfg_extras": "CFG附加组"
         },
@@ -1678,7 +1707,7 @@
         }
     },
     "ADE_CustomCFG": {
-        "title": "自定义CFG",
+        "title": "自定义CFG🎭🅐🅓",
         "inputs": {
             "cfg_multival": "多值CFG",
             "cfg_extras": "CFG附加组"
@@ -1688,7 +1717,7 @@
         }
     },
     "ADE_CustomCFGKeyframeSimple": {
-        "title": "自定义CFG关键帧（简易）",
+        "title": "自定义CFG关键帧(简易)🎭🅐🅓",
         "inputs": {
             "prev_custom_cfg": "前自定义CFG",
             "cfg_extras": "CFG附加组"
@@ -1701,7 +1730,7 @@
         "CUSTOM_CFG": "自定义CFG"
     },
     "ADE_CustomCFGKeyframe": {
-        "title": "自定义CFG关键帧",
+        "title": "自定义CFG关键帧🎭🅐🅓",
         "inputs": {
             "cfg_multival": "多值CFG",
             "prev_custom_cfg": "前自定义CFG",
@@ -1716,7 +1745,7 @@
         }
     },
     "ADE_CustomCFGKeyframeInterpolation": {
-        "title": "自定义CFG关键帧插值",
+        "title": "自定义CFG关键帧插值🎭🅐🅓",
         "inputs": {
             "prev_custom_cfg": "前自定义CFG",
             "cfg_extras": "CFG附加组"
@@ -1735,7 +1764,7 @@
         }
     },
     "ADE_CustomCFGKeyframeFromList": {
-        "Title": "自定义CFG关键帧（列表）",
+        "Title": "自定义CFG关键帧(列表)🎭🅐🅓",
         "inputs": {
             "prev_custom_cfg": "前自定义CFG",
             "cfg_extras": "CFG附加组",
@@ -1750,20 +1779,32 @@
             "CUSTOM_CFG": "自定义CFG"
         }
     },
-
+    "ADE_AncestralOptions": {
+        "Title": "先前选项 🎭🅐🅓",
+        "inputs": {
+            "seed_override": "种子覆盖层"
+        },
+        "widgets": {
+            "noise_type": "开始位置",
+            "seed_offset": "结束位置"
+        },
+        "outputs": {
+            "ANCESTRAL_OPTS": "先前选项"
+        }
+    },
 
     "ADE_NoisedImageInjection": {
-        "title": "噪波图像插入",
+        "title": "噪波图像插入🎭🅐🅓",
         "inputs": {
             "image": "图像",
             "vae": "VAE",
             "mask_opt": "遮罩(可选)",
-            "image_inject_opts": "图像插入设置",
+            "img_inject_opts": "图像插入设置",
             "strength_multival": "强度多值",
             "prev_image_inject": "前图像插入"
         },
         "widgets": {
-            "inver_mask": "反转遮罩",
+            "invert_mask": "反转遮罩",
             "resize_image": "缩放图像",
             "start_percent": "开始位置",
             "guarantee_steps": "最小采样步数"
@@ -1773,7 +1814,7 @@
         }
     },
     "ADE_NoisedImageInjectOptions": {
-        "title": "噪波图像插入设置",
+        "title": "噪波图像插入设置🎭🅐🅓",
         "widgets": {
             "composite_x": "合成_X",
             "composite_y": "合成_Y"
@@ -1785,7 +1826,7 @@
 
 
     "ADE_AnimateDiffModelSettingsSimple": {
-        "title": "动态扩散模型设置(简易)",
+        "title": "动态扩散模型设置(简易)🎭🅐🅓",
         "inputs": {
             "mask_motion_scale": "动态缩放遮罩"
         },
@@ -1799,7 +1840,7 @@
         }
     },
     "ADE_AnimateDiffModelSettings": {
-        "title": "动态扩散模型设置",
+        "title": "动态扩散模型设置🎭🅐🅓",
         "inputs": {
             "mask_motion_scale": "动态缩放遮罩"
         },
@@ -1808,7 +1849,7 @@
         }
     },
     "ADE_AnimateDiffModelSettingsAdvancedAttnStrengths": {
-        "title": "动态扩散模型设置(高级)",
+        "title": "动态扩散模型设置(高级)🎭🅐🅓",
         "inputs": {
             "mask_motion_scale": "动态缩放遮罩"
         },
@@ -1817,7 +1858,7 @@
         }
     },
     "ADE_AnimateDiffModelSettings_Release": {
-        "title": "动态扩散模型设置(发行)",
+        "title": "动态扩散模型设置(发行)🎭🅐🅓",
         "inputs": {
             "mask_motion_scale": "动态缩放遮罩"
         },
@@ -1831,7 +1872,7 @@
     },
 
     "ADE_AnimateDiffUniformContextOptions": {
-        "title": "动态扩散上下文选项",
+        "title": "动态扩散上下文选项🎭🅐🅓",
         "widgets": {
             "context_length": "上下文长度",
             "context_stride": "上下文步幅",
@@ -1845,7 +1886,7 @@
     },
 
     "AnimateDiffLoaderV1": {
-        "title": "动态扩散加载器v1",
+        "title": "动态扩散加载器v1🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "latents": "Latent"
@@ -1861,7 +1902,7 @@
         }
     },
     "ADE_AnimateDiffLoaderV1Advanced": {
-        "title": "动态扩散加载器v1(高级)",
+        "title": "动态扩散加载器v1(高级)🎭🅐🅓",
         "inputs": {
             "model": "模型",
             "latents": "Latent"
@@ -1879,6 +1920,235 @@
         "outputs": {
             "MODEL": "模型",
             "LATENT": "Latent"
+        }
+    },
+    "ADE_ADBlockCombo": {
+        "title": "动态扩散区块🎭🅐🅓",
+        "inputs": {
+            "effect": "效果",
+            "scale": "规模"
+        },
+        "widgets": {
+            "beta_schedule": "调度器"
+        },
+        "outputs": {
+            "AD_BLOCK": "动态扩散区块"
+        }
+    },
+    "ADE_PerBlock_SD15_FromFloats": {
+        "title": "动态扩散每块的浮动值(SD1.5) 🎭🅐🅓",
+        "inputs": {
+            "effect_21_floats": "效果21浮点",
+            "scale_21_floats": "规模21浮点"
+        },
+        "widgets": {
+            "beta_schedule": "调度器"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_PerBlock_SDXL_FromFloats": {
+        "title": "动态扩散每块的浮动值(SDXL)🎭🅐🅓",
+        "inputs": {
+            "effect_16_floats": "效果16浮点",
+            "scale_16_floats": "规模16浮点"
+        },
+        "widgets": {
+            "beta_schedule": "调度器"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_ADBlockIndiv": {
+        "title": "动态扩散区块+🎭🅐🅓",
+        "inputs": {
+            "effect": "效果",
+            "scale_0": "规模0",
+            "scale_1": "规模1"
+        },
+        "widgets": {
+            "beta_schedule": "调度器"
+        },
+        "outputs": {
+            "AD_BLOCK": "动态扩散区块"
+        }
+    },
+    "ADE_PerBlockHighLevel": {
+        "title": "动态扩散 每块高度级别🎭🅐🅓",
+        "inputs": {
+            "down": "向下",
+            "mid": "中间",
+            "up": "向上"
+        },
+        "widgets": {
+            "PER_BLOCK": "每块"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_PerBlock_SD15_MidLevel": {
+        "title": "动态扩散 每块+(SD1.5)🎭🅐🅓",
+        "inputs": {
+            "down_0": "向下",
+            "down_1": "向下1",
+            "down_2": "向下2",
+            "down_3": "向下3",
+            "mid": "中间",
+            "up_0": "向上",
+            "up_1": "向上1",
+            "up_2": "向上2",
+            "up_3": "向上3"
+        },
+        "widgets": {
+            "PER_BLOCK": "每块"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_PerBlock_SDXL_MidLevel": {
+        "title": "动态扩散 每块+(SDXL)🎭🅐🅓",
+        "inputs": {
+            "down_0": "向下",
+            "down_1": "向下1",
+            "down_2": "向下2",
+            "down_3": "向下3",
+            "mid": "中间",
+            "up_0": "向上",
+            "up_1": "向上1",
+            "up_2": "向上2",
+            "up_3": "向上3"
+        },
+        "widgets": {
+            "PER_BLOCK": "每块"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_PerBlock_SD15_LowLevel": {
+        "title": "动态扩散 每块++(SD1.5)🎭🅐🅓",
+        "inputs": {
+            "down_0": "向下",
+            "down_1": "向下1",
+            "down_2": "向下2",
+            "down_3": "向下3",
+            "mid": "中间",
+            "up_0": "向上",
+            "up_1": "向上1",
+            "up_2": "向上2",
+            "up_3": "向上3"
+        },
+        "widgets": {
+            "PER_BLOCK": "每块"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_PerBlock_SDXL_LowLevel": {
+        "title": "动态扩散 每块++(SDXL)🎭🅐🅓",
+        "inputs": {
+            "down_0": "向下",
+            "down_1": "向下1",
+            "down_2": "向下2",
+            "down_3": "向下3",
+            "mid": "中间",
+            "up_0": "向上",
+            "up_1": "向上1",
+            "up_2": "向上2",
+            "up_3": "向上3"
+        },
+        "widgets": {
+            "PER_BLOCK": "每块"
+        },
+        "outputs": {
+            "PER_BLOCK": "每块"
+        }
+    },
+    "ADE_ApplyAnimateDiffModelWithPIA": {
+        "title": "使用PIA应用动态扩散模型🎭🅐🅓②",
+        "inputs": {
+            "motion_model": "运动模型",
+            "image": "图像",
+            "vae": "VAE",
+            "pia_input": "pia 输入",
+            "motion_lora": "运动 LORA",
+            "scale_multival": "缩放系数",
+            "effect_multival": "效果强度",
+            "ad_keyframes": "动态扩散关键帧",
+            "prev_m_models": "前置运动模型组",
+            "per_block": "每块"
+        },
+        "widgets": {
+            "start_percent": "开始位置",
+            "end_percent": "结束位置"
+        },
+        "outputs": {
+            "M_MODELS": "M模型"
+        }
+    },
+    "ADE_PIA_AnimateDiffKeyframe": {
+        "title": "动态扩散-PIA 关键帧🎭🅐🅓",
+        "inputs": {
+            "pia_input": "pia 输入",
+            "scale_multival": "缩放系数",
+            "effect_multival": "效果强度",
+            "prev_ad_keyframes": "前置动态扩散关键帧",
+            "per_block": "每块"
+        },
+        "widgets": {
+            "start_percent": "开始位置",
+            "end_percent": "结束位置",
+            "inherit_missing": "继承缺失部分",
+            "guarantee_steps": "保证步骤"
+        },
+        "outputs": {
+            "AD_KEYFRAMES": "动态扩散关键帧"
+        }
+    },
+    "ADE_InputPIA_PaperPresets": {
+        "title": "输入PIA [纸张预设]🎭🅐🅓②",
+        "inputs": {
+            "mult_multival": "多值"
+        },
+        "widgets": {
+            "preset": "预设",
+            "batch_index": "批次索引",
+            "print_values": "打印值"
+        },
+        "outputs": {
+            "PIA_INPUT": "输入PIA"
+        }
+    },
+    "ADE_InputPIA_Multival": {
+        "title": "输入PIA [值]🎭🅐🅓②",
+        "inputs": {
+            "multival": "值"
+        },
+        "widgets": {
+            "preset": "预设",
+            "batch_index": "批次索引",
+            "print_values": "打印值"
+        },
+        "outputs": {
+            "PIA_INPUT": "输入PIA"
+        }
+    },
+    "ADE_InjectPIAIntoAnimateDiffModel": {
+        "title": "🧪插入PIA到动态扩散模型中 🎭🅐🅓②",
+        "inputs": {
+            "motion_model": "动态模型",
+            "ad_settings": "动态扩散设置"
+        },
+        "widgets": {
+            "model_name": "模型名称"
+        },
+        "outputs": {
+            "MOTION_MODEL": "动态模型"
         }
     },
     "ADE_AnimateDiffCombine": {

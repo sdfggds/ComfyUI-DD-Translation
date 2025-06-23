@@ -49,9 +49,14 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊丶alinuo666
+- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦
 
 ## 更新日志
+### v2.1.6 (2025-6-23) 
+- 合并贡献者（猪的飞行梦）提交的一系列节点翻译，包含以下节点的完整翻译内容：
+- ComfyUI-HunyuanVideoWrapper丶ComfyUI-Hunyuan3DWrapper丶 ComfyUI-AnimateDiff-Evolved（补全）丶BizyAir
+- 对部分类别翻译进行补全
+
 ### v2.1.5 (2025-6-21) 
 - 合并贡献者(是小张啊)提交的KJNodes翻译补全
 - 调整了部分Nunchaku节点的翻译
