@@ -49,13 +49,17 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦
+- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS
 
 ## 更新日志
 ### v2.1.7 (2025-6-24) 
-修正了一部分不太合适的翻译内容
-添加了ComfyUl-wanBlockswap插件的完整翻译
-补全ComfyUI-WanVideoWrapper插件的部分翻译内容
+- 合并贡献者（ZXSZS）提交的两个插件翻译，包含以下插件的完整翻译内容：
+- ComfyUI-PMRF丶ComfyUI-Lora-Manager
+
+- 修正了一部分不太合适的翻译内容.
+- 补全了因为删除原生节点翻译导致的节点拖拽翻译缺失的问题
+- 添加了ComfyUl-wanBlockswap插件的完整翻译
+- 补全ComfyUI-WanVideoWrapper插件的部分翻译内容
 
 ### v2.1.6 (2025-6-23) 
 - 合并贡献者（猪的飞行梦）提交的一系列节点翻译，包含以下插件的完整翻译内容：
