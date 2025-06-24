@@ -54,10 +54,11 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 更新日志
 ### v2.1.7 (2025-6-24) 
 修正了一部分不太合适的翻译内容
-添加了ComfyUl-wanBlockswap节点的完整翻译
+添加了ComfyUl-wanBlockswap插件的完整翻译
+补全ComfyUI-WanVideoWrapper插件的部分翻译内容
 
 ### v2.1.6 (2025-6-23) 
-- 合并贡献者（猪的飞行梦）提交的一系列节点翻译，包含以下节点的完整翻译内容：
+- 合并贡献者（猪的飞行梦）提交的一系列节点翻译，包含以下插件的完整翻译内容：
 - ComfyUI-HunyuanVideoWrapper丶ComfyUI-Hunyuan3DWrapper丶 ComfyUI-AnimateDiff-Evolved（补全）丶BizyAir
 - 对部分类别翻译进行补全
 
@@ -73,12 +74,12 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 翻译生成器添加新功能，现在可以导入Json翻译文件直接进行编辑了
 
 ### v2.1.2 (2025-6-19) 
-- 合并贡献者(是小张啊)提交的RG节点补全翻译
-- 合并贡献者(是小张啊)提交的teacache与comfyui_ttp_toolset节点的完整翻译
-- 补全和修正部分节点的翻译
+- 合并贡献者(是小张啊)提交的RG插件补全翻译
+- 合并贡献者(是小张啊)提交的teacache与comfyui_ttp_toolset插件的完整翻译
+- 补全和修正部分插件的翻译
 
 ### v2.1.1 (2025-6-18) 
-- 合并贡献者(是小张啊)提交的一系列节点翻译，包含以下节点的完整翻译内容：
+- 合并贡献者(是小张啊)提交的一系列节点翻译，包含以下插件的完整翻译内容：
 - 【ComfyUI-nunchaku丶ComfyUI-MingNodes丶ComfyUI-Align】
 - 补全MTB和UE最新版本的一些翻译
 
@@ -105,7 +106,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 【这两天会发布小工具的演示教程，请关注我的B站账号】
 
 ### v1.8.0 (2025-5-27)
-- 更新ComfyUI-WanVideoWrapper KJ系列节点的完整翻译
+- 更新ComfyUI-WanVideoWrapper KJ系列插件的完整翻译
 
 ### v1.7.1 (2025-5-21)
 - 删除了ComfyUI-Manager的重启按钮的翻译，因为它会导致一直请求UI更新，与ComfyUI-Manager抢夺UI更新权限，现在修复了这个问题。

@@ -686,8 +686,18 @@
         }
     },
     "WanVideoControlnetLoader": {
+        "title": "WanVideo 控制网络加载器",
+        "widgets": {
+            "model": "模型",
+            "base_precision": "基础精度",
+            "quantization": "量化",
+            "load_device": "加载设备"
+        },
+        "outputs": {
+            "controlnet": "控制网络"
+        }
+    },        "WanVideoUni3C_ControlnetLoader": {
         "title": "WanVideo Uni3C 控制网络加载器",
-        "description": "从'https://huggingface.co/collections/TheDenk/wan21-controlnets-68302b430411dafc0d74d2fc'加载控制网络模型",
         "inputs": {
             "compile_args": "编译参数"
         },
@@ -812,6 +822,123 @@
         },
         "outputs": {
             "samples": "采样输出"
+        }
+    },
+    "WanVideoMiniMaxRemoverEmbeds": {
+        "title": "WanVideo MiniMax 移除器嵌入",
+        "inputs": {
+            "latents": "潜空间",
+            "mask_latents": "蒙版潜空间"
+        },
+        "widgets": {
+            "width": "宽度",
+            "height": "高度",
+            "num_frames": "帧数"
+        },
+        "outputs": {
+            "image_embeds": "图像嵌入"
+        }
+    },
+    "WanVideoApplyNAG": {
+        "title": "WanVideoNAG应用",
+        "inputs": {
+            "original_text_embeds": "原始文本嵌入",
+            "nag_text_embeds": "NAG文本嵌入"
+        },
+        "widgets": {
+            "nag_scale": "NAG缩放",
+            "nag_tau": "NAG Tau",
+            "nag_alpha": "NAG Alpha"
+        },
+        "outputs": {
+            "text_embeds": "文本嵌入"
+        }
+    },
+    "WanVideoRealisDanceLatents": {
+        "title": "WanVideo RealisDance 潜空间",
+        "inputs": {
+            "ref_latent": "参考潜空间",
+            "smpl_latent": "SMPL潜空间",
+            "hamer_latent": "Hamer潜空间"
+        },
+        "widgets": {
+            "pose_cond_start_percent": "姿态条件起始百分比",
+            "pose_cond_end_percent": "姿态条件结束百分比"
+        },
+        "outputs": {
+            "realisdance_latents": "RealisDance潜空间"
+        }
+    },
+    "WanVideoLoraSelectMulti": {
+        "title": "WanVideo Lora 多选",
+        "inputs": {
+            "prev_lora": "上一个Lora",
+            "blocks": "块"
+        },
+        "widgets": {
+            "lora_0": "Lora_0",
+            "strength_0": "强度_0",
+            "lora_1": "Lora_1",
+            "strength_1": "强度_1",
+            "lora_2": "Lora_2",
+            "strength_2": "强度_2",
+            "lora_3": "Lora_3",
+            "strength_3": "强度_3",
+            "lora_4": "Lora_4",
+            "strength_4": "强度_4",
+            "low_mem_load": "低内存加载"
+        },
+        "outputs": {
+            "lora": "Lora"
+        }
+    },
+    "WanVideoATITracks": {
+        "title": "WanVideo ATI 轨迹",
+        "inputs": {
+            "model": "模型"
+        },
+        "widgets": {
+            "tracks": "轨迹",
+            "width": "宽度",
+            "height": "高度",
+            "temperature": "温度",
+            "topk": "TopK",
+            "start_percent": "起始百分比",
+            "end_percent": "结束百分比"
+        },
+        "outputs": {
+            "model": "模型"
+        }
+    },
+    "WanVideoATITracksVisualize": {
+        "title": "WanVideo ATI 轨迹可视化",
+        "inputs": {
+            "images": "图像",
+            "tracks": "轨迹"
+        },
+        "widgets": {
+            "min_radius": "最小半径",
+            "max_radius": "最大半径",
+            "max_retain": "最大保留"
+        },
+        "outputs": {
+            "images": "图像"
+        }
+    },
+    "WanVideoATI_comfy": {
+        "title": "WanVideo ATI 便捷",
+        "inputs": {
+            "model": "模型"
+        },
+        "widgets": {
+            "width": "宽度",
+            "height": "高度",
+            "tracks": "轨迹",
+            "temperature": "温度",
+            "topk": "TopK"
+        },
+        "outputs": {
+            "model": "模型"
         }
     }
 }
