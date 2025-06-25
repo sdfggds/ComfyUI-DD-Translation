@@ -1,27 +1,16 @@
 {
     "BrushNetLoader": {
-        "title": "BrushNet加载器",
+        "title": "BrushNet（加载）",
         "widgets": {
-            "brushnet": "BrushNet"
+            "brushnet": "BrushNet",
+            "dtype": "数据类型"
         },
         "outputs": {
             "brushnet": "BrushNet"
-        }
-    },
-    "BrushNetPipeline": {
-        "title": "BrushNet节点束",
-        "inputs": {
-            "model": "模型",
-            "clip": "CLIP",
-            "vae": "VAE",
-            "brushnet": "BrushNet"
-        },
-        "outputs": {
-            "BRPL": "BrushNet节点束"
         }
     },
     "BrushNet": {
-        "title": "BrushNet",
+        "title": "BrushNet（应用）",
         "inputs": {
             "model": "模型",
             "vae": "VAE",
@@ -32,7 +21,7 @@
             "negative": "负面条件"
         },
         "widgets": {
-            "scale": "缩放",
+            "scale": "强度系数",
             "start_at": "开始引导步数",
             "end_at": "结束引导步数"
         },
@@ -44,9 +33,9 @@
         }
     },
     "CutForInpaint": {
-        "title": "局部重绘裁剪处理",
+        "title": "局部重绘（裁剪）",
         "inputs": {
-            "image": "图像",
+            "image": "待裁剪图像",
             "mask": "遮罩"
         },
         "widgets": {
@@ -54,13 +43,13 @@
             "height": "高度"
         },
         "outputs": {
-            "image": "图像",
-            "mask": "遮罩",
-            "origin": "origin"
+            "image": "裁剪后图像",
+            "mask": "裁剪后遮罩",
+            "origin": "原始位置信息"
         }
     },
     "PowerPaintCLIPLoader": {
-        "title": "PowerPaintCLIP加载器",
+        "title": "PowerPaint（CLIP加载器）",
         "widgets": {
             "base": "CLIP",
             "powerpaint": "PowerPaint"
@@ -70,7 +59,7 @@
         }
     },
     "PowerPaint": {
-        "title": "PowerPaint",
+        "title": "PowerPaint（应用）",
         "inputs": {
             "model": "模型",
             "vae": "VAE",
@@ -82,11 +71,12 @@
             "negative": "负面条件"
         },
         "widgets": {
-            "fitting": "fitting",
-            "function": "模式",
-            "scale": "缩放",
+            "fitting": "适配系数",
+            "function": "功能模式",
+            "scale": "强度系数",
             "start_at": "开始引导步数",
-            "end_at": "结束引导步数"
+            "end_at": "结束引导步数",
+            "save_memory": "内存优化"
         },
         "outputs": {
             "model": "模型",
@@ -96,42 +86,31 @@
         }
     },
     "RAUNet": {
-        "title": "RAUNet",
+        "title": "RAU图像处理网络",
         "inputs": {
             "model": "模型"
-        },
-        "outputs": {
-            "model": "模型"
-        }
-    },
-    "BrushNetInpaint": {
-        "title": "BrushNet局部重绘",
-        "inputs": {
-            "BRPL": "BrushNet节点束",
-            "image": "图像",
-            "mask": "遮罩",
-            "positive": "正面条件",
-            "negative": "负面条件"
         },
         "widgets": {
-            "seed": "随机种",
-            "control_before_generate": "运行前操作",
-            "steps": "步数",
-            "scale": "缩放"
+            "du_start": "DU阶段起始",
+            "du_end": "DU阶段结束",
+            "xa_start": "XA阶段起始",
+            "xa_end": "XA阶段结束"
         },
         "outputs": {
-            "image": "图像"
+            "model": "模型"
         }
     },
     "BlendInpaint": {
-        "title": "混合局部重绘",
+        "title": "局部重绘（融合）",
         "inputs": {
-            "image1": "图像_1",
-            "image2": "图像_2",
-            "mask": "遮罩"
+            "inpaint": "局部重绘结果",
+            "original": "原始图像",
+            "mask": "遮罩",
+            "origin": "原始位置信息"
         },
         "widgets": {
-            "blur": "模糊"
+            "kernel": "模糊范围",
+            "sigma": "模糊强度"
         },
         "outputs": {
             "image": "图像"

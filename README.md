@@ -52,6 +52,12 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS
 
 ## 更新日志
+### v1.8.8 (2025-6-25) 
+- 合并贡献者（是小张啊）提交的插件翻译：
+- ComfyUI-Fill-Nodes丶ComfyUI-TTP-Toolset插件的完整翻译
+- ComfyUI-Inpaint-CropAndStitch丶ComfyUI-BrushNet丶ComfyUl-Align补全以上节点翻译
+- 对部分右键菜单栏中的原生节点翻译和DOM内部翻译进行补全
+
 ### v1.8.7 (2025-6-24) 
 - 合并贡献者（ZXSZS）提交的两个插件翻译，包含以下插件的完整翻译内容：
 - ComfyUI-PMRF丶ComfyUI-Lora-Manager

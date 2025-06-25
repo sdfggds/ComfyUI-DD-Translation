@@ -28,7 +28,7 @@
     "ComfyUI Guide To Making Custom Nodes": "制作自定义节点指南",
     "ComfyUI Examples": "ComfyUI使用例",
     "Close": "关闭",
-    
+
     "\nThe custom node DB is currently being updated, and updates to custom nodes are being checked for.\nNOTE: Update only checks for extensions that have been fetched.\n": "\n现在正在更新已安装的节点。\n注意: 仅更新已检查出可以更新的节点.\n",
     "input search keyword": "输入搜索关键词",
     "Filter": "过滤",
@@ -40,6 +40,12 @@
     "Try update": "尝试更新",
     "Try fix": "尝试修复",
     "Uninstall": "卸载",
+	"Stop": "停止",
+	"Restart Required": "需要重启",
+    "Switch Ver": "切换版本",
+	"Update All Custom Nodes": "更新所有自定义节点",
+    "Extensions": "扩展",
+    "Conflicts": "冲突",
     
     "Update: ComfyUI Stable Version": "更新: ComfyUI 稳定版",
     "Update: ComfyUI Nightly Version": "更新: ComfyUI 夜间版",
