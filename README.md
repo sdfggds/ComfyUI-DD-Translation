@@ -49,9 +49,18 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS
+- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+### v1.8.9 (2025-6-27) 
+- 合并贡献者（猪的飞行梦）提交的插件翻译包含：
+- AlekPet nodes丶 comfy_mtb丶Comfyui_ControlNet_aux丶ComfyUl_IPAdapter_plus丶ComfyUI-CogVideoXWrapper丶ComfyUI-Easy-Use以上插件的翻译补全和翻译重构
+- AuraSR-ComfyUI丶comfy-image-saver丶ComfyUI_GraftingRayman丶ComfyUI_KokoroTTS_MW丶ComfyUI-CatVTON-Wrapper丶ComfyUI-DiffBIR丶ComfyUI-PuLID-Flux-GR以上插件的完整翻译内容
+
+- 合并贡献者（tanglangxia）提交的ComfyUI-Advanced-ControlNet插件翻译补全
+
+- 添加ComfyUI-GIMM-VFI插件的完整翻译
+
 ### v1.8.8 (2025-6-25) 
 - 合并贡献者（是小张啊）提交的插件翻译：
 - ComfyUI-Fill-Nodes丶ComfyUI-TTP-Toolset插件的完整翻译

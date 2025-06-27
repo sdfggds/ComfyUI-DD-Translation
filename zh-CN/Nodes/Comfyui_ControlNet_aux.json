@@ -1,6 +1,6 @@
 {
     "AnimeFace_SemSegPreprocessor": {
-        "title": "AnimeFace分割预处理器",
+        "title": "AnimeFace面部分割预处理器(动漫)",
         "inputs": {
             "image": "图像"
         },
@@ -19,6 +19,20 @@
             "image": "图像"
         },
         "widgets": {
+            "resolution": "分辨率"
+        },
+        "outputs": {
+            "IMAGE": "图像"
+        }
+    },
+    "PyraCannyPreprocessor": {
+        "title": "PyraCanny硬边缘线预处理器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "low_threshold": "低阈值",
+            "high_threshold": "高阈值",
             "resolution": "分辨率"
         },
         "outputs": {
@@ -63,15 +77,15 @@
     },
 
     "AnyLineArtPreprocessor_aux": {
-        "title": "AnyLine预处理器",
+        "title": "AnyLine任何线条艺术 预处理器(助手)",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
-            "merge_with_lineart": "融合LineArt",
+            "merge_with_lineart": "融合线条",
             "resolution": "分辨率",
-            "lineart_lower_bound": "LineArt低阈值",
-            "lineart_upper_bound": "LineArt高阈值",
+            "lineart_lower_bound": "线条低阈值",
+            "lineart_upper_bound": "线条高阈值",
             "object_min_size": "物体最小尺寸",
             "object_connectivity": "物体连通"
         },
@@ -80,13 +94,13 @@
         }
     },
     "BinaryPreprocessor": {
-        "title": "Binary二值化预处理器",
+        "title": "Binary二进制预处理器",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
             "threshold": "阈值",
-            "bin_threshold": "阈值",
+            "bin_threshold": "bin阈值",
             "resolution": "分辨率"
         },
         "outputs": {
@@ -94,7 +108,7 @@
         }
     },
     "CannyEdgePreprocessor": {
-        "title": "Canny细致线预处理器",
+        "title": "Canny硬边缘预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -120,7 +134,7 @@
                 "indoor": "室内",
                 "urban": "城市",
                 "natural": "自然",
-            "patch_batch_size": "patch_batch_size",
+            "patch_batch_size": "补丁批量大小",
             "resolution": "分辨率"
         },
         "outputs": {
@@ -191,7 +205,7 @@
             "image": "图像"
         },
         "widgets": {
-            "gaussian_sigma": "gaussian_sigma",
+            "guassian_sigma": "高斯sigma",
             "intensity_threshold": "强度阈值",
             "resolution": "分辨率"
         },
@@ -345,6 +359,7 @@
             "detect_face": "检测面部",
             "resolution": "分辨率",
             "bbox_detector": "BBox检测",
+            "scale_stick_for_xinsr_cn": "新超分辨率ControlNet缩放工具",
             "pose_estimator": "姿态预估"
         },
         "outputs": {
@@ -406,8 +421,7 @@
             "detect_hand": "检测手部",
             "detect_body": "检测身体",
             "detect_face": "检测面部",
-                "enable": "开启",
-                "disable": "关闭",
+            "scale_stick_for_xinsr_cn": "新超分辨率ControlNet缩放工具",
             "version": "版本",
             "resolution": "分辨率"
         },
@@ -418,13 +432,13 @@
     },
 
     "InpaintPreprocessor": {
-        "title": "Inpaint内补预处理器",
+        "title": "Inpaint内补重绘预处理器",
         "inputs": {
             "image": "图像",
             "mask": "遮罩"
         },
         "widgets": {
-            "resolution": "分辨率"
+            "black_pixel_for_xinsir_cn": "新超分辨率ControlNet黑色像素"
         },
         "outputs": {
             "IMAGE": "图像"
@@ -443,7 +457,7 @@
         }
     },
     "TilePreprocessor": {
-        "title": "Tile平铺预处理器",
+        "title": "Tile平铺分块预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -453,25 +467,27 @@
         },
         "outputs": {
             "IMAGE": "图像"
-        }
+        },
+        "description": "\n\n 迭代次数越高越模糊 \n\n"
     },
     "TTPlanet_TileGF_Preprocessor": {
-        "title": "TTPlanet_TileGF平铺预处理器",
+        "title": "TTPlanet_TileGF平铺分块预处理器",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
             "scale_factor": "缩放系数",
-            "blur_strehgth": "模糊强度",
+            "blur_strength": "模糊强度",
             "radius": "半径",
-            "eps": "eps"
+            "resolution": "分辨率",
+            "eps": "eps阈值"
         },
         "outputs": {
             "IMAGE": "图像"
         }
     },
     "TTPlanet_TileSimple_Preprocessor": {
-        "title": "TTPlanet_TileSimple平铺预处理器",
+        "title": "TTPlanet_Tile平铺分块预处理器(简单)",
         "inputs": {
             "image": "图像"
         },
@@ -485,7 +501,7 @@
     },
 
     "DepthAnythingPreprocessor": {
-        "title": "DepthAnything深度预处理器",
+        "title": "DepthAnything任何深度预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -508,10 +524,11 @@
         },
         "outputs": {
             "IMAGE": "图像"
-        }
+        },
+        "description": "\n\n depth_anything_v2_vitg.pth 该模型已被删除 \n\n"
     },
     "Zoe_DepthAnythingPreprocessor": {
-        "title": "Zoe DepthAnything深度预处理器",
+        "title": "Zoe任何深度预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -525,12 +542,12 @@
         }
     },
     "DSINE-NormalMapPreprocessor": {
-        "title": "DSINE法向预处理器",
+        "title": "DSINE法线预处理器",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
-            "fov": "FOV",
+            "fov": "FOV焦距",
             "iterations": "迭代次数",
             "resolution": "分辨率"
         },
@@ -554,7 +571,7 @@
         }
     },
     "MeshGraphormer-DepthMapPreprocessor": {
-        "title": "MeshGraphormer深度预处理器",
+        "title": "MeshGraphormer深度手部预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -563,12 +580,15 @@
             "mask_type": "遮罩类型",
             "mask_expand": "遮罩扩展",
             "rand_seed": "随机种",
+            "detect_thr": "检测阈值",
+            "presence_thr": "出现阈值",
             "resolution": "分辨率"
         },
         "outputs": {
             "IMAGE": "图像",
             "INPAINTING_MASK": "内补遮罩"
-        }
+        },
+        "description": "\n\n 两个阈值调到最小，容易出现内容 \n\n"
     },
     "MeshGraphormer+ImpactDetector-DepthMapPreprocessor": {
         "title": "MeshGraphormer手部修复+Impact检测深度预处理器",
@@ -590,7 +610,8 @@
         "outputs": {
             "IMAGE": "图像",
             "INPAINTING_MASK": "内补遮罩"
-        }
+        },
+        "description": "\n\n 阈值越小越精准 \n\n BBox检测使用bbox-hand手部模型"
     },
     "Metric3D-DepthMapPreprocessor": {
         "title": "Metric3D深度预处理器",
@@ -608,7 +629,7 @@
         }
     },
     "Metric3D-NormalMapPreprocessor": {
-        "title": "Metric3D法向预处理器",
+        "title": "Metric3D法线预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -623,7 +644,7 @@
         }
     },
     "MiDaS-NormalMapPreprocessor": {
-        "title": "MiDaS法向预处理器",
+        "title": "MiDaS法线预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -651,7 +672,7 @@
         }
     },
     "BAE-NormalMapPreprocessor": {
-        "title": "BAE法向预处理器",
+        "title": "BAE法线预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -749,7 +770,7 @@
             "LForearm_width_height": "左小臂宽高"
         },
         "outputs": {
-            "tracking": "tracking",
+            "tracking": "tracking追踪",
             "prompt": "提示词"
         }
     },
@@ -768,7 +789,7 @@
         }
     },
     "RenderAnimalKps": {
-        "title": "渲染姿态关键点（动物）",
+        "title": "渲染姿态关键点(动物)",
         "inputs": {
             "kps": "姿态关键点"
         },
@@ -779,28 +800,28 @@
 
 
     "Unimatch_OptFlowPreprocessor": {
-        "title": "Unimatch光流预处理器",
+        "title": "Unimatch光流预处理器(视频)",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
             "ckpt_name": "模型名称",
-            "backward_flow": "后向流",
-            "bidirectional_flow": "双向流"
+            "backward_flow": "生成后向光流",
+            "bidirectional_flow": "生成双向光流"
         },
         "outputs": {
-            "OPTICAL_FLOW": "光流",
+            "OPTICAL_FLOW": "光流数据",
             "PREVIEW_IMAGE": "预览图像"
         }
     },
     "MaskOptFlow": {
-        "title": "遮罩光流",
+        "title": "遮罩光流(视频)",
         "inputs": {
-            "optical_flow": "光流",
+            "optical_flow": "光流数据",
             "mask": "遮罩"
         },
         "outputs": {
-            "OPTICAL_FLOW": "光流",
+            "OPTICAL_FLOW": "光流数据",
             "PREVIEW_IMAGE": "预览图像"
         }
     },
@@ -821,13 +842,13 @@
                 "AnimeLineArtPreprocessor": "AnimeLineArt动漫艺术线预处理器",
                 "LineartStandardPreprocessor": "LineArtStandard艺术线预处理器",
                 "Manga2Anime-LineArtPreprocessor": "Manga2Anime-LineArt漫画艺术线预处理器",
-                "CannyEdgePreprocessor": "Canny细致线预处理器",
+                "CannyEdgePreprocessor": "Canny硬边缘线预处理器",
                 "M-LSDPreprocessor": "M-LSD线段预处理器",
                 "MeshGraphormer-DepthMapPreprocessor": "MeshGraphormer深度预处理器",
                 "MiDaS-DepthMapPreprocessor": "MiDaS深度预处理器",
-                "MiDaS-NormalMapPreprocessor": "MiDaS法向预处理器",
+                "MiDaS-NormalMapPreprocessor": "MiDaS法线预处理器",
                 "LeReS-DepthMapPreprocessor": "LeReS深度预处理器",
-                "BAE-NormalMapPreprocessor": "BAE法向预处理器",
+                "BAE-NormalMapPreprocessor": "BAE法线预处理器",
                 "Zoe-DepthMapPreprocessor": "Zoe深度预处理器",
                 "OpenposePreprocessor": "Openpose姿态预处理器",
                 "MediaPipe-HandPosePreprocessor": "MediaPipe姿态预处理器",
@@ -837,13 +858,13 @@
                 "OneFormer-ADE20K-SemSegPreprocessor": "OF-ADE20K语义分割预处理器",
                 "MediaPipe-FaceMeshPreprocessor": "MediaPipe面部网格预处理器",
                 "ColorPreprocessor": "Color颜色预处理器",
-                "TilePreprocessor": "Tile平铺预处理器",
-                "InpaintPreprocessor": "Inpaint内补预处理器",
+                "TilePreprocessor": "Tile平铺分块预处理器",
+                "InpaintPreprocessor": "Inpaint内补重绘预处理器",
                 "ShufflePreprocessor": "Shuffle内容重组预处理器",
                 "Manga2Anime_LineArt_Preprocessor": "MangaAnime漫画艺术线预处理器",
                 "DWPreprocessor": "DW姿态预处理器",
                 "Scribble_XDoG_Preprocessor": "ScribbleXDoG涂鸦预处理器",
-                "SAM Segmentor": "SAM Segmentor",
+                "SAM Segmentor": "SAM分割器",
                 "SAMPreprocessor": "SAM预处理器",
                 "resolution": "分辨率"
         },
@@ -857,7 +878,7 @@
             "preprocessor": "预处理器"
         },
         "outputs": {
-            "prprocessor": "预处理器"
+            "preprocessor": "预处理器"
         }
     },
     "PixelPerfectResolution": {
@@ -898,7 +919,7 @@
         }
     },
     "SAM Segmentor": {
-        "title": "SAM Segmentor",
+        "title": "SAM分割预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -912,22 +933,22 @@
     "RaftOpticalFlowPreprocessor": {
         "title": "RAFT光流预处理器",
         "inputs": {
-            "image": "图像"
+            "image": "输入图像序列"
         },
         "widgets": {
-            "model_filename": "模型名",
-            "num_flow_updates": "光流数",
+            "model_filename": "模型文件",
+            "num_flow_updates": "光流迭代次数",
             "resolution": "分辨率"
         },
         "outputs": {
-            "SIX_CHANNEL_IMAGE": "六通道图像",
+            "SIX_CHANNEL_IMAGE": "六通道光流图像",
             "OPTICAL_FLOW_PREVIEW": "光流预览"
         }
     },
     "HintImageEnchance": {
-        "title": "图像提示增强",
+        "title": "图像提升质量",
         "inputs": {
-            "hint_image": "提示图像"
+            "hint_image": "提升图像"
         },
         "widgets": {
             "image_gen_width": "宽度",
