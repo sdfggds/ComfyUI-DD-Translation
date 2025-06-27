@@ -54,10 +54,12 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 更新日志
 ### v1.8.9 (2025-6-27) 
 - 合并贡献者（猪的飞行梦）提交的插件翻译包含：
-- AlekPet nodes丶 comfy_mtb丶Comfyui_ControlNet_aux丶ComfyUl_IPAdapter_plus丶ComfyUI-CogVideoXWrapper丶ComfyUI-Easy-Use以上插件的翻译补全和翻译重构
+- AlekPet nodes丶 comfy_mtb丶Comfyui_ControlNet_aux丶ComfyUl_IPAdapter_plus丶ComfyUI-CogVideoXWrapper丶ComfyUI-Easy-Use丶ComfyUI-Advanced-ControlNet以上插件的翻译补全和翻译重构
 - AuraSR-ComfyUI丶comfy-image-saver丶ComfyUI_GraftingRayman丶ComfyUI_KokoroTTS_MW丶ComfyUI-CatVTON-Wrapper丶ComfyUI-DiffBIR丶ComfyUI-PuLID-Flux-GR以上插件的完整翻译内容
 
 - 合并贡献者（tanglangxia）提交的ComfyUI-Advanced-ControlNet插件翻译补全
+
+- 将两个贡献者提交的ComfyUI-Advanced-ControlNet插件翻译文件合并成一个，并调整部分术语
 
 - 添加ComfyUI-GIMM-VFI插件的完整翻译。
 
