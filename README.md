@@ -59,7 +59,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 
 - 合并贡献者（tanglangxia）提交的ComfyUI-Advanced-ControlNet插件翻译补全
 
-- 添加ComfyUI-GIMM-VFI插件的完整翻译
+- 添加ComfyUI-GIMM-VFI插件的完整翻译。
 
 ### v1.8.8 (2025-6-25) 
 - 合并贡献者（是小张啊）提交的插件翻译：
