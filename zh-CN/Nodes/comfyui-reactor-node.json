@@ -12,7 +12,7 @@
             "swap_model": "置换模型",
             "facedetection": "检测模型",
             "face_restore_model": "修复模型",
-            "face_restore_visibility": "面部修复可见性",
+            "face_restore_visibility": "面部修复模糊",
             "codeformer_weight": "CodeFormer_权重",
             "detect_gender_source": "检测源性别",
             "detect_gender_input": "检测目标性别",
@@ -22,6 +22,8 @@
         },
         "outputs": {
             "IMAGE": "图像",
+            "SWAPPED_IMAGE": "换脸图像",
+            "ORIGINAL_IMAGE": "原始图像",
             "FACE_MODEL": "面部模型"
         }
     },
@@ -39,11 +41,13 @@
             "swap_model": "置换模型",
             "facedetection": "检测模型",
             "face_restore_model": "修复模型",
-            "face_restore_visibility": "面部修复可见性",
+            "face_restore_visibility": "面部修复模糊",
             "codeformer_weight": "CodeFormer_权重"
         },
         "outputs": {
             "IMAGE": "图像",
+            "SWAPPED_IMAGE": "换脸图像",
+            "ORIGINAL_IMAGE": "原始图像",
             "FACE_MODEL": "面部模型"
         }
     },
@@ -53,9 +57,9 @@
             "enabled": "启用",
             "boost_model": "增强模型",
             "interpolation": "插值方式",
-            "visibility": "可见性",
+            "visibility": "面部修复模糊",
             "codeformer_weight": "CodeFormer_权重",
-            "restore_with_main_after": "restore_with_main_after"
+            "restore_with_main_after": "主流程后修复"
         },
         "outputs": {
             "FACE_BOOST": "面部增强"
@@ -89,7 +93,7 @@
             "IMAGE": "图像",
             "MASK": "遮罩",
             "MASK_PREVIEW": "遮罩预览图",
-            "SWPAEED_FACE": "置换面部"
+            "SWAPPED_FACE": "置换面部"
         }
     },
     "ReActorOptions": {
@@ -147,14 +151,14 @@
         }
     },
     "ReActorRestoreFace": {
-        "title": "ReActor恢复面部",
+        "title": "ReActor修复面部",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
             "facedetection": "检测模型",
-            "model": "模型",
-            "visibility": "可见性",
+            "model": "修复模型",
+            "visibility": "面部修复模糊",
             "codeformer_weight": "CodeFormer_权重"
         },
         "outputs": {
@@ -164,21 +168,54 @@
     "ReActorBuildFaceModel": {
         "title": "ReActor创建面部模型",
         "inputs": {
-            "images": "图像"
+            "images": "图像",
+            "face_models": "面部模型"
         },
         "widgets": {
             "save_mode": "保存",
+            "send_only": "仅发送",
             "face_model_name": "模型名称",
             "compute_method": "计算方法"
+        },
+        "outputs": {
+            "INPUT_IMAGE": "目标图像",
+            "FACE_MODEL": "面部模型"
+        }
+    },
+    "ReActorSetWeight": {
+        "title": "ReActor设置换脸权重",
+        "inputs": {
+            "input_image": "目标图像",
+            "source_image": "源图像",
+            "face_model": "面部模型"
+        },
+        "widgets": {
+            "faceswap_weight": "换脸权重"
+        },
+        "outputs": {
+            "INPUT_IMAGE": "目标图像",
+            "FACE_MODEL": "面部模型"
+        }
+    },
+    "ReActorUnload": {
+        "title": "卸载反应器模型🌌ReActor",
+        "inputs": {
+            "trigger": "触发"
+        },
+        "widgets": {
+            "count": "次数"
+        },
+        "outputs": {
+            "IMAGE": "图像"
         }
     },
     "ReActorImageDublicator": {
-        "title": "图像复制",
+        "title": "图像复制（列表）🌌ReActor",
         "inputs": {
             "image": "图像"
         },
         "widgets": {
-            "count": "次数"
+            "count": "批次"
         },
         "outputs": {
             "IMAGES": "图像"

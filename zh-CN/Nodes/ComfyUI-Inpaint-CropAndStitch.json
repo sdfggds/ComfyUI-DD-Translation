@@ -1,78 +1,133 @@
 {
     "InpaintCrop": {
-        "title": "局部重绘裁剪（旧版）",
+        "title": "✂️局部重绘（裁剪）",
         "inputs": {
-            "image": "待修复图像",
+            "image": "图像",
             "mask": "遮罩",
-            "optional_context_mask": "可选上下文遮罩"
+            "optional_context_mask": "上下文遮罩(可选)"
         },
         "widgets": {
-            "context_expand_pixels": "上下文扩展像素",
+            "context_expand_pixels": "上下文像素扩展",
             "context_expand_factor": "上下文扩展系数",
             "fill_mask_holes": "填充遮罩孔洞",
-            "blur_mask_pixels": "模糊遮罩像素",
-            "invert_mask": "反转遮罩",
-            "blend_pixels": "混合像素",
+            "blur_mask_pixels": "遮罩模糊",
+            "invert_mask": "遮罩反相",
+            "blend_pixels": "像素混合",
             "rescale_algorithm": "缩放算法",
             "mode": "模式",
-            "force_width": "强制宽度",
-            "force_height": "强制高度",
-            "rescale_factor": "缩放系数",
             "min_width": "最小宽度",
             "min_height": "最小高度",
             "max_width": "最大宽度",
             "max_height": "最大高度",
-            "padding": "分区"
+            "force_width": "强制宽度",
+            "force_height": "强制高度",
+            "rescale_factor": "缩放系数",
+            "padding": "填充"
         },
         "outputs": {
-            "stitch": "拼接关联",
-            "cropped_image": "裁剪后图像",
-            "cropped_mask": "裁剪后遮罩"
+            "stitch": "接缝",
+            "cropped_image": "裁剪图像",
+            "cropped_mask": "裁剪遮罩"
         }
     },
     "InpaintStitch": {
-        "title": "局部重绘拼接（旧版）",
+        "title": "✂️局部重绘（拼接）",
         "inputs": {
-            "stitch": "拼接控制数据",
-            "inpainted_image": "修复后图像"
+            "stitch": "接缝",
+            "inpainted_image": "修复图像"
         },
         "widgets": {
             "rescale_algorithm": "缩放算法"
         },
         "outputs": {
-            "image": "拼接后图像"
+            "image": "图像"
         }
     },
     "InpaintExtendOutpaint": {
-        "title": "图像外绘扩展（旧版）",
+        "title": "✂️局部重绘（外扩）",
         "inputs": {
-            "image": "待扩展图像",
+            "image": "图像",
             "mask": "遮罩",
-            "optional_context_mask": "可选上下文遮罩"
+            "optional_context_mask": "上下文遮罩(可选)"
         },
         "widgets": {
             "mode": "模式",
-            "expand_up_pixels": "向上扩展像素",
-            "expand_up_factor": "向上扩展系数",
-            "expand_down_pixels": "向下扩展像素",
-            "expand_down_factor": "向下扩展系数",
-            "expand_left_pixels": "向左扩展像素",
-            "expand_left_factor": "向左扩展系数",
-            "expand_right_pixels": "向右扩展像素",
-            "expand_right_factor": "向右扩展系数"
+            "expand_up_factor": "上部扩展系数",
+            "expand_down_factor": "下部扩展系数",
+            "expand_left_factor": "左侧扩展系数",
+            "expand_right_factor": "右侧扩展系数",
+            "expand_up_pixels": "上部扩展像素",
+            "expand_down_pixels": "下部扩展像素",
+            "expand_left_pixels": "左侧扩展像素",
+            "expand_right_pixels": "右侧扩展像素"
         },
         "outputs": {
-            "image": "扩展后图像",
-            "mask": "扩展后遮罩",
-            "context_mask": "扩展后上下文遮罩"
+            "image": "图像",
+            "mask": "遮罩",
+            "context_mask": "上下文遮罩"
+        }
+    },
+    "InpaintCropImproved": {
+        "title": "✂️局部重绘裁剪（改进版）",
+        "inputs": {
+            "image": "图像",
+            "mask": "遮罩",
+            "optional_context_mask": "上下文遮罩(可选)"
+        },
+        "widgets": {
+            "downscale_algorithm": "降采样算法",
+            "upscale_algorithm": "上采样算法",
+            "preresize": "预缩放",
+            "preresize_mode": "预缩放模式",
+            "preresize_min_width": "预缩放最小宽度",
+            "preresize_min_height": "预缩放最小高度",
+            "preresize_max_width": "预缩放最大宽度",
+            "preresize_max_height": "预缩放最大高度",
+            "mask_fill_holes": "遮罩孔洞填充",
+            "mask_expand_pixels": "遮罩像素扩展",
+            "mask_invert": "遮罩反相",
+            "mask_blend_pixels": "遮罩像素混合",
+            "mask_hipass_filter": "遮罩高通滤波",
+            "expand_up_factor": "上部扩展系数",
+            "expand_down_factor": "下部扩展系数",
+            "expand_left_factor": "左侧扩展系数",
+            "expand_right_factor": "右侧扩展系数",
+            "extend_for_outpainting": "外补扩展系数",
+            "extend_up_factor": "向上扩展系数",
+            "extend_down_factor": "向下扩展系数",
+            "extend_left_factor": "向左扩展系数",
+            "extend_right_factor": "向右扩展系数",
+            "context_from_mask_extend_factor": "基于遮罩扩展的上下文因子",
+            "output_resize_to_target_size": "输出缩放至目标尺寸",
+            "output_target_width": "输出目标宽度",
+            "output_target_height": "输出目标高度",
+            "output_padding": "输出填充"
+        },
+        "outputs": {
+            "stitcher": "拼接器",
+            "cropped_image": "裁剪图像",
+            "cropped_mask": "裁剪遮罩"
+        }
+    },
+    "InpaintStitchImproved": {
+        "title": "✂️局部重绘拼接（改进版）",
+        "inputs": {
+            "stitcher": "拼接器",
+            "inpainted_image": "修复图像"
+        },
+        "widgets": {},
+        "outputs": {
+            "image": "图像",
+            "mask": "遮罩",
+            "context_mask": "上下文遮罩"
         }
     },
     "InpaintResize": {
-        "title": "局部重绘前调整尺寸（旧版）",
+        "title": "✂️局部重绘（缩放）",
         "inputs": {
-            "image": "待处理图像",
+            "image": "图像",
             "mask": "遮罩",
-            "optional_context_mask": "可选上下文遮"
+            "optional_context_mask": "上下文遮罩(可选)"
         },
         "widgets": {
             "rescale_algorithm": "缩放算法",
@@ -82,57 +137,9 @@
             "rescale_factor": "缩放系数"
         },
         "outputs": {
-            "image": "调整后图像",
-            "mask": "调整后遮罩",
-            "context_mask": "调整后上下文遮罩"
-        }
-    },
-    "InpaintCropImproved": {
-        "title": "局部重绘裁剪（改进版）",
-        "inputs": {
-            "image": "待修复图像",
+            "image": "图像",
             "mask": "遮罩",
-            "optional_context_mask": "可选上下文遮罩"
-        },
-        "widgets": {
-            "downscale_algorithm": "降采样算法",
-            "upscale_algorithm": "上采样算法",
-            "preresize": "预调整尺寸",
-            "preresize_mode": "预调整模式",
-            "preresize_min_width": "预调整最小宽度",
-            "preresize_min_height": "预调整最小高度",
-            "preresize_max_width": "预调整最大宽度",
-            "preresize_max_height": "预调整最大高度",
-            "mask_fill_holes": "遮罩填充孔洞",
-            "mask_expand_pixels": "遮罩扩展像素",
-            "mask_invert": "遮罩反转",
-            "mask_blend_pixels": "遮罩混合像素",
-            "mask_hipass_filter": "遮罩高通滤波",
-            "extend_for_outpainting": "扩展用于外绘",
-            "extend_up_factor": "向上扩展系数",
-            "extend_down_factor": "向下扩展系数",
-            "extend_left_factor": "向左扩展系数",
-            "extend_right_factor": "向右扩展系数",
-            "context_from_mask_extend_factor": "从遮罩扩展上下文系数",
-            "output_resize_to_target_size": "输出调整到目标尺寸",
-            "output_target_width": "输出目标宽度",
-            "output_target_height": "输出目标高度",
-            "output_padding": "输出填充"
-        },
-        "outputs": {
-            "stitcher": "拼接器关联",
-            "cropped_image": "裁剪后图像",
-            "cropped_mask": "裁剪后遮罩"
-        }
-    },
-    "InpaintStitchImproved": {
-        "title": "局部重绘拼接（改进版）",
-        "inputs": {
-            "stitcher": "拼接器数据",
-            "inpainted_image": "修复后图像"
-        },
-        "outputs": {
-            "image": "拼接后图像"
+            "context_mask": "上下文遮罩"
         }
     }
 }

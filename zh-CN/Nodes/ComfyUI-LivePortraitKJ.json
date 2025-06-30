@@ -1,33 +1,37 @@
 {
     "DownloadAndLoadLivePortraitModels": {
-        "title": "下载并加载LivePortrait模型",
+        "title": "下载并加载动态肖像模型",
         "widgets": {
+            "mode": "模式",
             "precision": "精度"
         },
         "outputs": {
-            "live_portrait_pipe": "LivePortrait管线"
+            "live_portrait_pipe": "动态肖像管道"
         }
     },
     "LivePortraitProcess": {
-        "title": "LivePortrait处理",
+        "title": "动态肖像处理",
         "inputs": {
-            "pipeline": "LivePortrait管线",
+            "pipeline": "动态肖像管道",
             "crop_info": "裁剪信息",
             "source_image": "原图像",
             "driving_images": "驱动图像",
-            "opt_retargeting_info": "重定向信息(可选)"
+            "opt_retargeting_info": "目标重定向信息(可选)"
         },
         "widgets": {
-            "lip_zero_threhold": "初始闭合阈值",
+            "lip_zero": "唇部闭合",
+            "lip_zero_threshold": "唇部闭合阈值",
             "stitching": "运动修复",
-            "delta_multiplier": "delta乘数",
-            "mismatch_method": "mismatch_method",
+            "delta_multiplier": "Delta乘数",
+            "mismatch_method": "不匹配处理方法",
             "relative_motion_mode": "相对运动模式",
-            "driving_smooth_observation_variance": "平滑移动"
+            "expression_friendly": "表情友好模式",
+            "expression_friendly_multiplier": "友好度乘数",
+            "driving_smooth_observation_variance": "驱动平滑度"
         },
         "outputs": {
             "cropped_image": "裁剪图像",
-            "output": "LivePOrtrait输出"
+            "output": "动态肖像输出"
         }
     },
     "LivePortraitLoadCropper": {
@@ -38,57 +42,57 @@
             "detection_threshold": "检测阈值"
         },
         "outputs": {
-            "cropper": "裁剪框架"
+            "cropper": "裁剪器"
         }
     },
     "LivePortraitLoadMediaPipeCropper": {
         "title": "加载MediaPipe裁剪",
         "widgets": {
-            "landmarkrunner_onnx_device": "LandmarkrunnerONNX设备",
+            "landmarkrunner_onnx_device": "特征点检测器-ONNX设备",
             "keep_model_loaded": "保持模型加载"
         },
         "outputs": {
-            "cropper": "裁剪框架"
+            "cropper": "裁剪器"
         }
     },
     "LivePortraitLoadFaceAlignmentCropper": {
         "title": "加载FaceAlignment裁剪",
         "widgets": {
             "face_detector": "面部检测",
-            "landmarkrunner_device": "Landmarkrunner设备",
+            "landmarkrunner_device": "特征点检测设备",
             "face_detector_device": "面部检测设备",
-            "face_detector_dtype": "面部检测剪枝",
+            "face_detector_dtype": "面部检测数据类型",
             "keep_model_loaded": "保持模型加载"
         },
         "outputs": {
-            "cropper": "裁剪框架"
+            "cropper": "裁剪器"
         }
     },
     "LivePortraitCropper": {
-        "title": "LivePortrait裁剪",
+        "title": "动态肖像裁剪",
         "inputs": {
-            "pipeline": "LivePortrait管线",
-            "cropper": "裁剪框架",
-            "source_image": "原图像"
+            "pipeline": "动态肖像管道",
+            "cropper": "裁剪器",
+            "source_image": "源图像"
         },
         "widgets": {
-            "dsize": "面部裁剪大小",
+            "dsize": "面部裁剪尺寸",
             "scale": "面部缩放",
             "vx_ratio": "面部纵向偏移",
             "vy_ratio": "面部横向偏移",
             "face_index": "面部索引",
-            "face_index_order": "面部索引排序",
+            "face_index_order": "面部索引顺序",
             "rotate": "旋转"
         },
         "outputs": {
-            "cropped_images": "裁剪图像",
+            "cropped_image": "裁剪图像",
             "crop_info": "裁剪信息"
         }
     },
     "LivePortraitRetargeting": {
-        "title": "LivePortrait重定向",
+        "title": "动态肖像重定向",
         "inputs": {
-            "driving_crop_info": "裁剪信息"
+            "driving_crop_info": "驱动裁剪信息"
         },
         "widgets": {
             "eye_retargeting": "眼部重定向",
@@ -97,19 +101,19 @@
             "lip_retargeting_multiplier": "嘴唇重定向乘数"
         },
         "outputs": {
-            "retargeting_info": "重定向信息"
+            "retargeting_info": "目标重定向信息"
         }
     },
     "LivePortraitComposite": {
-        "title": "LivePortrait合成",
+        "title": "动态肖像合成",
         "inputs": {
-            "source_image": "原图像",
+            "source_image": "源图像",
             "cropped_image": "裁剪图像",
-            "liveportrait_out": "LivePOrtrait输出",
+            "liveportrait_out": "动态肖像输出",
             "mask": "遮罩"
         },
         "outputs": {
-            "full_images": "图像",
+            "full_images": "合成图像",
             "mask": "遮罩"
         }
     },
@@ -119,7 +123,7 @@
             "crop_info": "裁剪信息"
         },
         "widgets": {
-            "draw_lines": "draw_lines"
+            "draw_lines": "绘制连接线"
         },
         "outputs": {
             "keypoints_image": "关键点图像"

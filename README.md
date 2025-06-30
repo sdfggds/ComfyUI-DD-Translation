@@ -52,10 +52,22 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+### v1.8.10 (2025-6-30) 
+- 合并贡献者（猪的飞行梦）提交的插件翻译包含：
+
+- ComfyUI-VideoHelperSuite丶comfyui-reactor-node丶comfyui-mixlab-nodes丶ComfyUI-LivePortraitKJ丶ComfyUI-InstantIDComfyUI-Inpaint-CropAndStitch
+- 以上插件的翻译补全和翻译重构
+
+- was-node-suite-comfyui丶CosyVoice-ComfyUI丶ComfyUI-YOLOWorld丶ComfyUI-YOLO丶ComfyUI-SparkTTS丶ComfyUI-Sonic丶ComfyUI-RyanOnTheInside丶ComfyUI-RMBG丶comfyui-mxtoolkit丶ComfyUI-InstantIR-Wrapper丶comfyui-fk-server丶ComfyUI-FFmpeg丶ComfyUI-essentials
+- 以上插件的完整翻译内容
+
 ### v1.8.9 (2025-6-27) 
 - 合并贡献者（猪的飞行梦）提交的插件翻译包含：
-- AlekPet nodes丶 comfy_mtb丶Comfyui_ControlNet_aux丶ComfyUl_IPAdapter_plus丶ComfyUI-CogVideoXWrapper丶ComfyUI-Easy-Use丶ComfyUI-Advanced-ControlNet以上插件的翻译补全和翻译重构
-- AuraSR-ComfyUI丶comfy-image-saver丶ComfyUI_GraftingRayman丶ComfyUI_KokoroTTS_MW丶ComfyUI-CatVTON-Wrapper丶ComfyUI-DiffBIR丶ComfyUI-PuLID-Flux-GR以上插件的完整翻译内容
+- AlekPet nodes丶 comfy_mtb丶Comfyui_ControlNet_aux丶ComfyUl_IPAdapter_plus丶ComfyUI-CogVideoXWrapper丶ComfyUI-Easy-Use丶ComfyUI-Advanced-ControlNet
+- 以上插件的翻译补全和翻译重构
+
+- AuraSR-ComfyUI丶comfy-image-saver丶ComfyUI_GraftingRayman丶ComfyUI_KokoroTTS_MW丶ComfyUI-CatVTON-Wrapper丶ComfyUI-DiffBIR丶ComfyUI-PuLID-Flux-GR
+- 以上插件的完整翻译内容
 
 - 合并贡献者（tanglangxia）提交的ComfyUI-Advanced-ControlNet插件翻译补全
 
