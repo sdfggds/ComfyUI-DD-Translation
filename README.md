@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 使用建议
 
 本项目主要面向使用 ComfyUI 最新版本的用户：
-
+- 与老版本翻译插件AIGODLIKE/AIGODLIKE-ComfyUI-Translation并不兼容，在安装新翻译插件前请先卸载老插件
 - 为确保最佳兼容性，项目将优先支持最新版 ComfyUI
 - 可能会放弃对旧版本的兼容支持，推荐用以下内容：
 【最新版 ComfyUI 内核】
