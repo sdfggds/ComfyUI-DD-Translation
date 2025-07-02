@@ -26,10 +26,27 @@
         "title": "Flux应用ControlNet",
         "inputs": {
             "controlnet": "ControlNet",
+            "controlnet_condition": "ControlNet条件",
             "image": "图像"
         },
         "widgets": {
             "strength": "强度"
+        },
+        "outputs": {
+            "controlnet_condition": "ControlNet条件"
+        }
+    },
+    "ApplyAdvancedFluxControlNet": {
+        "title": "Flux应用ControlNet（高级）",
+        "inputs": {
+            "controlnet": "ControlNet",
+            "controlnet_condition": "ControlNet条件",
+            "image": "图像"
+        },
+        "widgets": {
+            "strength": "强度",
+            "start": "开始",
+            "end": "结束"
         },
         "outputs": {
             "controlnet_condition": "ControlNet条件"
@@ -66,7 +83,7 @@
             "image": "图像"
         },
         "widgets": {
-            "strength_model": "强度"
+            "ip_scale": "IP强度"
         },
         "outputs": {
             "MODEL": "模型"
@@ -76,7 +93,7 @@
         "title": "Flux加载IPAdapter",
         "widgets": {
             "ipadapter": "IPAdapter",
-            "clip_vision": "CLIP_Vision",
+            "clip_vision": "CLIP视觉",
             "provider": "设备"
         },
         "outputs": {

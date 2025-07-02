@@ -10,7 +10,7 @@ from functools import lru_cache
 from aiohttp import web
 from pathlib import Path
 
-VERSION = "1.8.10"
+VERSION = "1.8.11"
 ADDON_NAME = "ComfyUI-DD-Translation"
 COMFY_PATH = Path(folder_paths.__file__).parent
 CUR_PATH = Path(__file__).parent
