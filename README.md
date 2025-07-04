@@ -53,7 +53,10 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 
 ## 更新日志
 ### v1.8.13 (2025-7-04) 
-- 合并贡献者（是小张啊）提交的ComfyUI-utils-nodes插件的完整翻译
+- 合并贡献者（是小张啊）提交的插件翻译包含：
+- ComfyUI-utils-nodes丶comfyui_facetools丶Comfyui_LG_Tools
+- 以上插件的完整翻译内容
+
 - 添加comfyui-ollama插件的完整翻译
 
 ### v1.8.12 (2025-7-03) 
@@ -67,7 +70,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ### v1.8.10 (2025-6-30) 
 - 合并贡献者（猪的飞行梦）提交的插件翻译包含：
 
-- ComfyUI-VideoHelperSuite丶comfyui-reactor-node丶comfyui-mixlab-nodes丶ComfyUI-LivePortraitKJ丶ComfyUI-InstantIDComfyUI-Inpaint-CropAndStitch
+- ComfyUI-VideoHelperSuite丶comfyui-reactor-node丶comfyui-mixlab-nodes丶ComfyUI-LivePortraitKJ丶ComfyUI-InstantID丶ComfyUI-Inpaint-CropAndStitch
 - 以上插件的翻译补全和翻译重构
 
 - was-node-suite-comfyui丶CosyVoice-ComfyUI丶ComfyUI-YOLOWorld丶ComfyUI-YOLO丶ComfyUI-SparkTTS丶ComfyUI-Sonic丶ComfyUI-RyanOnTheInside丶ComfyUI-RMBG丶comfyui-mxtoolkit丶ComfyUI-InstantIR-Wrapper丶comfyui-fk-server丶ComfyUI-FFmpeg丶ComfyUI-essentials
