@@ -54,10 +54,10 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 更新日志
 ### v1.8.13 (2025-7-04) 
 - 合并贡献者（是小张啊）提交的插件翻译包含：
-- ComfyUI-utils-nodes丶comfyui_facetools丶Comfyui_LG_Tools
+- ComfyUI-utils-nodes丶comfyui_facetools丶Comfyui_LG_Tools丶Comfyui_Object_Detect_QWen_VL
 - 以上插件的完整翻译内容
 
-- 添加comfyui-ollama插件的完整翻译
+- 添加comfyui-ollama与ComfyUI_MatAnyone_Kytra插件的完整翻译
 
 ### v1.8.12 (2025-7-03) 
 添加ComfyUI-PuLID-Flux-Enhanced插件的完整翻译
