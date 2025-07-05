@@ -52,6 +52,10 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+
+### v1.8.14 (2025-7-05) 
+- 合并贡献者（是小张啊）提交的comfyui_face_parsing插件翻译
+
 ### v1.8.13 (2025-7-04) 
 - 合并贡献者（是小张啊）提交的插件翻译包含：
 - ComfyUI-utils-nodes丶comfyui_facetools丶Comfyui_LG_Tools丶Comfyui_Object_Detect_QWen_VL
