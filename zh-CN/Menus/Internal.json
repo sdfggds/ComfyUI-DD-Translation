@@ -31,6 +31,8 @@
     "Add": "加",
 
     "Add Node": "新建节点",
+    "Add Reroute": "添加转接点",
+    "Search": "搜索节点",
     "Add Group": "新建框",
     "Add Stack": "新建Stack堆叠",
     "Save Selected as Template": "存储选中为模板",
@@ -225,5 +227,6 @@
     "SVD_img2vid_Conditioning": "SVD_img2vid条件",
     "ImageOnlyCheckpointSave": "保存Checkpoint（仅图像）",
     "StableZero123_Conditioning": "StableZero123条件",
-    "PreviewAny": "预览任意"
+    "PreviewAny": "预览任意",
+    "Delete": "删除" 
 }
