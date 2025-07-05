@@ -61,7 +61,8 @@ export class TUtils {
             }
           }
         } else {
-          TUtils.T.Menu = Object.assign(TUtils.T.Menu || {}, TUtils.T.NodeCategory || {});
+          // 不再将NodeCategory合并到Menu中，保持Categories和Menu的独立性
+          // TUtils.T.Menu = Object.assign(TUtils.T.Menu || {}, TUtils.T.NodeCategory || {});
         }
         
         // 提取 Node 中 key 到 Menu

@@ -52,6 +52,11 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+### v1.9.0(2025-7-05) 【翻译逻辑匹配机制重构】
+- 加入了更严格的节点匹配逻辑
+- 现在Categories不会影响到节点的下拉菜单，只有Nodes和Menus中的内容才会应用到节点下拉菜单。
+- 之前的逻辑太过宽泛，导致很多本该出现在分类中的翻译出现在了节点右键和下拉设置菜单中，多个插件的相同单词都变成了一个翻译，这是不正确的，因为哪怕是相同的单词在不同节点上表达的意思也有可能是不同的，它们应该是独立的逻辑。
+
 ### v1.8.13 (2025-7-04) 
 - 合并贡献者（是小张啊）提交的插件翻译包含：
 - ComfyUI-utils-nodes丶comfyui_facetools丶Comfyui_LG_Tools丶Comfyui_Object_Detect_QWen_VL
