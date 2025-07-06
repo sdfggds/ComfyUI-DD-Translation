@@ -28,10 +28,10 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 与老版本翻译插件AIGODLIKE/AIGODLIKE-ComfyUI-Translation并不兼容，在安装新翻译插件前请先卸载老插件
 - 为确保最佳兼容性，项目将优先支持最新版 ComfyUI
 - 可能会放弃对旧版本的兼容支持，推荐用以下内容：
-【最新版 ComfyUI 内核】
-【最新版本ComfyUI 前端依赖】
-【最新版本整合包（至少半年内）或官方桌面版】
-【整合包用户推荐使用谷歌或Edge浏览器确保最佳前端兼容性】
+- 【最新版 ComfyUI 内核】
+- 【最新版本ComfyUI 前端依赖】
+- 【最新版本整合包（至少半年内）或官方桌面版】
+- 【整合包用户推荐使用谷歌或Edge浏览器确保最佳前端兼容性】
 
 ## 安装方法
 方法1:
