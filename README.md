@@ -41,6 +41,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 
 方法2（推荐）：
 直接在Manager或启动器中使用git进行安装
+
 `https://github.com/1761696257/ComfyUI-DD-Translation.git`
 
 方法3（推荐）：
@@ -52,7 +53,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
-### v1.9.0 (2025-7-06) 【机制重构】
+### v1.9.0 (2025-7-06) 【功能性重构】
 - 删除了所有残留的浏览器翻译缓存机制，现在插件的所有通信完全通过后端API进行动态交互
 - 在根目录添加了配置json文件，方便云端用户进行翻译开关的控制
 
@@ -146,7 +147,7 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 重构了核心翻译应用方法，移除强制重置逻辑，改为智能增量补充
 - 修复了 Vue 组件节点名称翻译的覆盖问题，避免与官方翻译冲突
 
-### v1.7.0 (2025-6-16) 【重大功能重构】
+### v1.7.0 (2025-6-16) 【功能性修复】
 - 解决了在附加翻译模式下，用户手动修改节点标题后重新加载工作流时标题被重置的问题。
 - 重新将Label (rgthree)节点翻译为标签，现在它能在附加模式下正常工作了。
 - 修复了翻译生成器工具的小BUG
