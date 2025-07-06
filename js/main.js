@@ -1,12 +1,13 @@
 import { app } from "../../../scripts/app.js";
 import { $el } from "../../../scripts/ui.js";
 import { applyMenuTranslation, observeFactory } from "./MenuTranslate.js";
-import { 
-  containsChineseCharacters, 
+import {
+  containsChineseCharacters,
   isAlreadyTranslated,
   nativeTranslatedSettings,
-  isTranslationEnabled, 
+  isTranslationEnabled,
   toggleTranslation,
+  initConfig,
   error
 } from "./utils.js";
 
@@ -543,8 +544,8 @@ export class TUtils {
               borderRadius: "4px",
             },
             title: translationEnabled ? "已开启额外附加翻译" : "已使用官方原生翻译",
-            onclick: () => {
-              toggleTranslation();
+            onclick: async () => {
+              await toggleTranslation();
             },
           })
         );
@@ -557,8 +558,8 @@ export class TUtils {
           var ComfyButton = window.comfyAPI.button.ComfyButton;
           
           var btn = new ComfyButton({
-            action: () => {
-              toggleTranslation();
+            action: async () => {
+              await toggleTranslation();
             },
             tooltip: translationEnabled ? "已开启额外附加翻译" : "已使用官方原生翻译",
             content: translationEnabled ? "附加翻译" : "官方实现",
@@ -613,6 +614,7 @@ const ext = {
   name: "AIGODLIKE.Translation",
     async init(app) {
     try {
+      await initConfig();
       TUtils.enhandeDrawNodeWidgets();
       await TUtils.syncTranslation();
     } catch (e) {

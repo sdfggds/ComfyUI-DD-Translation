@@ -14,6 +14,20 @@ ADDON_NAME = "ComfyUI-DD-Translation"
 COMFY_PATH = Path(folder_paths.__file__).parent
 CUR_PATH = Path(__file__).parent
 
+# 读取配置文件
+def load_config():
+    config_path = CUR_PATH.joinpath("config.json")
+    if config_path.exists():
+        try:
+            config_data = try_get_json(config_path)
+            return config_data.get("translation_enabled", True)
+        except Exception:
+            return True
+    return True
+
+# 全局配置变量
+TRANSLATION_ENABLED = load_config()
+
 
 def try_get_json(path: Path):
     for coding in ["utf-8", "gbk"]:
@@ -86,7 +100,12 @@ async def get_translation(request: web.Request):
     accept_encoding = request.headers.get("Accept-Encoding", "")
     json_data = "{}"
     headers = {}
-    
+
+    # 实时检查配置文件中的翻译开关
+    current_enabled = load_config()
+    if not current_enabled:
+        return web.Response(status=200, body=json_data, headers=headers)
+
     try:
         json_data = compile_translation(locale)
         if "gzip" in accept_encoding:
@@ -94,8 +113,40 @@ async def get_translation(request: web.Request):
             headers["Content-Encoding"] = "gzip"
     except Exception:
         pass
-        
+
     return web.Response(status=200, body=json_data, headers=headers)
+
+
+@server.PromptServer.instance.routes.get("/agl/get_config")
+async def get_config(request: web.Request):
+    # 实时读取配置文件
+    current_enabled = load_config()
+    config_data = {"translation_enabled": current_enabled}
+    return web.Response(status=200, body=json.dumps(config_data), headers={"Content-Type": "application/json"})
+
+
+@server.PromptServer.instance.routes.post("/agl/set_config")
+async def set_config(request: web.Request):
+    try:
+        post = await request.post()
+        enabled = post.get("translation_enabled", "true").lower() == "true"
+
+        # 更新配置文件
+        config_path = CUR_PATH.joinpath("config.json")
+        config_data = {"translation_enabled": enabled}
+
+        with open(config_path, 'w', encoding='utf-8') as f:
+            json.dump(config_data, f, indent=2, ensure_ascii=False)
+
+        # 更新全局变量
+        global TRANSLATION_ENABLED
+        TRANSLATION_ENABLED = enabled
+
+        return web.Response(status=200, body=json.dumps({"success": True, "translation_enabled": enabled}),
+                          headers={"Content-Type": "application/json"})
+    except Exception as e:
+        return web.Response(status=500, body=json.dumps({"success": False, "error": str(e)}),
+                          headers={"Content-Type": "application/json"})
 
 
 def rmtree(path: Path):

@@ -2,9 +2,6 @@
  * ComfyUI-DD-Translation 工具模块
  */
 
-// 翻译启用状态的本地存储键
-export const TRANSLATION_ENABLED_KEY = "DD.TranslationEnabled";
-
 /**
  * 错误日志函数
  * @param  {...any} args 错误信息参数
@@ -53,18 +50,75 @@ export const nativeTranslatedSettings = [
     "Comfy", "画面", "外观", "3D", "遮罩编辑器",
 ];
 
+// 存储当前翻译状态
+let currentTranslationEnabled = true;
+
+/**
+ * 从配置文件获取翻译状态
+ */
+async function loadConfig() {
+    try {
+        const response = await fetch("./agl/get_config");
+        if (response.ok) {
+            const config = await response.json();
+            currentTranslationEnabled = config.translation_enabled;
+            return config.translation_enabled;
+        }
+    } catch (e) {
+        error("获取配置失败:", e);
+    }
+    return true;
+}
+
+/**
+ * 保存翻译状态到配置文件
+ */
+async function saveConfig(enabled) {
+    try {
+        const formData = new FormData();
+        formData.append('translation_enabled', enabled.toString());
+
+        const response = await fetch("./agl/set_config", {
+            method: "POST",
+            body: formData
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success) {
+                currentTranslationEnabled = enabled;
+                return true;
+            }
+        }
+    } catch (e) {
+        error("保存配置失败:", e);
+    }
+    return false;
+}
+
 /**
  * 检查翻译是否启用
  */
 export function isTranslationEnabled() {
-    return localStorage.getItem(TRANSLATION_ENABLED_KEY) !== "false";
+    return currentTranslationEnabled;
+}
+
+/**
+ * 初始化配置
+ */
+export async function initConfig() {
+    await loadConfig();
 }
 
 /**
  * 切换翻译状态
  */
-export function toggleTranslation() {
-    const enabled = isTranslationEnabled();
-    localStorage.setItem(TRANSLATION_ENABLED_KEY, enabled ? "false" : "true");
-    setTimeout(() => location.reload(), 100);
+export async function toggleTranslation() {
+    const newEnabled = !currentTranslationEnabled;
+    const success = await saveConfig(newEnabled);
+    if (success) {
+        setTimeout(() => location.reload(), 100);
+    } else {
+        error("切换翻译状态失败");
+    }
 }
