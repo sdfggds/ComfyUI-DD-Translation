@@ -6,7 +6,6 @@ import shutil
 import atexit
 import server
 import folder_paths
-from functools import lru_cache
 from aiohttp import web
 from pathlib import Path
 
@@ -61,12 +60,11 @@ def get_menu_translation(locale):
     return menus
 
 
-@lru_cache
 def compile_translation(locale):
     nodes_translation = get_nodes_translation(locale)
     node_category_translation = get_category_translation(locale)
     menu_translation = get_menu_translation(locale)
-    
+
     return json.dumps({
         "Nodes": nodes_translation,
         "NodeCategory": node_category_translation,
@@ -74,7 +72,6 @@ def compile_translation(locale):
     }, ensure_ascii=False)
 
 
-@lru_cache
 def compress_json(data, method="gzip"):
     if method == "gzip":
         import gzip

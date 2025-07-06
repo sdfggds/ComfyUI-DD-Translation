@@ -52,6 +52,8 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+### v1.9.0 (2025-7-06) 
+- 删除了所有残留的翻译缓存机制，现在翻译完全通过后端API与翻译文件进行实时交互。
 
 ### v1.8.14 (2025-7-05) 
 - 合并贡献者（是小张啊）提交的comfyui_face_parsing插件翻译
@@ -194,7 +196,6 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - 将XMLHttpRequest同步请求替换为异步Fetch API，避免主线程阻塞
 - 优化MutationObserver使用方式，减少观察者数量，降低内存占用
 - 重写DOM处理逻辑，减少不必要的重复处理
-- 新增翻译数据缓存机制，基于localStorage存储翻译结果，减少重复加载，显著提升页面响应速度
 - 【提供了详细的开发文档，便于社区贡献新的翻译内容】
 
 ### v1.2.0 (2025-4-24)
