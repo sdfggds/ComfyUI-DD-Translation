@@ -53,6 +53,11 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia
 
 ## 更新日志
+### v1.9.1 (2025-7-07) 
+- 一个ComfyUI_LayerStyle插件输出接口翻译错误的临时性解决方案。
+- 点击下方链接查看
+https://github.com/Dontdrunk/ComfyUI-DD-Translation/issues/76
+
 ### v1.9.0 (2025-7-06) 【功能性重构】
 - 删除了所有残留的浏览器翻译缓存机制，现在插件的所有通信完全通过后端API进行动态交互
 - 在根目录添加了配置json文件，方便云端用户进行翻译开关的控制
