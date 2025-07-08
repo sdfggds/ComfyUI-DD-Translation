@@ -15,6 +15,9 @@
     "The path to the postshot CLI": "Postshot命令行工具的路径",
     
     "Input & Output Sidebar": "输入/输出侧边栏",
+    "If browsing large folders it's recommended to use this to avoid overflow/crash of the webpage. Image will get resized to this target width on the server before being sent to the client.": "浏览大型文件夹时，建议使用此功能以避免网页溢出/崩溃。图像将在服务器上调整到此目标宽度后再发送到客户端。",
+    "Resize width of shown images": "调整显示图像的宽度",
+    "Adds a random query parameter to every urls to always invalidate caching.": "为每个URL添加随机查询参数以始终使缓存失效。",
     "Default sort mode": "默认排序方式",
     "Resolution of the images": "图像分辨率",
     "It's recommended to keep it at 512px": "建议保持在512px",
