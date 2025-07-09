@@ -377,13 +377,13 @@
         }
     },
     "Fast Muter (rgthree)": {
-        "title": "快速禁用节点",
+        "title": "禁用节点",
         "outputs": {
             "OPT_CONNECTION": "可选连接"
         }
     },
     "Fast Bypasser (rgthree)": {
-        "title": "快速绕过节点",
+        "title": "忽略节点",
         "outputs": {
             "OPT_CONNECTION": "可选连接"
         }
@@ -401,13 +401,13 @@
         }
     },
     "Fast Group Bypasser (rgthree)": {
-        "title": "快速绕过节点组",
+        "title": "忽略节点组",
         "outputs": {
             "OPT_CONNECTION": "可选连接"
         }
     },
     "Fast Groups Bypasser (rgthree)": {
-        "title": "快速绕过多个节点组",
+        "title": "忽略多个节点组",
         "outputs": {
             "OPT_CONNECTION": "可选连接"
         }
@@ -430,7 +430,7 @@
         "outputs": {}
     },
     "Fast Groups Muter (rgthree)": {
-        "title": "快速禁用节点组",
+        "title": "禁用节点组",
         "outputs": {
             "OPT_CONNECTION": "可选连接"
         }

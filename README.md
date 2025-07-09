@@ -53,9 +53,14 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 - msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia丶AIGCZero
 
 ## 更新日志
+### v1.9.3 (2025-7-09) 
+- 调整部分节点翻译
+- 合并贡献者（AIGCZero）提交的ComfyUI_AdvancedRefluxControl插件的完整翻译
+
 ### v1.9.2 (2025-7-08) 
 - 补全ComfyUI_Custom_Nodes_AlekPe插件的面板翻译
 - 补全comfy_mtb插件的面板翻译
+
 
 ### v1.9.1 (2025-7-07) 
 - 合并贡献者（AIGCZero）提交的ComfyUI_Custom_Nodes_AlekPet插件的部分翻译补充
