@@ -50,9 +50,17 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia丶AIGCZero
+- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia丶AIGCZero丶
 
 ## 更新日志
+### v1.9.4 (2025-7-16) 
+- 合并贡献者（是小张啊）提交的翻译涉及以下节点：
+- ComfyUI-LBMWrapper丶wavespeed
+- 合并贡献者（AIGCZero）提交的翻译涉及以下节点：
+- ComfyUI-MagCache丶ComfyUI-WanVideoWrapper丶dio-separation-nodes-comfyui以及部分下拉菜单
+- 合并贡献者（Artistjjw）提交的翻译涉及以下节点：
+- ComfyUI-EsesImageEffectBloom
+
 ### v1.9.3 (2025-7-09) 
 - 调整部分节点翻译
 - 合并贡献者（AIGCZero）提交的ComfyUI_AdvancedRefluxControl插件的完整翻译
