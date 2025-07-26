@@ -50,9 +50,13 @@ https://github.com/user-attachments/assets/1ec662ba-da6c-4712-8be7-61168b08940e
 ## 贡献者名单
 感谢以下贡献者对于ComfyUI中文开源生态的支持
 
-- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia丶AIGCZero丶
+- msola-ht丶是小张啊丶alinuo666丶猪的飞行梦丶ZXSZS丶tanglangxia丶AIGCZero丶Artistjjw丶henrylaobai
 
 ## 更新日志
+### v1.9.5 (2025-7-26) 
+- 合并贡献者（henrylaobai）提交的翻译涉及以下节点：
+- ComfyUI-RBG-ImageStitchPlus节点的完整翻译
+
 ### v1.9.4 (2025-7-16) 
 - 合并贡献者（是小张啊）提交的翻译涉及以下节点：
 - ComfyUI-LBMWrapper丶wavespeed
