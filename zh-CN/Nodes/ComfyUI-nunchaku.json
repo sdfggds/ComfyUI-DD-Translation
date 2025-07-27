@@ -1,119 +1,60 @@
 {
-    "NunchakuFluxDiTLoader": {
-        "title": "Nunchaku FluxDiT 加载器",
-        "widgets": {
-            "model_path": "模型路径",
-            "cache_threshold": "缓存阈值",
-            "attention": "注意力",
-            "cpu_offload": "CPU 卸载",
-            "device_id": "设备 ID",
-            "data_type": "数据类型",
-            "i2f_mode": "图像到特征模式"
-        }
+  "NunchakuFluxLoraLoader": {
+    "title": "双截棍FluxLora加载器",
+    "inputs": {
+      "model": "模型"
     },
-    "NunchakuFluxLoraLoader": {
-        "title": "Nunchaku FluxLora 加载器",
-        "inputs": {
-            "model": "模型"
-        },
-        "widgets": {
-            "lora_name": "Lora 名称",
-            "lora_strength": "Lora 强度"
-        }
+    "widgets": {
+      "lora_name": "Lora名称",
+      "lora_strength": "Lora强度"
     },
-    "NunchakuTextEncoderLoader": {
-        "title": "Nunchaku CLIP文本编码加载器",
-        "widgets": {
-            "model_type": "模型类型",
-            "text_encoder1": "文本编码器 1",
-            "text_encoder2": "文本编码器 2",
-            "t5_min_length": "T5 最小长度",
-            "use_4bit_t5": "使用 4 位量化的 T5",
-            "int4_model": "Int4 模型"
-        }
-    },
-    "NunchakuTextEncoderLoaderV2": {
-        "title": "Nunchaku CLIP文本编码加载器",
-        "widgets": {
-            "model_type": "模型类型",
-            "text_encoder1": "文本编码器 1",
-            "text_encoder2": "文本编码器 2",
-            "t5_min_length": "T5 最小长度"
-        }
-    },
-    "NunchakuDepthPreprocessor": {
-        "title": "Nunchaku 深度预处理器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "model_path": "模型路径"
-        }
-    },
-    "NunchakuPulidApply": {
-        "title": "Nunchaku Pulid 应用",
-        "inputs": {
-            "pulid": "pulid",
-            "image": "图像",
-            "model": "模型"
-        },
-        "widgets": {
-            "ip_weight": "IP 权重"
-        }
-    },
-    "NunchakuPulidLoader": {
-        "title": "Nunchaku Pulid 加载器",
-        "inputs": {
-            "model": "模型"
-        }
-    },
-    "NunchakuPuLIDLoaderV2": {
-        "title": "Nunchaku Pulid 加载器 V2",
-        "inputs": {
-            "model": "模型"
-        },
-        "widgets": {
-            "pulid_file": "Pulid 文件",
-            "eva_clip_file": "Eva-Clip 文件",
-            "insight_face_provider": "InsightFace 提供器"
-        },
-        "outputs": {
-            "PULID_PIPELINE": "Pulid_管线"
-        }
-    },
-    "NunchakuFluxPuLIDApplyV2": {
-        "title": "Nunchaku FluxPuLID 应用 V2",
-        "inputs": {
-            "model": "模型",
-            "pulid_pipline": "Pulid_管线",
-            "image": "图像",
-            "attn_mask": "关注层遮罩",
-            "options": "选项"
-        },
-        "widgets": {
-            "weight": "权重",
-            "start_at": "开始于",
-            "end_at": "结束于"
-        }
-    },
-    "NunchakuModelMerger": {
-        "title": "Nunchaku 模型合并器",
-        "widgets": {
-            "model_folder": "模型文件夹",
-            "save_name": "保存名称"
-        },
-        "outputs": {
-            "status": "状态"
-        }
-    },
-    "NunchakuWheelInstaller": {
-        "title": "Nunchaku Wheel 安装器",
-        "widgets": {
-            "source": "来源",
-            "version": "版本"
-        },
-        "outputs": {
-            "status": "状态"
-        }
+    "outputs": {
+      "model": "模型"
     }
+  },
+  "NunchakuFluxDiTLoader": {
+    "title": "双截棍FluxDiT加载器",
+    "inputs": {},
+    "widgets": {
+      "model_path": "模型路径",
+      "cache_threshold": "缓存阈值",
+      "attention": "注意力模式",
+      "cpu_offload": "CPU卸载",
+      "device_id": "设备ID",
+      "data_type": "数据类型",
+      "i2f_mode": "I2F模式"
+    },
+    "outputs": {
+      "model": "模型"
+    }
+  },
+  "NunchakuTextEncoderLoader": {
+    "title": "双截棍文本编码器加载器",
+    "inputs": {},
+    "widgets": {
+      "model_type": "模型类型",
+      "text_encoder1": "文本编码器1",
+      "text_encoder2": "文本编码器2",
+      "t5_min_length": "T5最小长度",
+      "use_4bit_t5": "使用4位T5",
+      "int4_model": "INT4模型"
+    },
+    "outputs": {
+      "clip": "CLIP编码器"
+    }
+  },
+  "NunchakuDepthPreprocessor": {
+    "title": "双截棍深度预处理器",
+    "inputs": {
+      "image": "图像",
+      "model_path": "模型路径"
+    },
+    "widgets": {
+      "model_path": "模型路径"
+    },
+    "outputs": {
+      "image": "图像",
+      "IMAGE": "深度图"
+    }
+  }
 }

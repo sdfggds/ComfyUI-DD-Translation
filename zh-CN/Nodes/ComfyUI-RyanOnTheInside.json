@@ -2804,7 +2804,7 @@
         "outputs": {}
     },
     "TemporalMaskBase": {
-        "title": "时序遮罩基础⚡🅡🅞🅣🅘",
+        "title": "时间遮罩基础⚡🅡🅞🅣🅘",
         "inputs": {
             "masks": "遮罩组",
             "strength": "强度",
@@ -3715,6 +3715,95 @@
             "Audio": "音频",
             "AUDIO": "音频",
             "audio": "音频"
+        }
+    },
+    "AudioTemporalMask": {
+        "title": "音频时间遮罩⚡🅡🅞🅣🅘",
+        "inputs": {
+            "masks": "遮罩组",
+            "strength": "强度",
+            "audio_latents": "音频Latent"
+        },
+        "widgets": {
+            "value": "值",
+            "length_mismatch": "长度不匹配"
+        },
+        "outputs": {
+            "mask": "遮罩",
+            "MASK": "遮罩"
+        }
+    },
+    "AudioRegionMask": {
+        "title": "音频区域遮罩⚡🅡🅞🅣🅘",
+        "inputs": {
+            "masks": "遮罩组",
+            "strength": "强度",
+            "audio_latents": "音频Latent"
+        },
+        "widgets": {
+            "value": "值",
+            "start_time": "开始时间",
+            "end_time": "结束时间",
+            "mask_value": "遮罩值",
+            "feather_seconds": "羽化时间(秒)"
+        },
+        "outputs": {
+            "mask": "遮罩",
+            "MASK": "遮罩"
+        }
+    },
+    "MaskToAudioMask": {
+        "title": "遮罩到音频遮罩⚡🅡🅞🅣🅘",
+        "inputs": {
+            "masks": "遮罩组",
+            "spatial_mask": "空间遮罩",
+            "audio_latents": "音频Latent"
+        },
+        "widgets": {
+            "frame_summary": "框架概述",
+            "start_time": "开始时间",
+            "end_time": "结束时间",
+            "mask_value": "遮罩值",
+            "feather_seconds": "羽化时间(秒)"
+        },
+        "outputs": {
+            "mask": "遮罩",
+            "MASK": "遮罩"
+        }
+    },
+    "AudioLatentInfo": {
+        "title": "音频Latent信息⚡🅡🅞🅣🅘",
+        "inputs": {
+            "masks": "遮罩组",
+            "spatial_mask": "空间遮罩",
+            "audio_latents": "音频Latent"
+        },
+        "widgets": {
+            "frame_rate": "帧率",
+            "start_time": "开始时间",
+            "end_time": "结束时间",
+            "mask_value": "遮罩值",
+            "feather_seconds": "羽化时间(秒)"
+        },
+        "outputs": {
+            "mask": "遮罩",
+            "MASK": "遮罩",
+            "batch_size": "批次大小",
+            "length_frames": "帧长(帧数)",
+            "duration_seconds": "持续时间(秒)",
+            "info": "信息"
+        }
+    },
+    "AudioMaskAnalyzer": {
+        "title": "音频遮罩分析器⚡🅡🅞🅣🅘",
+        "inputs": {
+            "masks": "遮罩组",
+            "mask": "遮罩"
+        },
+        "widgets": {},
+        "outputs": {
+            "string": "字符串",
+            "STRING": "字符串"
         }
     },
     "MIDIFeatureExtractor": {

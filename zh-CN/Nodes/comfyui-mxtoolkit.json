@@ -1,12 +1,12 @@
 {
     "mxReroute": {
-        "title": "mx 连线🌈",
+        "title": "mx连线🌈",
         "inputs": {},
         "widgets": {},
         "outputs": {}
     },
     "mxSeed": {
-        "title": "mx 随机种子🌈",
+        "title": "mx随机种子🌈",
         "inputs": {
             "In": "任意"
         },
@@ -16,19 +16,19 @@
         }
     },
     "mxStop": {
-        "title": "mx 停止🌈",
+        "title": "mx停止🌈",
         "inputs": {},
         "widgets": {},
         "outputs": {}
     },
     "mxSlider": {
-        "title": "mx 滑块🌈",
+        "title": "滑块🌈",
         "inputs": {},
         "widgets": {},
         "outputs": {}
     },
     "mxSlider2D": {
-        "title": "mx 滑块2D🌈",
+        "title": "滑块2D🌈",
         "inputs": {},
         "widgets": {},
         "outputs": {}
