@@ -217,7 +217,7 @@
         }
     },
     "BizyAir_MinusZoneChatGLM3TextEncode": {
-        "title": "☁️BizyAir 负向区域 ChatGLM3文本编码",
+        "title": "☁️BizyAir MinusZone ChatGLM3文本编码",
         "inputs": {
             "text": "输入文本"
         },
@@ -230,7 +230,7 @@
         "inputs": {
             "model": "模型",
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "latent_image": "latent图像"
         },
         "widgets": {
@@ -250,7 +250,7 @@
         "inputs": {
             "model": "模型",
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "latent_image": "latent图像"
         },
         "widgets": {
@@ -468,23 +468,23 @@
         }
     },
     "BizyAir_InpaintModelConditioning": {
-        "title": "☁️BizyAir 填补模型条件",
+        "title": "☁️BizyAir 内补模型条件",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "pixels": "像素图像",
             "mask": "遮罩"
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_InpaintModelConditioning_v2": {
-        "title": "☁️BizyAir 填补模型条件v2",
+        "title": "☁️BizyAir 内补模型条件v2",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "pixels": "像素图像",
             "mask": "遮罩"
         },
@@ -493,14 +493,14 @@
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_ControlNetApplyAdvanced": {
         "title": "☁️BizyAir ControlNet高级应用",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "control_net": "Control_Net",
             "image": "控制图像"
         },
@@ -511,7 +511,7 @@
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_ControlNetApply": {
@@ -520,6 +520,9 @@
             "conditioning": "条件输入",
             "control_net": "Control_Net",
             "image": "控制图像",
+            "strength": "强度"
+        },
+        "widgets": {
             "strength": "强度"
         },
         "outputs": {
@@ -979,7 +982,7 @@
             "num_images_per_prompt": "每提示图像数",
             "guidance_scale": "引导尺度",
             "prompt": "提示词",
-            "negative_prompt": "负向提示词",
+            "negative_prompt": "负面提示词",
             "control_guidance_start": "控制引导起始",
             "control_guidance_end": "控制引导结束"
         },
@@ -1003,7 +1006,7 @@
         }
     },
     "BizyAirSegmentAnythingPointBox": {
-        "title": "☁️BizyAir 点-框引导SAM分割",
+        "title": "☁️BizyAir 加载图像",
         "widgets": {
             "image": "输入图像",
             "is_point": "是否点模式"
@@ -1108,9 +1111,9 @@
         }
     },
     "BizyAir_MultiplySigmas": {
-        "title": "☁️BizyAir_Sigma乘法器",
+        "title": "☁️BizyAir_乘法调度器",
         "inputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度器"
         },
         "widgets": {
             "factor": "乘数因子",
@@ -1118,11 +1121,11 @@
             "end": "结束位置"
         },
         "outputs": {
-            "SIGMAS": "Sigma序列"
+            "SIGMAS": "调度器"
         }
     },
     "BizyAir_LyingSigmaSampler": {
-        "title": "☁️BizyAir_Sigma采样欺骗器",
+        "title": "☁️BizyAir_欺骗调度采样器",
         "inputs": {
             "sampler": "采样器"
         },
@@ -1136,9 +1139,9 @@
         }
     },
     "BizyAir_DetailDaemonGraphSigmasNode": {
-        "title": "☁️BizyAir_细节守护Sigma图节点",
+        "title": "☁️BizyAir_守护细节图调度节点",
         "inputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度"
         },
         "widgets": {
             "detail_amount": "细节强度",
@@ -1173,7 +1176,7 @@
             "image": "参考图像",
             "model": "基础模型",
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "image_kps": "人脸关键点",
             "mask": "区域遮罩"
         },
@@ -1185,7 +1188,7 @@
         "outputs": {
             "MODEL": "模型",
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_ApplyInstantIDAdvanced": {
@@ -1197,7 +1200,7 @@
             "image": "参考图像",
             "model": "基础模型",
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "image_kps": "人脸关键点",
             "mask": "区域遮罩"
         },
@@ -1213,7 +1216,7 @@
         "outputs": {
             "MODEL": "模型",
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_InstantIDFaceAnalysis": {
@@ -1359,7 +1362,7 @@
         "title": "☁️BizyAir_阿里妈妈ControlNet修复应用",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "control_net": "Control_Net",
             "vae": "VAE编码器",
             "image": "参考图像",
@@ -1372,7 +1375,7 @@
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_DisableNoise": {
@@ -1401,7 +1404,7 @@
             "eps_s": "Epsilon起始值"
         },
         "outputs": {
-            "SIGMAS": "Sigma序列"
+            "SIGMAS": "调度器"
         }
     },
     "BizyAir_BasicScheduler": {
@@ -1415,42 +1418,42 @@
             "denoise": "降噪"
         },
         "outputs": {
-            "SIGMAS": "Sigma序列"
+            "SIGMAS": "调度器"
         }
     },
     "BizyAir_SplitSigmas": {
-        "title": "☁️BizyAir_Sigma序列分割",
+        "title": "☁️BizyAir_调度分割",
         "inputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度器"
         },
         "widgets": {
             "step": "分割步长"
         },
         "outputs": {
-            "high_sigmas": "高Sigma",
-            "low_sigmas": "低Sigma"
+            "high_sigmas": "高调度器",
+            "low_sigmas": "低调度器"
         }
     },
     "BizyAir_SplitSigmasDenoise": {
-        "title": "☁️BizyAir_Sigma降噪分割",
+        "title": "☁️BizyAir_分割降噪调度器",
         "inputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度器"
         },
         "widgets": {
             "denoise": "降噪强度"
         },
         "outputs": {
-            "high_sigmas": "高Sigma",
-            "low_sigmas": "低Sigma"
+            "high_sigmas": "高调度器",
+            "low_sigmas": "低调度器"
         }
     },
     "BizyAir_FlipSigmas": {
-        "title": "☁️BizyAir_Sigma序列翻转",
+        "title": "☁️BizyAir_翻转调度器",
         "inputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度器"
         },
         "outputs": {
-            "sigmas": "Sigma序列"
+            "sigmas": "调度器"
         }
     },
     "BizyAir_CFGGuider": {
@@ -1458,7 +1461,7 @@
         "inputs": {
             "model": "扩散模型",
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         },
         "widgets": {
             "cfg": "CFG比例"
@@ -1483,7 +1486,7 @@
             "noise": "噪波生成",
             "guider": "引导",
             "sampler": "采样器",
-            "sigmas": "Sigma",
+            "sigmas": "调度器",
             "latent_image": "latent"
         },
         "outputs": {
@@ -1679,13 +1682,13 @@
         "title": "☁️BizyAir_Pix2Pix指令条件",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "vae": "VAE编码器",
             "pixels": "像素图像"
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "latent": "潜空间"
         }
     },
@@ -1699,8 +1702,8 @@
             "processor": "处理器"
         }
     },
-    "BizyAir_MZ_KolorsUNETLoaderV2": {
-        "title": "☁️BizyAir_负向区域-Kolors模型加载器V2",
+    "BizyAir__KolorsUNETLoaderV2": {
+        "title": "☁️BizyAir_MZ-Kolors模型加载器V2",
         "widgets": {
             "unet_name": "模型名称"
         },
@@ -1710,7 +1713,7 @@
         }
     },
     "BizyAir_MZ_KolorsControlNetLoader": {
-        "title": "☁️BizyAir_负向区域-Kolors模型ControlNet加载器",
+        "title": "☁️BizyAir_MZ-Kolors模型ControlNet加载器",
         "widgets": {
             "control_net_name": "模型名称"
         },
@@ -1818,7 +1821,7 @@
         "title": "☁️BizyAir_SD3ControlNet应用",
         "inputs": {
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "control_net": "Control_Net",
             "vae": "VAE编码器",
             "image": "控制图像"
@@ -1830,7 +1833,7 @@
         },
         "outputs": {
             "positive": "正向条件",
-            "negative": "负向条件"
+            "negative": "负面条件"
         }
     },
     "BizyAir_IF_TrellisCheckpointLoader": {
@@ -1885,6 +1888,7 @@
             "save_texture": "保存纹理"
         },
         "outputs": {
+            "url": "地址",
             "texture_image": "纹理图像"
         }
     },
@@ -1892,6 +1896,7 @@
         "title": "☁️BizyAir文件下载",
         "widgets": {
             "url": "网址",
+            "folder": "文件夹",
             "file_name": "文件名称"
         },
         "outputs": {
@@ -1904,7 +1909,7 @@
             "model": "模型",
             "image": "图像",
             "positive": "正向条件",
-            "negative": "负向条件",
+            "negative": "负面条件",
             "upscale_model": "放大模型"
         },
         "widgets": {
@@ -2030,6 +2035,35 @@
         "outputs": {
             "BIZYAIR_PULID": "BizyAir PuLID",
             "BIZYAIR_MODEL": "BizyAir_模型"
+        }
+    },
+    "BizyAir_Hy3D_2_1SimpleMeshGen": {
+        "title": "☁️BizyAir 混元3D_2_1 简单网格生成器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "model": "模型",
+            "steps": "迭代步数",
+            "guidance_scale": "引导强度",
+            "octree_resolution": "八叉树分辨率"
+        },
+        "outputs": {
+            "trimesh": "trimesh格式"
+        }
+    },
+    "BizyAir_Hy3DExportMesh": {
+        "title": "☁️BizyAir 混元3D_2_1 简单网格生成器",
+        "inputs": {
+            "trimesh": "trimesh格式"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "file_fommat": "文件格式",
+            "save_file": "保存文件"
+        },
+        "outputs": {
+            "glb_path": "GLB 路径"
         }
     },
     "BizyAirGenerateLightningImage": {

@@ -34,7 +34,8 @@
         },
         "widgets": {
             "title_regex": "名称正则",
-            "input_regex": "输入正则"
+            "input_regex": "输入正则",
+            "group_regex": "正则表达式"
         }
     },
     "Prompts Everywhere": {

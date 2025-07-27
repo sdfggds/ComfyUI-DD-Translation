@@ -326,7 +326,7 @@
         }
     },
     "ttN pipeEncodeConcat": {
-        "title": "TTN编码联结",
+        "title": "TTN编码合并",
         "inputs": {
             "pipe": "节点束",
             "optional_positive_from": "正面条件(可选)",
@@ -517,7 +517,7 @@
         }
     },
     "ttN concat": {
-        "title": "文本联结",
+        "title": "文本合并",
         "widgets": {
             "text1": "文本_1",
             "text2": "文本_2",
@@ -525,11 +525,11 @@
             "delimiter": "分隔符"
         },
         "outputs": {
-            "concat": "联结字符串"
+            "concat": "合并字符串"
         }
     },
     "ttN text3BOX_3WAYconcat": {
-        "title": "TTN文本框联结(3路)",
+        "title": "TTN文本框合并(3路)",
         "widgets": {
             "text1": "文本_1",
             "text2": "文本_2",
@@ -543,11 +543,11 @@
             "1 & 2": "1 & 2",
             "1 & 3": "1 & 3",
             "2 & 3": "2 & 3",
-            "concat": "联结字符串"
+            "concat": "合并字符串"
         }
     },
     "ttN text7BOX_concat": {
-        "title": "TTN文本框联结(7路)",
+        "title": "TTN文本框合并(7路)",
         "widgets": {
             "text1": "文本_1",
             "text2": "文本_2",
@@ -566,7 +566,7 @@
             "text5": "文本_5",
             "text6": "文本_6",
             "text7": "文本_7",
-            "concat": "联结字符串"
+            "concat": "合并字符串"
         }
     },
 

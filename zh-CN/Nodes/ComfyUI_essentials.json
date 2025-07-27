@@ -948,18 +948,6 @@
             "model": "模型",
             "providers": "设备"
         },
-        "widgets_values": {
-            "model": {
-                "u2net": "u2net: 通用",
-                "u2netp": "u2netp: 轻量通用",
-                "u2net_human_seg": "u2net_human_seg: 人体分割",
-                "u2net_cloth_seg": "u2net_cloth_seg: 服装解析",
-                "silueta": "silueta: 超小u2net",
-                "isnet-general-use": "isnet-general-use: 通用",
-                "isnet-anime": "isnet-anime: 动漫插画",
-                "sam": "sam: 通用"
-            }
-        },
         "outputs": {
             "REMBG_SESSION": "移除背景组"
         }

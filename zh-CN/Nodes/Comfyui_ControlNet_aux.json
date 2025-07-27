@@ -614,7 +614,7 @@
         "description": "\n\n 阈值越小越精准 \n\n BBox检测使用bbox-hand手部模型"
     },
     "Metric3D-DepthMapPreprocessor": {
-        "title": "Metric3D深度预处理器",
+        "title": "Metric三维深度预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -629,7 +629,7 @@
         }
     },
     "Metric3D-NormalMapPreprocessor": {
-        "title": "Metric3D法线预处理器",
+        "title": "Metric三维法线预处理器",
         "inputs": {
             "image": "图像"
         },
@@ -795,7 +795,8 @@
         },
         "outputs": {
             "IMAGE": "图像"
-        }
+        },
+        "description": "\n\n 该节点暂时无法使用 \n\n"
     },
 
 
@@ -844,7 +845,7 @@
                 "Manga2Anime-LineArtPreprocessor": "Manga2Anime-LineArt漫画艺术线预处理器",
                 "CannyEdgePreprocessor": "Canny硬边缘线预处理器",
                 "M-LSDPreprocessor": "M-LSD线段预处理器",
-                "MeshGraphormer-DepthMapPreprocessor": "MeshGraphormer深度预处理器",
+                "MeshGraphormer-DepthMapPreprocessor": "MeshGraphormer深度手部预处理器",
                 "MiDaS-DepthMapPreprocessor": "MiDaS深度预处理器",
                 "MiDaS-NormalMapPreprocessor": "MiDaS法线预处理器",
                 "LeReS-DepthMapPreprocessor": "LeReS深度预处理器",
@@ -864,7 +865,7 @@
                 "Manga2Anime_LineArt_Preprocessor": "MangaAnime漫画艺术线预处理器",
                 "DWPreprocessor": "DW姿态预处理器",
                 "Scribble_XDoG_Preprocessor": "ScribbleXDoG涂鸦预处理器",
-                "SAM Segmentor": "SAM分割器",
+                "SAM Segmentor": "分割预处理器",
                 "SAMPreprocessor": "SAM预处理器",
                 "resolution": "分辨率"
         },
