@@ -1,5 +1,5 @@
 {
-    "ImpactPack": "Impact节点",
+    "ImpactPack": "😊ImpactPack节点",
 
     "Util": "实用工具",
     "Operation": "操作",
@@ -16,7 +16,5 @@
     "experimental": "测试",
     "Regional": "区域",
     "Logic": "逻辑",
-        "_for_test": "测试",
-    "Debug": "Debug",
-    "Huggingface": "Huggingface"
+        "_for_test": "测试"
 }

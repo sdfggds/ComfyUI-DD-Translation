@@ -1,4 +1,6 @@
 {
+    "KJNodes": "🛠️KJ工具节点",
+
     "constants": "常量",
     "masking": "遮罩",
     "generate": "生成",
@@ -14,14 +16,7 @@
     "vec2": "2元数",
     "vec3": "3元数",
     "vec4": "4元数",
-    "graphics": "图像",
-    "VRAM_Debug": "显存调试",
-    "experimental": "实验",
-    "weights": "权重",
     "torchcompile": "PyTorch编译",
-    "teacache": "Teacache加速",
     "videomodels": "视频模型",
-    "InstanceDiffusion": "实例扩散",
-    "latents": "Latents",
-    "vae": "Vae"
+    "graphics": "图像"
 }
