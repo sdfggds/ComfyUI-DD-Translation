@@ -12,7 +12,8 @@
         },
         "outputs": {
             "MODEL": "模型",
-            "CLIP": "CLIP"
+            "CLIP": "CLIP",
+            "example": "示例"
         }
     },
     "CheckpointLoader|pysssss": {
@@ -23,7 +24,8 @@
         "outputs": {
             "MODEL": "模型",
             "CLIP": "CLIP",
-            "VAE": "VAE"
+            "VAE": "VAE",
+            "example": "示例"
         }
     },
 
@@ -86,7 +88,8 @@
             "mode": "模式",
                 "alway": "总是",
                 "on empty queue": "空队列",
-            "volume": "音量"
+            "volume": "音量",
+            "file": "文件"
         }
     },
     "Repeater|pysssss": {

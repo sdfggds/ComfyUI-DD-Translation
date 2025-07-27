@@ -304,7 +304,48 @@
             "diff": "差值"
         }
     },
-
+    "JSON extractor [Crystools]": {
+        "title": "🪛 JSON提取器（测试版）",
+        "inputs": {
+            "json": "JSON"
+        },
+        "widgets": {
+            "key": "钥匙",
+            "default": "默认",
+            "metadata_extra": "额外数据"
+        },
+        "outputs": {
+            "any": "任意",
+            "string": "字符串",
+            "int": "整数",
+            "float": "浮点",
+            "boolean": "布尔"
+        }
+    },
+    "Read JSON file [Crystools]": {
+        "title": "🪛读取 JSON 文件（测试版）",
+        "inputs": {
+            "json": "JSON"
+        },
+        "widgets": {
+            "key": "钥匙",
+            "default": "默认",
+            "path_to_json": "JSON 的路径"
+        },
+        "outputs": {
+            "json": "JSON"
+        }
+    },
+    "JSON comparator [Crystools]": {
+        "title": "🪛 JSON对比",
+        "inputs": {
+            "json_old": "JSON旧",
+            "json_new": "JSON新"
+        },
+        "outputs": {
+            "json_compared": "对比结果"
+        }
+    },
 
     "Json comparator [Crystools]": {
         "title": "JSON对比",

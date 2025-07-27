@@ -350,6 +350,7 @@
   "easy joyCaption2API": {
     "title": "JoyCaption2 (BizyAIR)",
     "inputs": {
+      "apikey_override": "API 密钥覆盖设置",
       "image": "图像"
     },
     "widgets": {
@@ -2068,7 +2069,7 @@
     }
   },
   "easy ifElse": {
-    "title": "If else",
+    "title": "如果...否则...",
     "inputs": {
       "boolean": "布尔",
       "on_true": "真时",
@@ -3582,6 +3583,18 @@
     },
     "outputs": {
       "*": "输出"
+    }
+  },
+  "easy loraNames": {
+    "title": "简易 LORA 名称",
+    "inputs": {
+      "negative": "负面条件"
+    },
+    "widgets": {
+      "lora_name": "LORA 名称"
+    },
+    "outputs": {
+      "lora_name": "LORA 名称"
     }
   },
   "easy imageCropFromMask": {

@@ -267,6 +267,7 @@
         "outputs": {
             "width": "宽度",
             "height": "高度",
+            "count": "数字",
             "INT": "整数"
         }
     },
@@ -638,7 +639,7 @@
         "widgets": {
             "width": "宽度",
             "height": "高度",
-            "energy": "energy",
+            "energy": "能量",
             "order": "顺序"
         },
         "outputs": {
@@ -1071,7 +1072,7 @@
         "title": "透明背景组",
         "widgets": {
             "mode": "模式",
-            "use_jit": "jit"
+            "use_jit": "即时编译（JIT）技术"
         },
         "outputs": {
             "REMBG_SESSION": "移除背景组"
