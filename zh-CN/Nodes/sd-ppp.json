@@ -1,0 +1,19 @@
+{
+    "CLIP Text Encode PS Regional": {
+        "title": "CLIP文本编码PS区域",
+        "inputs": {
+            "clip": "CLIP",
+            "texts": "文本",
+            "masks": "遮罩",
+            "strengths": "优势"
+        },
+        "widgets": {
+            "swap_model": "替换模型",
+            "faces_index": "面部编号",
+            "console_logging_level": "控制台日志等级"
+        },
+        "outputs": {
+            "CONDITIONING": "条件"
+        }
+    }
+}
